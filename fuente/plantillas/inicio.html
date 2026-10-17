@@ -308,11 +308,13 @@ document.addEventListener('DOMContentLoaded', function(){
     pasos.forEach(function(p, i){ p.classList.toggle('wz-oculto', activo && i !== actual); });
     resumen.classList.toggle('wz-oculto', activo && actual !== total - 1);
     nav.hidden = cab.hidden = !activo;
+    sec.classList.toggle('wz-on', activo);
     if (!activo) return;
     cab.textContent = 'Paso ' + (actual + 1) + ' de ' + total + ' · ' + titulos[actual];
     nav.querySelector('.wz-prev').style.visibility = actual ? 'visible' : 'hidden';
     nav.querySelector('.wz-next').style.display = actual === total - 1 ? 'none' : '';
     nav.querySelector('.wz-n').textContent = (actual + 1) + ' / ' + total;
+    nav.classList.toggle('wz-ultimo', actual === total - 1);
     nav.querySelector('.wz-total').textContent = totalTxt();
     if (scroll) sec.querySelector('.quote').scrollIntoView({block: 'start'});
   }
