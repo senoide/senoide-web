@@ -44,7 +44,7 @@
         d:'Toma con cableado desde el router o el armario de red.'},
       {id:'e17', c:'ec', name:'Luz de emergencia', unit:'ud', min:50, max:50,
         d:'Luz de emergencia autónoma, instalada y probada.'},
-      {id:'e19', closed:1, c:'e', name:'Revisión puntual de apartamento turístico (sin contrato)', unit:'visita', min:120, max:120,
+      {id:'e19', closed:1, c:'e', name:'Revisión puntual de apartamento turístico (sin contrato)', unit:'visita', min:150, max:150,
         d:'Revisión de electricidad, termo y grifos. Las piezas o reparaciones se presupuestan aparte. Con un plan de mantenimiento sale más barato.'},
       {id:'e20', closed:1, c:'ec', name:'Visita de mantenimiento preventivo', unit:'visita', min:90, max:90,
         d:'Revisión periódica de cuadros, protecciones e iluminación, con parte de trabajo. Las reparaciones que salgan se presupuestan aparte.'},
