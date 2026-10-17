@@ -419,9 +419,20 @@ def construir():
     inicio = inicio.replace("{{BLOQUE_TRABAJOS}}", bloque(
         "Trabajos recientes", "Trabajos", trabajos, "/trabajos/",
         lambda t: f'{t.get("municipio", "")} · {t.get("servicio", "")}'.strip(" ·"), "Ver todos los trabajos", ""))
-    inicio = inicio.replace("{{BLOQUE_NOTICIAS}}", bloque(
-        "Noticias y normativa", "Noticias", noticias, "/noticias/",
-        lambda n: f'{n.get("categoria", "Noticias")} · {fecha_larga(n["_fecha"])}', "Ver todas las noticias", ""))
+    # Noticias y consejos en un solo bloque: los 3 artículos más recientes de las dos secciones
+    articulos = sorted([(x, "/noticias/") for x in noticias] + [(x, "/consejos/") for x in consejos],
+                       key=lambda a: a[0]["_fecha"], reverse=True)[:3]
+    bloque_art = ""
+    if articulos:
+        bloque_art = ('<section style="padding-top:0"><div class="wrap"><div class="section-head"><p class="eyebrow">Noticias y consejos</p>'
+                      '<h2>Normativa y consejos para tu instalación</h2></div><div class="cards">'
+                      + "".join(tarjeta(x, base, f'{x.get("categoria", "Noticias" if base == "/noticias/" else "Consejos")} · {fecha_larga(x["_fecha"])}')
+                                for x, base in articulos)
+                      + '</div><p class="more">'
+                      + ('<a class="btn" href="/noticias/">Ver noticias</a> ' if noticias else "")
+                      + ('<a class="btn" href="/consejos/">Ver consejos</a>' if consejos else "")
+                      + '</p></div></section>')
+    inicio = inicio.replace("{{BLOQUE_ARTICULOS}}", bloque_art)
     opiniones = ""
     if d["RESENAS_URL"] or d["PERFIL_GOOGLE"]:
         opiniones = ('<div class="ccard"><div><div class="k">Opiniones</div>'
@@ -429,9 +440,6 @@ def construir():
                      + (f'<a class="v small" href="{esc(d["RESENAS_URL"])}" target="_blank" rel="noopener">¿Ya has trabajado con nosotros? Déjanos tu opinión</a>' if d["RESENAS_URL"] else "")
                      + '</div></div>')
     inicio = inicio.replace("{{OPINIONES}}", opiniones)
-    inicio = inicio.replace("{{BLOQUE_CONSEJOS}}", bloque(
-        "Consejos y normativa", "Consejos", consejos, "/consejos/",
-        lambda c: c.get("categoria", "Consejos"), "Ver todos los consejos", ""))
     inicio = (inicio.replace("{{TELEFONO}}", d["TELEFONO"])
               .replace("{{TELEFONO_SIN_ESPACIOS}}", d["TELEFONO"].replace(" ", ""))
               .replace("{{EMAIL}}", d["EMAIL"]).replace("{{WHATSAPP}}", d["WHATSAPP"]))
