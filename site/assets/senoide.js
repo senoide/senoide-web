@@ -70,8 +70,6 @@
         d:'Grifo de gama comercial, montaje y retirada del viejo.'},
       {id:'f2', c:'pe', name:'Reparación de cisterna o fuga', unit:'ud', min:48, max:48,
         d:'Mecanismo de cisterna nuevo o reparación de una fuga visible.'},
-      {id:'f3', c:'pe', name:'Cambio de termo eléctrico de 80 L', unit:'ud', min:311, max:311,
-        d:'Termo de gama comercial, montaje y retirada del viejo.'},
       {id:'f4', c:'pe', name:'Cambio de inodoro', unit:'ud', min:218, max:218,
         d:'Inodoro de gama comercial, montaje y retirada del viejo.'},
       {id:'f5', c:'pe', name:'Desatasco sencillo', unit:'ud', min:34, max:34,
