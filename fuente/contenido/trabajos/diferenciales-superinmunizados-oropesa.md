@@ -18,11 +18,11 @@ Revisamos el cuadro y sustituimos los dos diferenciales (40 A, 30 mA) por difere
 
 ![Cuadro antes del cambio, con los diferenciales estándar](diferenciales-antes.jpg)
 
-*Antes: diferenciales estándar.*
+*Antes: los dos diferenciales estándar, marcados en amarillo.*
 
 ![Cuadro después del cambio, con los diferenciales superinmunizados](diferenciales-despues.jpg)
 
-*Después: diferenciales superinmunizados (clase SI).*
+*Después: los dos diferenciales superinmunizados (clase SI), en el mismo sitio.*
 
 ## Por qué un superinmunizado
 
