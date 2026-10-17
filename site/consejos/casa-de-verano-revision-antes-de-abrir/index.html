@@ -20,7 +20,7 @@
 <link rel="icon" href="/assets/favicon-48.png" type="image/png" sizes="48x48">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <link rel="preload" href="/assets/fonts/bricolage.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/estilos.css?v=202610180035">
+<link rel="stylesheet" href="/assets/estilos.css?v=202610180041">
 <style>
 /* Menú con desplegables, menú móvil, accesos rápidos, barra inferior y «volver arriba» */
 header.site nav.main{gap:18px}
@@ -115,7 +115,6 @@ header.site nav.main .nav-tel{font-family:var(--f-mono);font-weight:500;color:va
   .plate .row.opt{display:none}
   .plate .row:nth-child(3){border-bottom:0;padding-bottom:0}
   .hero .plate{display:none}
-  .hero canvas{display:none}
   .hero .eyebrow .ey-extra{display:none}
   .hero-cert{display:flex!important}
 }
@@ -263,19 +262,23 @@ var sc=document.currentScript;sc.parentNode.insertBefore(d,sc);})();
   if(top){
     top.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
     var on=false,ultimo=window.scrollY,b=document.body;
+    if(document.querySelector('.hero')&&window.scrollY<200)b.classList.add('mbar-off');
     window.addEventListener('scroll',function(){
       var y=window.scrollY,v=y>400;
       if(v!==on){on=v;top.classList.toggle('on',v);}
       /* la barra de abajo se esconde al bajar y vuelve al subir o al llegar al final */
       var fin=window.innerHeight+y>=document.documentElement.scrollHeight-40;
-      if(Math.abs(y-ultimo)>8){b.classList.toggle('mbar-off',y>ultimo&&y>200&&!fin);ultimo=y;}
+      /* en la primera pantalla (cabecera de la portada) la barra no se muestra, para ver el apartado completo */
+      var h=document.querySelector('.hero'),arriba=h?y<h.offsetTop+h.offsetHeight-window.innerHeight*0.5:y<200;
+      if(Math.abs(y-ultimo)>8){b.classList.toggle('mbar-off',arriba||(y>ultimo&&!fin));ultimo=y;}
       if(fin)b.classList.remove('mbar-off');
+      else if(arriba)b.classList.add('mbar-off');
     },{passive:true});
   }
 })();
 </script>
-<script src="/assets/senoide.js?v=202610180035" defer></script>
-<script src="/assets/trabajos.js?v=202610180035" defer></script>
+<script src="/assets/senoide.js?v=202610180041" defer></script>
+<script src="/assets/trabajos.js?v=202610180041" defer></script>
 
 </body>
 </html>
