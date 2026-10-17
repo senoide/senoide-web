@@ -20,7 +20,7 @@
 <link rel="icon" href="/assets/favicon-48.png" type="image/png" sizes="48x48">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <link rel="preload" href="/assets/fonts/bricolage.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/estilos.css?v=202610172203">
+<link rel="stylesheet" href="/assets/estilos.css?v=202610172206">
 <style>
 /* Menú con desplegables, menú móvil, accesos rápidos, barra inferior y «volver arriba» */
 header.site nav.main{gap:18px}
@@ -79,7 +79,8 @@ header.site nav.main .nav-tel{font-family:var(--f-mono);font-weight:500;color:va
 /* barra inferior en el móvil y botón volver arriba */
 .mbar{display:none}
 @media (max-width:820px){
-  .mbar{display:grid;grid-template-columns:repeat(3,1fr);position:fixed;left:0;right:0;bottom:0;z-index:25;background:var(--surface);border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom,0px)}
+  .mbar{display:grid;grid-template-columns:repeat(3,1fr);position:fixed;left:0;right:0;bottom:0;z-index:25;background:var(--surface);border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom,0px);transition:transform .25s}
+  .mbar-off .mbar{transform:translateY(110%)}
   .mbar a{display:flex;flex-direction:column;align-items:center;gap:2px;padding:9px 4px 10px;text-decoration:none;font:600 .8rem var(--f-body);color:var(--ink)}
   .mbar a svg{width:22px;height:22px}
   .mbar a.go{background:var(--signal);color:var(--signal-ink)}
@@ -88,7 +89,17 @@ header.site nav.main .nav-tel{font-family:var(--f-mono);font-weight:500;color:va
 .totop{position:fixed;right:16px;bottom:20px;z-index:24;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--surface);color:var(--ink);box-shadow:0 6px 18px rgba(4,33,63,.15);cursor:pointer;opacity:0;pointer-events:none;transition:opacity .2s}
 .totop.on{opacity:1;pointer-events:auto}
 .totop svg{width:20px;height:20px}
-@media (max-width:820px){.totop{bottom:calc(76px + env(safe-area-inset-bottom,0px))}}
+@media (max-width:820px){
+  .totop{bottom:calc(76px + env(safe-area-inset-bottom,0px));transition:opacity .2s,bottom .25s}
+  .mbar-off .totop{bottom:calc(16px + env(safe-area-inset-bottom,0px))}
+  .en-calc .totop{bottom:calc(150px + env(safe-area-inset-bottom,0px))}
+  .en-calc.mbar-off .totop{bottom:calc(92px + env(safe-area-inset-bottom,0px))}
+  .mbar-off .wz-nav{bottom:calc(8px + env(safe-area-inset-bottom,0px))}
+}
+/* enlace «Volver» al final de las páginas interiores */
+.volver{max-width:1160px;margin:8px auto 48px;padding-inline:20px}
+.volver a{display:inline-flex;align-items:center;gap:8px;font-weight:600;color:var(--accent-text);text-decoration:none}
+.volver a:hover{text-decoration:underline}
 /* portada en el móvil: texto más corto y ficha del instalador compacta */
 @media (max-width:820px){
   .hero{padding-block:28px 28px}
@@ -107,7 +118,7 @@ header.site nav.main .nav-tel{font-family:var(--f-mono);font-weight:500;color:va
 .wz-nav.wz-ultimo{position:static;box-shadow:none}
 .wz-nav.wz-ultimo .wz-row{justify-content:flex-start}
 .wz-nav.wz-ultimo .wz-total{display:none}
-@media (max-width:820px){.en-calc .totop{opacity:0;pointer-events:none}}
+
 .wz-cab{margin-bottom:14px;color:var(--accent-text)}
 .wz-nav{position:sticky;bottom:calc(64px + env(safe-area-inset-bottom,0px));z-index:15;margin-top:8px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:10px 12px;box-shadow:0 -6px 18px rgba(4,33,63,.08)}
 .wz-row{display:flex;align-items:center;justify-content:space-between;gap:10px}
@@ -181,6 +192,11 @@ header.site nav.main .nav-tel{font-family:var(--f-mono);font-weight:500;color:va
 </ul>
 <p class="src">Normativa: <a href="https://www.boe.es/eli/es/rd/2014/12/12/1053" target="_blank" rel="noopener">Real Decreto 1053/2014, ITC-BT-52</a> y <a href="https://www.boe.es/buscar/act.php?id=BOE-A-1960-10906" target="_blank" rel="noopener">Ley 49/1960 de Propiedad Horizontal, artículo 17.5</a>.</p><div class="cta-box"><div><p class="eyebrow" style="color:inherit;opacity:.7">¿Tienes un trabajo parecido?</p><h3 style="margin-top:6px">Calcula un precio orientativo en un minuto.</h3></div><a class="btn primary" href="/#presupuesto">Calcular presupuesto</a></div></article></div>
 
+<script>
+(function(){var c=document.querySelector('nav.crumbs');if(!c)return;var a=c.querySelectorAll('a');if(!a.length)return;var u=a[a.length-1];
+var d=document.createElement('div');d.className='volver';var l=document.createElement('a');l.href=u.getAttribute('href');l.textContent='← Volver a '+(u.textContent==='Inicio'?'la portada':u.textContent.toLowerCase());d.appendChild(l);
+var sc=document.currentScript;sc.parentNode.insertBefore(d,sc);})();
+</script>
 <footer><div class="wrap">
   <div class="foot-logo">
     <img class="logo-l" src="/assets/logo-completo.png" alt="SENOIDE · Instalaciones eléctricas · Mantenimiento" width="900" height="186" loading="lazy">
@@ -225,12 +241,20 @@ header.site nav.main .nav-tel{font-family:var(--f-mono);font-weight:500;color:va
   var top=document.querySelector('.totop');
   if(top){
     top.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
-    var on=false;window.addEventListener('scroll',function(){var v=window.scrollY>900;if(v!==on){on=v;top.classList.toggle('on',v);}},{passive:true});
+    var on=false,ultimo=window.scrollY,b=document.body;
+    window.addEventListener('scroll',function(){
+      var y=window.scrollY,v=y>400;
+      if(v!==on){on=v;top.classList.toggle('on',v);}
+      /* la barra de abajo se esconde al bajar y vuelve al subir o al llegar al final */
+      var fin=window.innerHeight+y>=document.documentElement.scrollHeight-40;
+      if(Math.abs(y-ultimo)>8){b.classList.toggle('mbar-off',y>ultimo&&y>200&&!fin);ultimo=y;}
+      if(fin)b.classList.remove('mbar-off');
+    },{passive:true});
   }
 })();
 </script>
-<script src="/assets/senoide.js?v=202610172203" defer></script>
-<script src="/assets/trabajos.js?v=202610172203" defer></script>
+<script src="/assets/senoide.js?v=202610172206" defer></script>
+<script src="/assets/trabajos.js?v=202610172206" defer></script>
 
 </body>
 </html>
