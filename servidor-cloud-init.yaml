@@ -1,0 +1,43 @@
+#cloud-config
+# Configuración automática del servidor de SENOIDE (pegar en Hetzner → «Configuración de nube» al crear el servidor).
+# No contiene contraseñas ni claves.
+package_update: true
+package_upgrade: true
+packages:
+  - git
+  - ufw
+  - unattended-upgrades
+  - debian-keyring
+  - debian-archive-keyring
+  - apt-transport-https
+  - curl
+  - gnupg
+write_files:
+  - path: /etc/cron.d/senoide-web
+    content: |
+      */5 * * * * root /srv/senoide-web/scripts/actualizar.sh >/var/log/senoide-actualizar.log 2>&1
+  - path: /etc/apt/apt.conf.d/20auto-upgrades
+    content: |
+      APT::Periodic::Update-Package-Lists "1";
+      APT::Periodic::Unattended-Upgrade "1";
+  - path: /etc/apt/apt.conf.d/51senoide-reinicio
+    content: |
+      Unattended-Upgrade::Automatic-Reboot "true";
+      Unattended-Upgrade::Automatic-Reboot-Time "05:00";
+runcmd:
+  # Caddy desde su repositorio oficial
+  - curl -1sLf 'https://dl.cloudsmith.io/public/caddy/stable/gpg.key' | gpg --dearmor -o /usr/share/keyrings/caddy-stable-archive-keyring.gpg
+  - curl -1sLf 'https://dl.cloudsmith.io/public/caddy/stable/debian.deb.txt' -o /etc/apt/sources.list.d/caddy-stable.list
+  - apt-get update && apt-get install -y caddy
+  # Web y configuración desde GitHub
+  - git clone --depth 1 https://github.com/senoide/senoide-web /srv/senoide-web
+  - cp /etc/caddy/Caddyfile /etc/caddy/Caddyfile.original
+  - ln -sf /srv/senoide-web/Caddyfile /etc/caddy/Caddyfile
+  - systemctl enable caddy && systemctl restart caddy
+  # Cortafuegos: solo web (80/443). SSH cerrado; en caso de necesidad se usa la consola de Hetzner.
+  - ufw default deny incoming
+  - ufw allow 80/tcp
+  - ufw allow 443/tcp
+  - ufw allow 443/udp
+  - ufw --force enable
+  - systemctl disable --now ssh || true
