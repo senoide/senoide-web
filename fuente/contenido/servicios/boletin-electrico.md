@@ -17,7 +17,7 @@ El boletín eléctrico es el nombre de siempre del **Certificado de Instalación
 ## Cómo lo hacemos
 
 1. Visitamos la vivienda o el local y revisamos el cuadro, las protecciones, la toma de tierra y el cableado.
-2. Si algo no cumple, te damos presupuesto cerrado para adecuarlo antes de certificar.
+2. Si algo no cumple, te damos presupuesto por escrito para adecuarlo antes de certificar.
 3. Emitimos el certificado y lo registramos ante la Generalitat Valenciana.
 4. Te entregamos la documentación para que la presentes a la comercializadora o la distribuidora.
 

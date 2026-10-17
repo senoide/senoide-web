@@ -490,7 +490,7 @@ def construir():
         {"@type": "Question", "name": "¿Qué es el boletín eléctrico?",
          "acceptedAnswer": {"@type": "Answer", "text": "Es el Certificado de Instalación Eléctrica (CIE). Lo firma un instalador habilitado y lo pide la distribuidora para dar de alta la luz, cambiar de titular tras años sin suministro o subir la potencia."}},
         {"@type": "Question", "name": "¿El precio de la calculadora es el definitivo?",
-         "acceptedAnswer": {"@type": "Answer", "text": "No. Es un precio medio con material de gama comercial incluido. Si quieres otra gama o un modelo concreto, se presupuesta aparte. En la visita vemos tu caso y te damos un presupuesto cerrado por escrito, y ese es el que vale."}}]}
+         "acceptedAnswer": {"@type": "Answer", "text": "No. Es un precio medio con material de gama comercial incluido. Si quieres otra gama o un modelo concreto, se presupuesta aparte. En la visita vemos tu caso y te damos el presupuesto por escrito antes de empezar. Si al abrir aparece algo que no se veía, te lo explicamos y no hacemos nada sin tu aprobación."}}]}
     pagina("/", "Electricista en Oropesa del Mar y Castellón | SENOIDE",
            "Electricista certificado en Oropesa del Mar, Benicàssim y Castellón: averías, boletines CIE, cuadros, puntos de recarga y mantenimiento. Calcula tu presupuesto.",
            inicio, jsonld=faq)
