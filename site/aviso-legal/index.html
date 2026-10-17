@@ -20,7 +20,7 @@
 <link rel="icon" href="/assets/favicon-48.png" type="image/png" sizes="48x48">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <link rel="preload" href="/assets/fonts/bricolage.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/estilos.css?v=202610172206">
+<link rel="stylesheet" href="/assets/estilos.css?v=202610172208">
 <style>
 /* Menú con desplegables, menú móvil, accesos rápidos, barra inferior y «volver arriba» */
 header.site nav.main{gap:18px}
@@ -34,6 +34,8 @@ header.site nav.main a:not(.btn):hover,.dd-btn:hover,.dd.open .dd-btn{color:var(
 header.site nav.main .dd-panel a:not(.btn){display:block!important;padding:9px 12px;border-radius:7px;color:var(--ink)}
 header.site nav.main .dd-panel a:not(.btn):hover{background:var(--paper)}
 .dd.open .dd-panel{display:block}
+header.site nav.main .nav-inicio{display:none!important}
+header.site nav.main .dd-panel a.dd-todos:not(.btn){font-weight:600;color:var(--accent-text)}
 @media (hover:hover) and (min-width:1101px){.dd:hover .dd-panel,.dd:focus-within .dd-panel{display:block}}
 header.site nav.main .nav-tel{font-family:var(--f-mono);font-weight:500;color:var(--ink)}
 .burger{display:none;align-items:center;gap:10px;font:600 .95rem var(--f-body);color:var(--ink);background:none;border:1.5px solid var(--line);border-radius:999px;padding:8px 14px;cursor:pointer}
@@ -51,6 +53,7 @@ header.site nav.main .nav-tel{font-family:var(--f-mono);font-weight:500;color:va
   header.site nav.main.open{display:flex}
   header.site nav.main > a:not(.btn),.dd-btn{display:flex!important;justify-content:space-between;align-items:center;width:100%;padding:14px 4px;font-size:1.05rem;color:var(--ink);border-bottom:1px solid var(--line);text-align:left}
   header.site nav.main .nav-tel{display:flex!important}
+  header.site nav.main .nav-inicio{display:flex!important}
   .dd-panel{position:static;box-shadow:none;border:0;padding:4px 0 8px 12px;min-width:0;background:none}
   .dd-panel::before{display:none}
   header.site nav.main .dd-panel a:not(.btn){padding:10px 4px;font-size:1rem;color:var(--muted)}
@@ -141,9 +144,11 @@ header.site nav.main .nav-tel{font-family:var(--f-mono);font-weight:500;color:va
   </a>
   <button class="burger" type="button" aria-controls="menu-principal" aria-expanded="false"><span class="burger-i" aria-hidden="true"></span>Menú</button>
   <nav class="main" id="menu-principal" aria-label="Principal">
+    <a class="nav-inicio" href="/">Inicio</a>
     <div class="dd">
       <button class="dd-btn" type="button" aria-expanded="false">Servicios</button>
       <div class="dd-panel">
+        <a class="dd-todos" href="/#servicios">Ver todos los servicios</a>
         <a href="/servicios/averias-electricas-urgencias/">Averías y urgencias</a>
         <a href="/servicios/cuadro-electrico-aumento-potencia/">Cuadro y aumento de potencia</a>
         <a href="/servicios/boletin-electrico/">Boletín eléctrico (CIE)</a>
@@ -154,6 +159,7 @@ header.site nav.main .nav-tel{font-family:var(--f-mono);font-weight:500;color:va
     <div class="dd">
       <button class="dd-btn" type="button" aria-expanded="false">Para quién</button>
       <div class="dd-panel">
+        <a class="dd-todos" href="/#clientes">Ver todos los tipos de cliente</a>
         <a href="/#particulares">Particulares</a>
         <a href="/servicios/comunidades-de-propietarios/">Comunidades de propietarios</a>
         <a href="/servicios/apartamentos-turisticos/">Apartamentos turísticos</a>
@@ -258,8 +264,8 @@ var sc=document.currentScript;sc.parentNode.insertBefore(d,sc);})();
   }
 })();
 </script>
-<script src="/assets/senoide.js?v=202610172206" defer></script>
-<script src="/assets/trabajos.js?v=202610172206" defer></script>
+<script src="/assets/senoide.js?v=202610172208" defer></script>
+<script src="/assets/trabajos.js?v=202610172208" defer></script>
 
 </body>
 </html>
