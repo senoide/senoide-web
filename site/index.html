@@ -20,7 +20,7 @@
 <link rel="icon" href="/assets/favicon-48.png" type="image/png" sizes="48x48">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <link rel="preload" href="/assets/fonts/bricolage.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/estilos.css?v=202610172218">
+<link rel="stylesheet" href="/assets/estilos.css?v=202610180026">
 <style>
 /* Menú con desplegables, menú móvil, accesos rápidos, barra inferior y «volver arriba» */
 header.site nav.main{gap:18px}
@@ -114,7 +114,15 @@ header.site nav.main .nav-tel{font-family:var(--f-mono);font-weight:500;color:va
   .plate{padding:14px 16px;gap:10px;font-size:.9rem}
   .plate .row.opt{display:none}
   .plate .row:nth-child(3){border-bottom:0;padding-bottom:0}
+  .hero .plate{display:none}
+  .hero canvas{opacity:.35}
+  .hero .eyebrow .ey-extra{display:none}
+  .hero-cert{display:flex!important}
 }
+.ey-movil{display:none}
+@media (max-width:820px){.hero .eyebrow .ey-movil{display:inline}}
+.hero-cert{display:none;align-items:center;gap:8px;margin-top:18px;font-family:var(--f-mono);font-size:.82rem;color:var(--muted)}
+.hero-cert .ok-dot{width:8px;height:8px;border-radius:50%;background:var(--ok);flex:none}
 /* calculadora por pasos (solo móvil; lo activa el código de la portada) */
 .wz-oculto{display:none!important}
 #presupuesto .quote{scroll-margin-top:84px}
@@ -192,13 +200,14 @@ header.site nav.main .nav-tel{font-family:var(--f-mono);font-weight:500;color:va
   <canvas id="wave" aria-hidden="true"></canvas>
   <div class="wrap">
     <div>
-      <p class="eyebrow">Instalaciones eléctricas · Mantenimiento · Oropesa del Mar</p>
+      <p class="eyebrow"><span class="ey-extra">Instalaciones eléctricas · Mantenimiento · </span>Oropesa del Mar<span class="ey-movil"> · Castellón</span></p>
       <h1>Electricista en Oropesa del Mar. <em>La luz, bien puesta.</em></h1>
       <p class="lead">Instalaciones eléctricas, averías, boletines y puntos de recarga para casas, comercios y comunidades.<span class="lead-extra"> Si hay que abrir una roza, cambiar un grifo o alicatar después, lo resolvemos en la misma visita.</span></p>
       <div class="ctas">
         <a class="btn primary" href="#presupuesto">Calcula tu presupuesto</a>
         <a class="btn" href="#servicios">Ver servicios</a>
       </div>
+      <p class="hero-cert"><span class="ok-dot" aria-hidden="true"></span>Instalador BT certificado · nº CIBTB-04551</p>
     </div>
     <aside class="plate" aria-label="Datos del instalador">
       <div class="row"><span class="k">Instalador</span><span class="v">Luis M. Sierra Mena</span></div>
@@ -597,8 +606,8 @@ var sc=document.currentScript;sc.parentNode.insertBefore(d,sc);})();
   }
 })();
 </script>
-<script src="/assets/senoide.js?v=202610172218" defer></script>
-<script src="/assets/trabajos.js?v=202610172218" defer></script>
+<script src="/assets/senoide.js?v=202610180026" defer></script>
+<script src="/assets/trabajos.js?v=202610180026" defer></script>
 
 </body>
 </html>
