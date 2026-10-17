@@ -28,4 +28,6 @@ Revisamos el cuadro y sustituimos los dos diferenciales (40 A, 30 mA) por difere
 
 Un diferencial normal puede saltar con las pequeñas fugas y perturbaciones que provocan los aparatos electrónicos y con los picos de tensión de las tormentas, aunque no haya ningún peligro. El superinmunizado protege igual a las personas (corta con 30 mA), pero tolera mejor esas perturbaciones y salta mucho menos sin motivo.
 
-Si con tormenta siguen los cortes, el siguiente paso es instalar protección contra sobretensiones en el cuadro. También conviene revisar la toma de tierra.
+## ¿Te pasa algo parecido?
+
+Si el diferencial te salta cuando hay tormenta o sin motivo aparente, llámanos o escríbenos por WhatsApp al [621 018 374](tel:+34621018374) y lo revisamos.
