@@ -374,7 +374,7 @@ def construir():
     # --- consejos ---
     for c in consejos:
         rev = c.get("revisado")
-        nota = f'<p class="src">Publicado el {fecha_larga(c["_fecha"])}.</p>'
+        nota = f'<p class="src">Publicado el {fecha_larga(c["_fecha"])}. La normativa cambia: si tienes dudas sobre tu caso, pregúntanos.</p>'
         cuerpo = (cabecera(c.get("categoria", "Consejos"), c["titulo"], c.get("resumen", ""),
                            [("Inicio", "/"), ("Consejos", "/consejos/"), (c["titulo"], None)])
                   + f'<div class="wrap"><article class="prose">{markdown(c["_cuerpo"])}{nota}{bloque_cta()}</article></div>')
@@ -400,7 +400,7 @@ def construir():
     # --- noticias ---
     for n in noticias:
         rev = n.get("revisado")
-        nota = f'<p class="src">Publicado el {fecha_larga(n["_fecha"])}.</p>'
+        nota = f'<p class="src">Publicado el {fecha_larga(n["_fecha"])}. Si tienes dudas sobre cómo te afecta, pregúntanos.</p>'
         cuerpo = (cabecera(n.get("categoria", "Noticias"), n["titulo"], n.get("resumen", ""),
                            [("Inicio", "/"), ("Noticias", "/noticias/"), (n["titulo"], None)])
                   + f'<div class="wrap"><article class="prose">{markdown(n["_cuerpo"])}{nota}{bloque_cta()}</article></div>')
