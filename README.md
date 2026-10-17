@@ -8,3 +8,6 @@ Se sirve desde un servidor propio en la UE (Hetzner) con IP dedicada, para no de
 - `servidor-cloud-init.yaml` — configuración automática del servidor al crearlo (sin contraseñas ni claves).
 
 Para cambiar la web: editar `site/` y subir a `main`. En 5 minutos está publicado.
+
+## Cómo se genera `site/`
+La web se escribe en la carpeta de OneDrive `SENOIDE/web-senoide` (textos en `contenido/`, diseño en `plantillas/`, calculadora en `assets/senoide.js`). `python build.py` genera `publicar/`; su contenido se copia a `site/` (sin tocar `site/assets/fonts`) y se sube a `main`. Ya no se sube nada al Worker de Cloudflare `lucky-fog-e704`.

@@ -20,11 +20,12 @@
 <link rel="icon" href="/assets/favicon-48.png" type="image/png" sizes="48x48">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <link rel="preload" href="/assets/fonts/bricolage.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/estilos.css?v=202610161336">
+<link rel="stylesheet" href="/assets/estilos.css?v=202610172102">
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@context": "https://schema.org", "@type": "Electrician", "@id": "https://senoide.es/#empresa", "name": "SENOIDE", "description": "Instalaciones eléctricas, averías, boletines, puntos de recarga, fontanería y remates de albañilería.", "url": "https://senoide.es/", "logo": "https://senoide.es/assets/icono-512.png", "image": "https://senoide.es/assets/og-senoide.jpg", "telephone": "+34621018374", "email": "info@senoide.es", "founder": {"@type": "Person", "name": "Luis M. Sierra Mena"}, "address": {"@type": "PostalAddress", "addressLocality": "Oropesa del Mar", "postalCode": "12594", "addressRegion": "Castellón", "addressCountry": "ES"}, "areaServed": [{"@type": "City", "name": "Oropesa del Mar"}, {"@type": "City", "name": "Benicàssim"}, {"@type": "City", "name": "Cabanes"}, {"@type": "City", "name": "Torreblanca"}, {"@type": "City", "name": "Vilafamés"}, {"@type": "City", "name": "La Pobla Tornesa"}, {"@type": "City", "name": "Borriol"}, {"@type": "City", "name": "Castelló de la Plana"}, {"@type": "City", "name": "Alcalà de Xivert"}], "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "08:00", "closes": "18:00"}], "priceRange": "€€"}]}</script>
 </head>
-<body data-whatsapp="34621018374">
-<div class="ribbon"><div class="wrap"><span>Abrimos el <b>2 de noviembre de 2026</b> · ya puedes pedir presupuesto</span><span class="mono">230 V · 50 Hz</span></div></div>
+<body data-whatsapp="34621018374" data-api="https://app.senoide.es">
+<div class="ribbon"><div class="wrap"><span id="aviso" data-abierto="Atendemos de lunes a viernes, de 8 a 18 h · Urgencias: &lt;a href=&quot;tel:+34621018374&quot;&gt;621 018 374&lt;/a&gt;" data-desde="2026-11-02">Abrimos el <b>2 de noviembre de 2026</b> · ya puedes pedir presupuesto</span><span class="mono">230 V · 50 Hz</span></div></div>
+<script>(function(){var a=document.getElementById('aviso');if(!a)return;var d=new Date(),h=d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');if(h>=a.dataset.desde)a.innerHTML=a.dataset.abierto;})();</script>
 
 <header class="site"><div class="wrap">
   <a class="brand" href="/" aria-label="SENOIDE, inicio">
@@ -36,6 +37,7 @@
     <a href="/#mantenimiento">Mantenimiento</a>
     <a href="/trabajos/">Trabajos</a>
     <a href="/consejos/">Consejos</a>
+    <a href="/noticias/">Noticias</a>
     <a href="/#contacto">Contacto</a>
     <a class="btn primary small" href="/#presupuesto">Calcular presupuesto</a>
   </nav>
@@ -53,7 +55,8 @@
     <span><a href="/aviso-legal/">Aviso legal</a> · <a href="/privacidad/">Privacidad</a> · <a href="/cookies/">Cookies</a></span>
   </div>
 </div></footer>
-<script src="/assets/senoide.js?v=202610161336" defer></script>
+<script src="/assets/senoide.js?v=202610172102" defer></script>
+<script src="/assets/trabajos.js?v=202610172102" defer></script>
 
 </body>
 </html>

@@ -20,11 +20,12 @@
 <link rel="icon" href="/assets/favicon-48.png" type="image/png" sizes="48x48">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <link rel="preload" href="/assets/fonts/bricolage.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/estilos.css?v=202610161336">
+<link rel="stylesheet" href="/assets/estilos.css?v=202610172102">
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@context": "https://schema.org", "@type": "Electrician", "@id": "https://senoide.es/#empresa", "name": "SENOIDE", "description": "Instalaciones eléctricas, averías, boletines, puntos de recarga, fontanería y remates de albañilería.", "url": "https://senoide.es/", "logo": "https://senoide.es/assets/icono-512.png", "image": "https://senoide.es/assets/og-senoide.jpg", "telephone": "+34621018374", "email": "info@senoide.es", "founder": {"@type": "Person", "name": "Luis M. Sierra Mena"}, "address": {"@type": "PostalAddress", "addressLocality": "Oropesa del Mar", "postalCode": "12594", "addressRegion": "Castellón", "addressCountry": "ES"}, "areaServed": [{"@type": "City", "name": "Oropesa del Mar"}, {"@type": "City", "name": "Benicàssim"}, {"@type": "City", "name": "Cabanes"}, {"@type": "City", "name": "Torreblanca"}, {"@type": "City", "name": "Vilafamés"}, {"@type": "City", "name": "La Pobla Tornesa"}, {"@type": "City", "name": "Borriol"}, {"@type": "City", "name": "Castelló de la Plana"}, {"@type": "City", "name": "Alcalà de Xivert"}], "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "08:00", "closes": "18:00"}], "priceRange": "€€"}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "¿Qué es el boletín eléctrico?", "acceptedAnswer": {"@type": "Answer", "text": "Es el Certificado de Instalación Eléctrica (CIE). Lo firma un instalador habilitado y lo pide la distribuidora para dar de alta la luz, cambiar de titular tras años sin suministro o subir la potencia."}}, {"@type": "Question", "name": "¿El precio de la calculadora es el definitivo?", "acceptedAnswer": {"@type": "Answer", "text": "No. Es un precio medio con material de gama comercial incluido. Si quieres otra gama o un modelo concreto, se presupuesta aparte. En la visita vemos tu caso y te damos un presupuesto cerrado por escrito, y ese es el que vale."}}]}]}</script>
 </head>
-<body data-whatsapp="34621018374">
-<div class="ribbon"><div class="wrap"><span>Abrimos el <b>2 de noviembre de 2026</b> · ya puedes pedir presupuesto</span><span class="mono">230 V · 50 Hz</span></div></div>
+<body data-whatsapp="34621018374" data-api="https://app.senoide.es">
+<div class="ribbon"><div class="wrap"><span id="aviso" data-abierto="Atendemos de lunes a viernes, de 8 a 18 h · Urgencias: &lt;a href=&quot;tel:+34621018374&quot;&gt;621 018 374&lt;/a&gt;" data-desde="2026-11-02">Abrimos el <b>2 de noviembre de 2026</b> · ya puedes pedir presupuesto</span><span class="mono">230 V · 50 Hz</span></div></div>
+<script>(function(){var a=document.getElementById('aviso');if(!a)return;var d=new Date(),h=d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');if(h>=a.dataset.desde)a.innerHTML=a.dataset.abierto;})();</script>
 
 <header class="site"><div class="wrap">
   <a class="brand" href="/" aria-label="SENOIDE, inicio">
@@ -36,6 +37,7 @@
     <a href="/#mantenimiento">Mantenimiento</a>
     <a href="/trabajos/">Trabajos</a>
     <a href="/consejos/">Consejos</a>
+    <a href="/noticias/">Noticias</a>
     <a href="/#contacto">Contacto</a>
     <a class="btn primary small" href="/#presupuesto">Calcular presupuesto</a>
   </nav>
@@ -85,7 +87,7 @@
           <li>Puntos de recarga para coche eléctrico</li>
           <li>Instalación completa en reformas</li>
         </ul>
-        <p><a class="more-link" href="/servicios/boletin-electrico/">Boletín eléctrico →</a><br><a class="more-link" href="/servicios/punto-recarga-coche-electrico/">Punto de recarga →</a></p>
+        <p><a class="more-link" href="/servicios/averias-electricas-urgencias/">Averías y urgencias →</a><br><a class="more-link" href="/servicios/cuadro-electrico-aumento-potencia/">Cuadro y aumento de potencia →</a><br><a class="more-link" href="/servicios/boletin-electrico/">Boletín eléctrico →</a><br><a class="more-link" href="/servicios/punto-recarga-coche-electrico/">Punto de recarga →</a></p>
       </article>
       <article class="trade">
         <div class="cable neutral"></div>
@@ -146,8 +148,8 @@
       </div>
       <dl>
         <div><dt>Locales y comercios</dt><dd>Instalación para apertura, adecuación de cuadros e iluminación del local.</dd></div>
-        <div><dt>Comunidades de propietarios</dt><dd>Zonas comunes, alumbrado de escalera y garaje, puntos de recarga comunitarios.</dd></div>
-        <div><dt>Apartamentos turísticos</dt><dd>Mantenimiento entre temporadas y averías con huésped dentro.</dd></div>
+        <div><dt>Comunidades de propietarios</dt><dd>Zonas comunes, alumbrado de escalera y garaje, puntos de recarga comunitarios. <a class="more-link" href="/servicios/comunidades-de-propietarios/">Más información →</a></dd></div>
+        <div><dt>Apartamentos turísticos</dt><dd>Mantenimiento entre temporadas y averías con huésped dentro. <a class="more-link" href="/servicios/apartamentos-turisticos/">Más información →</a></dd></div>
         <div><dt>Inmobiliarias</dt><dd>Boletines y pequeñas reparaciones antes de alquilar o vender.</dd></div>
       </dl>
     </div>
@@ -198,11 +200,13 @@
           <form class="form" id="req" novalidate>
             <div class="field"><label for="f-name">Nombre</label><input id="f-name" autocomplete="name" placeholder="Nombre y apellido"></div>
             <div class="field"><label for="f-phone">Teléfono</label><input id="f-phone" type="tel" autocomplete="tel" placeholder="6XX XXX XXX"></div>
+            <div class="field full"><label for="f-email">Correo (opcional, para enviarte la confirmación)</label><input id="f-email" type="email" autocomplete="email" placeholder="nombre@correo.com"></div>
+            <div class="hp" aria-hidden="true"><label for="f-web">No rellenes este campo</label><input id="f-web" tabindex="-1" autocomplete="off"></div>
             <div class="field full"><label for="f-town">Municipio</label><input id="f-town" placeholder="Oropesa del Mar"></div>
             <div class="field"><label for="f-day">Día preferido para la visita</label><input id="f-day" type="date"></div>
             <div class="field"><label for="f-slot">Hora</label><select id="f-slot"><option value="">Me da igual</option><option value="08">8:00 a 9:00</option><option value="09">9:00 a 10:00</option><option value="10">10:00 a 11:00</option><option value="11">11:00 a 12:00</option><option value="12">12:00 a 13:00</option><option value="15">15:00 a 16:00</option><option value="16">16:00 a 17:00</option><option value="17">17:00 a 18:00</option></select></div>
             <div class="full disp" id="disp" hidden><p class="disp-t">Próximos días con huecos libres</p><div class="disp-chips" id="disp-chips"></div></div>
-            <p class="note full" id="day-note">Es una preferencia: te confirmamos día y hora por WhatsApp según la agenda. Atendemos de lunes a viernes, de 8 a 18 h.</p>
+            <p class="note full" id="day-note">Es una preferencia: te confirmamos día y hora por teléfono o WhatsApp según la agenda. Atendemos de lunes a viernes, de 8 a 18 h.</p>
             <div class="field full"><label for="f-desc">Cuéntanos el trabajo</label><textarea id="f-desc" placeholder="Ej.: el diferencial salta cuando enciendo el horno"></textarea></div>
           </form>
         </div>
@@ -238,9 +242,11 @@
         </div>
         <p class="note" id="vat-note">El IVA del 10 % se aplica a reparaciones de vivienda de uso particular con más de dos años, si el material aportado no supera el 40 % del precio. Lo confirmamos en la visita.</p>
         <div class="acts">
-          <a class="btn primary" id="wa" href="https://wa.me/34621018374" target="_blank" rel="noopener">Enviar por WhatsApp</a>
+          <button class="btn primary" type="button" id="send">Enviar solicitud</button>
+          <a class="btn" id="wa" href="https://wa.me/34621018374" target="_blank" rel="noopener">Enviar por WhatsApp</a>
           <button class="btn" type="button" id="copy">Copiar resumen</button>
         </div>
+        <label class="priv"><input type="checkbox" id="f-priv"><span>He leído la <a href="/privacidad/" target="_blank">política de privacidad</a> y acepto que SENOIDE use mis datos para responder a esta solicitud.</span></label>
         <div class="toast" id="toast" role="status"></div>
         <p class="note">Precios de partida para la zona de Castellón, con material de gama comercial incluido. Si prefieres otra gama o un modelo concreto, presupuestamos la diferencia. No incluyen tasas de la distribuidora eléctrica.</p>
       </aside>
@@ -259,6 +265,8 @@
   </div>
 </section>
 
+<section id="trabajos-home" style="padding-top:0" hidden><div class="wrap"><div class="section-head"><p class="eyebrow">Trabajos</p><h2>Trabajos recientes</h2></div><div class="cards" data-trabajos="3"></div><p class="more"><a class="btn" href="/trabajos/">Ver todos los trabajos</a></p></div></section>
+<section style="padding-top:0"><div class="wrap"><div class="section-head"><p class="eyebrow">Noticias</p><h2>Noticias y normativa</h2></div><div class="cards"><a class="card" href="/noticias/nuevo-reglamento-suministro-electrico/"><div class="body"><span class="meta">Normativa · 17 de octubre de 2026</span><h3>Nuevo reglamento de suministro eléctrico: lo que cambia en tu contrato de luz</h3><p>El Real Decreto 88/2026 está en vigor desde el 12 de febrero de 2026. Más avisos antes de subir precios, plazos para cambiar de compañía y la devolución de las fianzas que guardaban las distribuidoras.</p></div></a><a class="card" href="/noticias/reforma-reglamento-baja-tension/"><div class="body"><span class="meta">Normativa · 17 de octubre de 2026</span><h3>Reforma del reglamento de baja tensión: qué se sabe y a quién afecta</h3><p>El Ministerio de Industria prepara cambios en el REBT: diferenciales tipo A en viviendas, protección contra sobretensiones y nuevas reglas para recarga y autoconsumo. Te contamos en qué punto está y qué significa para ti.</p></div></a></div><p class="more"><a class="btn" href="/noticias/">Ver todas las noticias</a></p></div></section>
 <section style="padding-top:0"><div class="wrap"><div class="section-head"><p class="eyebrow">Consejos</p><h2>Consejos y normativa</h2></div><div class="cards"><a class="card" href="/consejos/casa-de-verano-revision-antes-de-abrir/"><div class="body"><span class="meta">Mantenimiento</span><h3>Casa de verano cerrada meses: revisión antes de abrirla</h3><p>Lista de comprobación de electricidad y fontanería para una segunda residencia o un apartamento turístico que ha estado cerrado.</p></div></a><a class="card" href="/consejos/punto-de-recarga-garaje-comunitario/"><div class="body"><span class="meta">Normativa</span><h3>Punto de recarga en el garaje de tu comunidad: lo que dice la ley</h3><p>Para instalar un cargador en tu plaza de garaje no necesitas permiso de la junta, solo comunicarlo antes. Te explicamos los pasos.</p></div></a><a class="card" href="/consejos/salta-el-diferencial-que-hacer/"><div class="body"><span class="meta">Seguridad</span><h3>Salta el diferencial: qué hacer paso a paso</h3><p>Cómo encontrar qué aparato o circuito hace saltar el diferencial, qué puedes revisar tú y cuándo hay que llamar a un electricista.</p></div></a></div><p class="more"><a class="btn" href="/consejos/">Ver todos los consejos</a></p></div></section>
 <section id="proceso">
   <div class="wrap">
@@ -305,6 +313,7 @@
       <div class="ccard"><div><div class="k">Teléfono y WhatsApp</div><a class="v" id="ph" href="tel:+34621018374">621 018 374</a></div><button class="btn small" type="button" data-copy="621018374">Copiar</button></div>
       <div class="ccard"><div><div class="k">Correo</div><a class="v" href="mailto:info@senoide.es">info@senoide.es</a></div><button class="btn small" type="button" data-copy="info@senoide.es">Copiar</button></div>
       <div class="ccard"><div><div class="k">Horario</div><div class="v">L–V · 8:00–18:00</div></div></div>
+      
     </div>
   </div>
 </section>
@@ -320,7 +329,8 @@
     <span><a href="/aviso-legal/">Aviso legal</a> · <a href="/privacidad/">Privacidad</a> · <a href="/cookies/">Cookies</a></span>
   </div>
 </div></footer>
-<script src="/assets/senoide.js?v=202610161336" defer></script>
+<script src="/assets/senoide.js?v=202610172102" defer></script>
+<script src="/assets/trabajos.js?v=202610172102" defer></script>
 
 </body>
 </html>

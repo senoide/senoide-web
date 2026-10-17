@@ -20,11 +20,12 @@
 <link rel="icon" href="/assets/favicon-48.png" type="image/png" sizes="48x48">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <link rel="preload" href="/assets/fonts/bricolage.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/estilos.css?v=202610161336">
+<link rel="stylesheet" href="/assets/estilos.css?v=202610172102">
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@context": "https://schema.org", "@type": "Electrician", "@id": "https://senoide.es/#empresa", "name": "SENOIDE", "description": "Instalaciones eléctricas, averías, boletines, puntos de recarga, fontanería y remates de albañilería.", "url": "https://senoide.es/", "logo": "https://senoide.es/assets/icono-512.png", "image": "https://senoide.es/assets/og-senoide.jpg", "telephone": "+34621018374", "email": "info@senoide.es", "founder": {"@type": "Person", "name": "Luis M. Sierra Mena"}, "address": {"@type": "PostalAddress", "addressLocality": "Oropesa del Mar", "postalCode": "12594", "addressRegion": "Castellón", "addressCountry": "ES"}, "areaServed": [{"@type": "City", "name": "Oropesa del Mar"}, {"@type": "City", "name": "Benicàssim"}, {"@type": "City", "name": "Cabanes"}, {"@type": "City", "name": "Torreblanca"}, {"@type": "City", "name": "Vilafamés"}, {"@type": "City", "name": "La Pobla Tornesa"}, {"@type": "City", "name": "Borriol"}, {"@type": "City", "name": "Castelló de la Plana"}, {"@type": "City", "name": "Alcalà de Xivert"}], "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "08:00", "closes": "18:00"}], "priceRange": "€€"}]}</script>
 </head>
-<body data-whatsapp="34621018374">
-<div class="ribbon"><div class="wrap"><span>Abrimos el <b>2 de noviembre de 2026</b> · ya puedes pedir presupuesto</span><span class="mono">230 V · 50 Hz</span></div></div>
+<body data-whatsapp="34621018374" data-api="https://app.senoide.es">
+<div class="ribbon"><div class="wrap"><span id="aviso" data-abierto="Atendemos de lunes a viernes, de 8 a 18 h · Urgencias: &lt;a href=&quot;tel:+34621018374&quot;&gt;621 018 374&lt;/a&gt;" data-desde="2026-11-02">Abrimos el <b>2 de noviembre de 2026</b> · ya puedes pedir presupuesto</span><span class="mono">230 V · 50 Hz</span></div></div>
+<script>(function(){var a=document.getElementById('aviso');if(!a)return;var d=new Date(),h=d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');if(h>=a.dataset.desde)a.innerHTML=a.dataset.abierto;})();</script>
 
 <header class="site"><div class="wrap">
   <a class="brand" href="/" aria-label="SENOIDE, inicio">
@@ -36,6 +37,7 @@
     <a href="/#mantenimiento">Mantenimiento</a>
     <a href="/trabajos/">Trabajos</a>
     <a href="/consejos/">Consejos</a>
+    <a href="/noticias/">Noticias</a>
     <a href="/#contacto">Contacto</a>
     <a class="btn primary small" href="/#presupuesto">Calcular presupuesto</a>
   </nav>
@@ -49,8 +51,12 @@
 <li><strong>Contacto:</strong> info@senoide.es · 621 018 374</li>
 </ul>
 <h2>Qué datos tratamos y para qué</h2>
-<p>Esta web <strong>no tiene formularios que guarden datos</strong> en ningún servidor. La calculadora de presupuesto funciona en tu navegador. Solo nos llegan tus datos si tú decides enviarnos el resumen por WhatsApp, llamarnos o escribirnos un correo.</p>
-<p>En ese caso tratamos tu nombre, teléfono, municipio y la descripción del trabajo para:</p>
+<p>La calculadora de presupuesto funciona en tu navegador. Tus datos solo nos llegan si tú decides enviarlos:</p>
+<ul>
+<li><strong>Con el botón «Enviar solicitud»</strong>: guardamos tu nombre, teléfono, correo (si lo pones), municipio, el día y la hora que prefieres, los trabajos marcados y la descripción. Para evitar envíos automáticos, el servidor guarda durante 24 horas un código anónimo calculado a partir de tu conexión; no guarda tu dirección IP.</li>
+<li><strong>Por WhatsApp, por teléfono o por correo</strong>, si prefieres contactarnos así.</li>
+</ul>
+<p>Tratamos esos datos para:</p>
 <ul>
 <li>Responder a tu consulta y prepararte un presupuesto.</li>
 <li>Si lo aceptas, realizar el trabajo, facturarlo y atender la garantía.</li>
@@ -62,9 +68,9 @@
 <li>El cumplimiento de obligaciones legales, por ejemplo fiscales, según el artículo 6.1.c del RGPD.</li>
 </ul>
 <h2>Cuánto tiempo los conservamos</h2>
-<p>Los datos de presupuestos no aceptados se borran al cabo de un año. Los datos de clientes se conservan mientras dure la relación y, después, durante los plazos que exige la ley (fiscales y de garantía).</p>
+<p>Las solicitudes y los presupuestos no aceptados se borran al cabo de un año. Los datos de clientes se conservan mientras dure la relación y, después, durante los plazos que exige la ley (fiscales y de garantía).</p>
 <h2>Con quién se comparten</h2>
-<p>No cedemos tus datos a terceros salvo obligación legal. Si nos escribes por WhatsApp, ese servicio lo presta WhatsApp Ireland Limited según sus propias condiciones. La web se aloja en Cloudflare y el correo electrónico lo presta Microsoft (Microsoft 365). Los dos actúan como proveedores técnicos (encargados del tratamiento) y solo tratan los datos para prestar ese servicio.</p>
+<p>No cedemos tus datos a terceros salvo obligación legal. Si nos escribes por WhatsApp, ese servicio lo presta WhatsApp Ireland Limited según sus propias condiciones. Usamos estos proveedores técnicos, que actúan como encargados del tratamiento y solo tratan los datos para prestar su servicio: Cloudflare (alojamiento de la web y de la aplicación de gestión donde se guardan las solicitudes), Resend (envío de los correos de confirmación) y Microsoft (correo electrónico, Microsoft 365). Algunos de ellos pueden tratar datos fuera del Espacio Económico Europeo; en ese caso, la transferencia se hace con las garantías que exige el RGPD.</p>
 <h2>Tus derechos</h2>
 <p>Puedes pedir acceso, rectificación, supresión, oposición, limitación del tratamiento y portabilidad de tus datos escribiendo a info@senoide.es. Si crees que no hemos atendido bien tu petición, puedes reclamar ante la <a href="https://www.aepd.es" target="_blank" rel="noopener">Agencia Española de Protección de Datos</a>.</p></article></div>
 
@@ -78,7 +84,8 @@
     <span><a href="/aviso-legal/">Aviso legal</a> · <a href="/privacidad/">Privacidad</a> · <a href="/cookies/">Cookies</a></span>
   </div>
 </div></footer>
-<script src="/assets/senoide.js?v=202610161336" defer></script>
+<script src="/assets/senoide.js?v=202610172102" defer></script>
+<script src="/assets/trabajos.js?v=202610172102" defer></script>
 
 </body>
 </html>

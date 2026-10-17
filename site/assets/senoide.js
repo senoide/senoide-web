@@ -180,7 +180,7 @@
     var vat = +val('vat') / 100;
 
     var list = $('#sum-list'); list.innerHTML = '';
-    var wMin = 0, wMax = 0, hMin = 0, hMax = 0, lines = [], code = CODE[client], needSal = false, diag = false;
+    var wMin = 0, wMax = 0, hMin = 0, hMax = 0, lines = [], items = [], code = CODE[client], needSal = false, diag = false;
     var intro = $('#cat-intro'); if (intro) intro.textContent = INTRO[client] + ' Abre cada categoría y pulsa + en los trabajos que necesites. Los precios son por unidad; la salida y visita (' + SALIDA + ' €) se cobra una sola vez por visita. ¿No sabes qué marcar? Elige «Visita y diagnóstico» y cuéntanos el problema más abajo.';
     CATALOG.forEach(function(g){
       var n = 0, vis = 0;
@@ -201,6 +201,7 @@
           li.innerHTML = '<span>' + q + ' ' + it.unit + ' · ' + it.name + '</span><span>' + desde(a) + '</span>';
           list.appendChild(li);
           lines.push('- ' + q + ' ' + it.unit + ' · ' + it.name + ': ' + desde(a));
+          items.push({id: it.id, nombre: it.name, cant: q, unidad: it.unit, desde: it.min});
         }
       });
       $('#grp-' + g.id).hidden = !vis;
@@ -262,6 +263,8 @@
       (desc ? 'Detalle: ' + desc : '') +
       (fotos ? '\nTe adjunto fotos en este chat.' : '');
     last.text = t;
+    last.data = {nombre: name, telefono: phone, email: $('#f-email') ? $('#f-email').value.trim() : '', municipio: town, descripcion: desc, tipoCliente: client,
+      dia: day, hora: slot, urgencia: urg, zona: zone, iva: Math.round(vat * 100), fotos: fotos, totalDesde: has ? Math.round(bMin * (1 + vat) * 100) / 100 : 0, trabajos: items};
     renderDisp();
     $('#wa').href = 'https://wa.me/' + PHONE + '?text=' + encodeURIComponent(t);
   }
@@ -274,6 +277,37 @@
     if ($('#f-fotos') && $('#f-fotos').checked){ var t = $('#toast'); t.textContent = 'Envía el mensaje en WhatsApp y después adjunta las fotos con el clip.'; setTimeout(function(){t.textContent=''}, 8000); }
   });
   $('#req').addEventListener('submit', function(e){e.preventDefault()});
+
+  /* Enviar la solicitud a SENOIDE (llega a la app de gestión y por correo) */
+  var API = document.body.dataset.api || '';
+  var sending = false;
+  function sendMsg(txt, ok){
+    var m = $('#send-msg'); if (!m){ m = document.createElement('div'); m.id = 'send-msg'; m.setAttribute('role', 'status'); $('.summary .acts').insertAdjacentElement('afterend', m); }
+    m.className = 'send-msg ' + (ok ? 'ok' : 'err'); m.innerHTML = txt;
+  }
+  if ($('#send')) $('#send').addEventListener('click', function(){
+    if (sending) return;
+    update();
+    var d = last.data || {}, tel = String(d.telefono || '').replace(/\D/g, '');
+    if (!d.nombre){ sendMsg('Escribe tu nombre en el paso 4.'); $('#f-name').focus(); return; }
+    if (tel.length < 9){ sendMsg('Escribe un teléfono de contacto en el paso 4.'); $('#f-phone').focus(); return; }
+    if (d.email && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(d.email)){ sendMsg('El correo no parece correcto.'); $('#f-email').focus(); return; }
+    if (!d.trabajos.length && (d.descripcion || '').length < 5){ sendMsg('Marca algún trabajo o cuéntanos en el paso 4 qué necesitas.'); $('#f-desc').focus(); return; }
+    if (!$('#f-priv').checked){ sendMsg('Marca la casilla de la política de privacidad para poder enviarla.'); $('#f-priv').focus(); return; }
+    if (!API){ sendMsg('Ahora mismo no podemos recibirla desde aquí. Envíala por WhatsApp, por favor.'); return; }
+    sending = true; var b = $('#send'); b.disabled = true; b.textContent = 'Enviando…';
+    var body = Object.assign({}, d, {privacidad: true, web: ($('#f-web') || {}).value || ''});
+    fetch(API + '/api/solicitud', {method: 'POST', headers: {'content-type': 'application/json'}, body: JSON.stringify(body)})
+      .then(function(r){ return r.json().catch(function(){ return {}; }).then(function(j){ return {ok: r.ok, j: j}; }); })
+      .then(function(x){
+        if (x.ok && x.j.ok){
+          sendMsg('<b>¡Recibida!</b> Te llamamos o escribimos en horario laboral (L–V, 8 a 18 h) para confirmar la visita.' + (d.email ? ' Te hemos enviado una copia a tu correo.' : '') + (d.fotos ? ' Si quieres, mándanos ya las fotos por WhatsApp con el botón de al lado.' : ''), true);
+          b.textContent = 'Solicitud enviada';
+        } else { sendMsg((x.j && x.j.error ? x.j.error : 'No se ha podido enviar.') + ' También puedes enviarla por WhatsApp o llamarnos al 621 018 374.'); b.disabled = false; b.textContent = 'Enviar solicitud'; }
+      })
+      .catch(function(){ sendMsg('No se ha podido enviar (sin conexión o servidor no disponible). Envíala por WhatsApp o llámanos al 621 018 374.'); b.disabled = false; b.textContent = 'Enviar solicitud'; })
+      .then(function(){ sending = false; });
+  });
 
   function copyText(text, msg){
     var toast = $('#toast');
