@@ -253,7 +253,7 @@ def cabecera(eyebrow, titulo, lead="", migas=None):
 
 
 def bloque_cta():
-    return ('<div class="cta-box"><div><p class="eyebrow" style="color:inherit;opacity:.7">¿Tienes un trabajo parecido?</p>'
+    return ('<div class="cta-box"><div><p class="eyebrow" style="color:inherit;opacity:.7">¿Necesitas algo parecido?</p>'
             '<h3 style="margin-top:6px">Calcula un precio orientativo en un minuto.</h3></div>'
             '<a class="btn primary" href="/#presupuesto">Calcular presupuesto</a></div>')
 
