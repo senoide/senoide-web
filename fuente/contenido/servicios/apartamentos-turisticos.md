@@ -12,7 +12,7 @@ En un apartamento turístico, una avería no espera: si salta el diferencial o f
 - **Revisión antes de la temporada**: cuadro y diferenciales, enchufes y luces, termo, extractores, iluminación de terraza y exterior.
 - **Averías entre huéspedes**: diagnóstico y reparación coordinados con tu limpieza o tu gestor.
 - **Pequeñas mejoras** que evitan llamadas: cambiar mecanismos gastados, poner luces LED, añadir enchufes con USB junto a la cama o reforzar la iluminación de la entrada.
-- **Fontanería básica**: grifos que gotean, cisternas, termos y desagües sencillos.
+- **Fontanería básica**: grifos que gotean, cisternas y desagües sencillos.
 
 ## Casas de costa cerradas meses
 
