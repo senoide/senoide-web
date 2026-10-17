@@ -20,7 +20,7 @@
 <link rel="icon" href="/assets/favicon-48.png" type="image/png" sizes="48x48">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <link rel="preload" href="/assets/fonts/bricolage.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/estilos.css?v=202610172154">
+<link rel="stylesheet" href="/assets/estilos.css?v=202610172158">
 <style>
 /* Menú con desplegables, menú móvil, accesos rápidos, barra inferior y «volver arriba» */
 header.site nav.main{gap:18px}
@@ -89,6 +89,27 @@ header.site nav.main .nav-tel{font-family:var(--f-mono);font-weight:500;color:va
 .totop.on{opacity:1;pointer-events:auto}
 .totop svg{width:20px;height:20px}
 @media (max-width:820px){.totop{bottom:calc(76px + env(safe-area-inset-bottom,0px))}}
+/* portada en el móvil: texto más corto y ficha del instalador compacta */
+@media (max-width:820px){
+  .hero{padding-block:28px 28px}
+  .hero .lead{font-size:1.04rem;margin-top:14px}
+  .hero .lead .lead-extra{display:none}
+  .hero .ctas{margin-top:20px;gap:10px}
+  .hero .ctas .btn{flex:1 1 auto;padding:11px 14px}
+  .plate{padding:14px 16px;gap:10px;font-size:.9rem}
+  .plate .row.opt{display:none}
+  .plate .row:nth-child(3){border-bottom:0;padding-bottom:0}
+}
+/* calculadora por pasos (solo móvil; lo activa el código de la portada) */
+.wz-oculto{display:none!important}
+@media (max-width:820px){.en-calc .totop{opacity:0;pointer-events:none}}
+.wz-cab{margin-bottom:14px;color:var(--accent-text)}
+.wz-nav{position:sticky;bottom:calc(64px + env(safe-area-inset-bottom,0px));z-index:15;margin-top:8px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:10px 12px;box-shadow:0 -6px 18px rgba(4,33,63,.08)}
+.wz-row{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.wz-info{display:grid;text-align:center;font-size:.8rem;color:var(--muted);line-height:1.2}
+.wz-total{font-family:var(--f-display);font-size:1.15rem;color:var(--ink)}
+.wz-msg{color:#c0392b;font-weight:600;font-size:.9rem;margin-bottom:6px}
+.wz-msg:empty{display:none}
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .dd-panel{box-shadow:0 14px 34px rgba(0,0,0,.4)}}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@context": "https://schema.org", "@type": "Electrician", "@id": "https://senoide.es/#empresa", "name": "SENOIDE", "description": "Instalaciones eléctricas, averías, boletines, puntos de recarga, fontanería y remates de albañilería.", "url": "https://senoide.es/", "logo": "https://senoide.es/assets/icono-512.png", "image": "https://senoide.es/assets/og-senoide.jpg", "telephone": "+34621018374", "email": "info@senoide.es", "founder": {"@type": "Person", "name": "Luis M. Sierra Mena"}, "address": {"@type": "PostalAddress", "addressLocality": "Oropesa del Mar", "postalCode": "12594", "addressRegion": "Castellón", "addressCountry": "ES"}, "areaServed": [{"@type": "City", "name": "Oropesa del Mar"}, {"@type": "City", "name": "Benicàssim"}, {"@type": "City", "name": "Cabanes"}, {"@type": "City", "name": "Torreblanca"}, {"@type": "City", "name": "Vilafamés"}, {"@type": "City", "name": "La Pobla Tornesa"}, {"@type": "City", "name": "Borriol"}, {"@type": "City", "name": "Castelló de la Plana"}, {"@type": "City", "name": "Alcalà de Xivert"}], "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "08:00", "closes": "18:00"}], "priceRange": "€€"}, {"@type": "Service", "name": "Mantenimiento eléctrico con cuota fija", "description": "Planes de mantenimiento eléctrico para comunidades de propietarios, locales y apartamentos turísticos.", "provider": {"@id": "https://senoide.es/#empresa"}, "areaServed": [{"@type": "City", "name": "Oropesa del Mar"}, {"@type": "City", "name": "Benicàssim"}, {"@type": "City", "name": "Cabanes"}, {"@type": "City", "name": "Torreblanca"}, {"@type": "City", "name": "Vilafamés"}, {"@type": "City", "name": "La Pobla Tornesa"}, {"@type": "City", "name": "Borriol"}, {"@type": "City", "name": "Castelló de la Plana"}, {"@type": "City", "name": "Alcalà de Xivert"}]}]}</script>
@@ -191,8 +212,8 @@ header.site nav.main .nav-tel{font-family:var(--f-mono);font-weight:500;color:va
   }
 })();
 </script>
-<script src="/assets/senoide.js?v=202610172154" defer></script>
-<script src="/assets/trabajos.js?v=202610172154" defer></script>
+<script src="/assets/senoide.js?v=202610172158" defer></script>
+<script src="/assets/trabajos.js?v=202610172158" defer></script>
 
 </body>
 </html>
