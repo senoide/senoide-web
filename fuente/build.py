@@ -374,8 +374,7 @@ def construir():
     # --- consejos ---
     for c in consejos:
         rev = c.get("revisado")
-        nota = f'<p class="src">Publicado el {fecha_larga(c["_fecha"])}' + (f" · revisado el {esc(rev)}" if rev else "") + \
-               ". La normativa cambia: si tienes dudas sobre tu caso, pregúntanos.</p>"
+        nota = f'<p class="src">Publicado el {fecha_larga(c["_fecha"])}.</p>'
         cuerpo = (cabecera(c.get("categoria", "Consejos"), c["titulo"], c.get("resumen", ""),
                            [("Inicio", "/"), ("Consejos", "/consejos/"), (c["titulo"], None)])
                   + f'<div class="wrap"><article class="prose">{markdown(c["_cuerpo"])}{nota}{bloque_cta()}</article></div>')
@@ -389,7 +388,7 @@ def construir():
     consejos = [c for c in consejos if not c["_oculto"]]
 
     lista_c = ('<div class="cards">' + "".join(
-        tarjeta(c, "/consejos/", f'{c.get("categoria", "Consejos")} · {fecha_larga(c["_fecha"])}') for c in consejos) + "</div>"
+        tarjeta(c, "/consejos/", f'{c.get("categoria", "Consejos")} · {fecha_larga(c["_fecha"])}') for c in consejos) + '</div><p class="desliza" aria-hidden="true">Desliza para ver más →</p>'
                if consejos else '<div class="empty-state">Pronto publicaremos los primeros consejos.</div>')
     pagina("/consejos/", "Consejos y normativa eléctrica | SENOIDE",
            "Boletines, puntos de recarga, ahorro y seguridad eléctrica en casa explicados de forma clara.",
@@ -401,8 +400,7 @@ def construir():
     # --- noticias ---
     for n in noticias:
         rev = n.get("revisado")
-        nota = f'<p class="src">Publicado el {fecha_larga(n["_fecha"])}' + (f" · revisado el {esc(rev)}" if rev else "") + \
-               ". Si tienes dudas sobre cómo te afecta, pregúntanos.</p>"
+        nota = f'<p class="src">Publicado el {fecha_larga(n["_fecha"])}.</p>'
         cuerpo = (cabecera(n.get("categoria", "Noticias"), n["titulo"], n.get("resumen", ""),
                            [("Inicio", "/"), ("Noticias", "/noticias/"), (n["titulo"], None)])
                   + f'<div class="wrap"><article class="prose">{markdown(n["_cuerpo"])}{nota}{bloque_cta()}</article></div>')
@@ -416,7 +414,7 @@ def construir():
     noticias = [n for n in noticias if not n["_oculto"]]
 
     lista_n = ('<div class="cards">' + "".join(
-        tarjeta(n, "/noticias/", f'{n.get("categoria", "Noticias")} · {fecha_larga(n["_fecha"])}') for n in noticias) + "</div>"
+        tarjeta(n, "/noticias/", f'{n.get("categoria", "Noticias")} · {fecha_larga(n["_fecha"])}') for n in noticias) + '</div><p class="desliza" aria-hidden="true">Desliza para ver más →</p>'
                if noticias else '<div class="empty-state">Pronto publicaremos las primeras noticias.</div>')
     pagina("/noticias/", "Noticias: normativa eléctrica y suministro | SENOIDE",
            "Cambios en el reglamento de baja tensión, en los contratos de luz y en las ayudas, explicados para tu casa, tu negocio o tu comunidad.",

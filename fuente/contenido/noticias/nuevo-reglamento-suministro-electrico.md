@@ -23,4 +23,4 @@ No cambia cómo tiene que ser tu instalación (eso lo regula el reglamento de ba
 
 El reglamento también regula los cambios de potencia, pero esa parte no se aplica hasta que la CNMC fije los importes correspondientes. Mientras tanto, si necesitas subir potencia o dar de alta un suministro, lo que te pedirá la distribuidora sigue siendo lo mismo: que tu instalación lo admita y, si hace falta, un boletín eléctrico (CIE) nuevo. [Te ayudamos con el boletín](/servicios/boletin-electrico/).
 
-> Fuente: [Real Decreto 88/2026, texto consolidado del BOE](https://www.boe.es/buscar/act.php?id=BOE-A-2026-3212). Resumen orientativo: para tu caso concreto, consulta el texto oficial o tu comercializadora.
+> Fuente: [Real Decreto 88/2026, texto consolidado del BOE](https://www.boe.es/buscar/act.php?id=BOE-A-2026-3212).
