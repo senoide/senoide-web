@@ -21,6 +21,7 @@ Solo usa la librería estándar de Python. Si tienes Pillow instalado
 import datetime as dt
 import html
 import json
+import os
 import re
 import shutil
 import sys
@@ -59,7 +60,12 @@ CONFIG = {
 RAIZ = Path(__file__).resolve().parent
 SALIDA = RAIZ.parent / "site"   # la web generada; el servidor la publica desde aquí
 PLANTILLAS = RAIZ / "plantillas"
-VERSION = dt.datetime.now().strftime("%Y%m%d%H%M")
+VERSION = os.environ.get("WEB_VERSION") or dt.datetime.now().strftime("%Y%m%d%H%M")
+try:
+    from zoneinfo import ZoneInfo
+    HOY = dt.datetime.now(ZoneInfo("Europe/Madrid")).date()   # fecha en España, para «publicar:»
+except Exception:
+    HOY = dt.date.today()
 MESES = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto",
          "septiembre", "octubre", "noviembre", "diciembre"]
 
@@ -100,6 +106,15 @@ def leer_md(ruta):
     except ValueError:
         datos["_fecha"] = dt.date.fromtimestamp(ruta.stat().st_mtime)
     datos["_borrador"] = datos.get("borrador", "no").lower() in ("si", "sí", "yes", "true")
+    # publicar: AAAA-MM-DD -> hasta ese día la página existe (para revisarla con el enlace),
+    # pero no sale en listados, portada, sitemap ni Google. Ese día aparece sola.
+    try:
+        datos["_publicar"] = dt.date.fromisoformat(datos.get("publicar", ""))
+    except ValueError:
+        datos["_publicar"] = None
+    datos["_oculto"] = bool(datos["_publicar"] and datos["_publicar"] > HOY)
+    if datos["_publicar"] and "fecha" not in datos:
+        datos["_fecha"] = datos["_publicar"]
     return datos, cuerpo
 
 
@@ -261,20 +276,42 @@ def cargar(carpeta):
         if datos["_borrador"]:
             print(f"  · borrador, no se publica: {f.name}")
             continue
+        if datos["_oculto"]:
+            print(f"  · oculto hasta el {datos['_publicar'].isoformat()} (solo con enlace): /{carpeta}/{datos['slug']}/")
         datos["_cuerpo"] = cuerpo
         items.append(datos)
     return sorted(items, key=lambda x: x["_fecha"], reverse=True)
 
 
+def fotos_usadas():
+    """Fotos de los artículos que no son borrador (los ocultos sí, para poder revisarlos con el enlace)."""
+    usadas = set()
+    for carpeta in ("trabajos", "consejos", "noticias", "servicios"):
+        d = RAIZ / "contenido" / carpeta
+        if not d.exists():
+            continue
+        for f in d.glob("*.md"):
+            if f.name.startswith("_"):
+                continue
+            datos, cuerpo = leer_md(f)
+            if datos["_borrador"]:
+                continue
+            nombres = [datos.get("portada", "")] + datos.get("fotos", "").split(",")
+            nombres += re.findall(r"!\[[^\]]*\]\(([^)]+)\)", cuerpo)
+            usadas |= {x.strip() for x in nombres if x.strip() and not x.strip().startswith(("http", "/"))}
+    return usadas
+
+
 def copiar_fotos():
     origen, destino = RAIZ / "fotos", SALIDA / "fotos"
     destino.mkdir(parents=True, exist_ok=True)
+    usadas = fotos_usadas()
     try:
         from PIL import Image, ImageOps
     except ImportError:
         Image = None
     for f in origen.iterdir():
-        if f.suffix.lower() not in (".jpg", ".jpeg", ".png", ".webp"):
+        if f.suffix.lower() not in (".jpg", ".jpeg", ".png", ".webp") or f.name not in usadas:
             continue
         dst = destino / f.name
         if Image:
@@ -313,12 +350,16 @@ def construir():
                 for i, x in enumerate(fotos)) + "</div>"
         facts = '<div class="facts">' + "".join(
             f"<span>{esc(v)}</span>" for v in (t.get("municipio"), t.get("servicio"), t.get("duracion")) if v) + "</div>"
-        cuerpo = (cabecera(fecha_larga(t["_fecha"]), t["titulo"], t.get("resumen", ""),
+        # la fecha solo se muestra si el .md la indica (fecha del trabajo); si no, «Trabajo realizado»
+        eyebrow = fecha_larga(t["_fecha"]) if t.get("fecha") else "Trabajo realizado"
+        cuerpo = (cabecera(eyebrow, t["titulo"], t.get("resumen", ""),
                            [("Inicio", "/"), ("Trabajos", "/trabajos/"), (t["titulo"], None)])
                   + f'<div class="wrap"><article class="prose">{facts}{markdown(t["_cuerpo"])}{galeria}{bloque_cta()}</article></div>')
         pagina(f"/trabajos/{t['slug']}/", f"{t['titulo']} · {t.get('municipio', 'Oropesa del Mar')} | SENOIDE",
                t.get("resumen", t["titulo"]), cuerpo,
-               imagen=d["DOMINIO"] + ruta_foto(t["portada"]) if t.get("portada") else None, og_tipo="article")
+               imagen=d["DOMINIO"] + ruta_foto(t["portada"]) if t.get("portada") else None, og_tipo="article",
+               indexar=not t["_oculto"])
+    trabajos = [t for t in trabajos if not t["_oculto"]]   # los ocultos no salen en listados ni en la portada
 
     lista_t = ('<div class="cards" data-trabajos="">' + "".join(
         tarjeta(t, "/trabajos/", f'{t.get("municipio", "")} · {t.get("servicio", "")}'.strip(" ·")) for t in trabajos) + "</div>"
@@ -344,7 +385,8 @@ def construir():
                "publisher": {"@id": d["DOMINIO"] + "/#empresa"},
                "mainEntityOfPage": d["DOMINIO"] + f"/consejos/{c['slug']}/", "inLanguage": "es-ES"}
         pagina(f"/consejos/{c['slug']}/", f"{c['titulo']} | SENOIDE", c.get("resumen", c["titulo"]), cuerpo,
-               jsonld=art, og_tipo="article")
+               jsonld=art, og_tipo="article", indexar=not c["_oculto"])
+    consejos = [c for c in consejos if not c["_oculto"]]
 
     lista_c = ('<div class="cards">' + "".join(
         tarjeta(c, "/consejos/", f'{c.get("categoria", "Consejos")} · {fecha_larga(c["_fecha"])}') for c in consejos) + "</div>"
@@ -370,7 +412,8 @@ def construir():
                "publisher": {"@id": d["DOMINIO"] + "/#empresa"},
                "mainEntityOfPage": d["DOMINIO"] + f"/noticias/{n['slug']}/", "inLanguage": "es-ES"}
         pagina(f"/noticias/{n['slug']}/", f"{n['titulo']} | SENOIDE", n.get("resumen", n["titulo"]), cuerpo,
-               jsonld=art, og_tipo="article")
+               jsonld=art, og_tipo="article", indexar=not n["_oculto"])
+    noticias = [n for n in noticias if not n["_oculto"]]
 
     lista_n = ('<div class="cards">' + "".join(
         tarjeta(n, "/noticias/", f'{n.get("categoria", "Noticias")} · {fecha_larga(n["_fecha"])}') for n in noticias) + "</div>"
@@ -472,7 +515,7 @@ def construir():
     (SALIDA / "404-tmp" / "index.html").rename(SALIDA / "404.html")
     (SALIDA / "404-tmp").rmdir()
 
-    hoy = dt.date.today().isoformat()
+    hoy = os.environ.get("WEB_FECHA") or dt.date.today().isoformat()
     (SALIDA / "sitemap.xml").write_text(
         '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
         + "".join(f"  <url><loc>{u}</loc><lastmod>{hoy}</lastmod></url>\n" for u in SITEMAP) + "</urlset>\n",

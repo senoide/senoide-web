@@ -6,6 +6,10 @@ on:
     branches: [main]
     paths: ["fuente/**"]
   workflow_dispatch:
+  # Cada noche a las 00:10 (hora de invierno en España; en verano, 01:10) para publicar
+  # los artículos con «publicar: AAAA-MM-DD» el día que toca.
+  schedule:
+    - cron: "10 23 * * *"
 permissions:
   contents: write
 concurrency:
@@ -16,12 +20,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 50
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
       - name: Generar
         run: |
           pip install --quiet pillow
+          export WEB_VERSION=$(git log -1 --format=%cd --date=format:%Y%m%d%H%M -- fuente)
+          export WEB_FECHA=$(git log -1 --format=%cd --date=format:%Y-%m-%d -- fuente)
           cd fuente && python build.py
       - name: Subir site/ si ha cambiado
         run: |

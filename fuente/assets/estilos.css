@@ -238,7 +238,7 @@ footer .wrap{display:flex;justify-content:space-between;align-items:end;gap:16px
 .prose h3{font-size:1.2rem;margin-top:8px}
 .prose ul,.prose ol{margin:0;padding-left:22px;display:grid;gap:6px}
 .prose a{color:var(--accent-text)}
-.prose img{border-radius:var(--r);border:1px solid var(--line)}
+.prose img{display:block;max-width:100%;height:auto;border-radius:var(--r);border:1px solid var(--line)}
 .prose .src{font-size:.9rem;color:var(--muted);border-top:1px solid var(--line);padding-top:14px}
 .gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
 @media (max-width:560px){.gallery{grid-template-columns:1fr}}

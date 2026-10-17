@@ -4,7 +4,8 @@ resumen: En una casa de Oropesa del Mar el diferencial saltaba cada vez que hab�
 municipio: Oropesa del Mar
 servicio: Averías
 portada: diferenciales-despues.jpg
-borrador: si
+publicar: 2026-11-02
+slug: diferenciales-superinmunizados-oropesa
 ---
 
 ## El problema
@@ -17,7 +18,11 @@ Revisamos el cuadro y sustituimos los dos diferenciales (40 A, 30 mA) por difere
 
 ![Cuadro antes del cambio, con los diferenciales estándar](diferenciales-antes.jpg)
 
+*Antes: diferenciales estándar.*
+
 ![Cuadro después del cambio, con los diferenciales superinmunizados](diferenciales-despues.jpg)
+
+*Después: diferenciales superinmunizados (clase SI).*
 
 ## Por qué un superinmunizado
 
