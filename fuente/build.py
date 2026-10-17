@@ -471,7 +471,7 @@ def construir():
                       '<h2>Normativa y consejos para tu instalación</h2></div><div class="cards">'
                       + "".join(tarjeta(x, base, f'{x.get("categoria", "Noticias" if base == "/noticias/" else "Consejos")} · {fecha_larga(x["_fecha"])}')
                                 for x, base in articulos)
-                      + '</div><p class="more">'
+                      + '</div><p class="desliza" aria-hidden="true">Desliza para ver más →</p><p class="more">'
                       + ('<a class="btn" href="/noticias/">Ver noticias</a> ' if noticias else "")
                       + ('<a class="btn" href="/consejos/">Ver consejos</a>' if consejos else "")
                       + '</p></div></section>')

@@ -81,6 +81,7 @@
         <p class="trade-note">Solo como complemento de un trabajo eléctrico. No hacemos reformas de albañilería por separado.</p>
       </article>
     </div>
+    <p class="desliza" aria-hidden="true">Desliza para ver más →</p>
   </div>
 </section>
 
@@ -106,6 +107,7 @@
         <div><dt>Coche eléctrico en casa</dt><dd>Línea, protecciones y certificado del punto de recarga en vivienda unifamiliar o garaje.</dd></div>
         <div><dt>Arreglos en baño o cocina</dt><dd>Enchufes, puntos de luz, extractor o grifos. Si hay que abrir rozas o reponer azulejo, lo dejamos rematado.</dd></div>
       </dl>
+      <p class="desliza" aria-hidden="true">Desliza para ver más →</p>
     </div>
     <div class="aud" id="pane-pro" role="tabpanel" aria-labelledby="tab-pro" hidden>
       <div class="intro">
@@ -119,6 +121,7 @@
         <div><dt>Apartamentos turísticos</dt><dd>Mantenimiento entre temporadas y averías con huésped dentro. <a class="more-link" href="/servicios/apartamentos-turisticos/">Más información →</a></dd></div>
         <div><dt>Inmobiliarias</dt><dd>Boletines y pequeñas reparaciones antes de alquilar o vender.</dd></div>
       </dl>
+      <p class="desliza" aria-hidden="true">Desliza para ver más →</p>
     </div>
   </div>
 </section>
@@ -233,6 +236,7 @@
       <article><div class="cable neutral"></div><h3>Locales y oficinas</h3><p class="p"><small>desde</small> 35 € <small>/ mes + IVA</small></p><p>Comercios, oficinas y pequeños negocios.</p></article>
       <article><div class="cable earth"></div><h3>Apartamentos turísticos</h3><p class="p"><small>desde</small> 8 € <small>/ mes por apartamento + IVA</small></p><p>Revisión antes de la temporada y atención con huéspedes dentro. También revisión suelta.</p></article>
     </div>
+    <p class="desliza" aria-hidden="true">Desliza para ver más →</p>
     <div class="mt-acts">
       <a class="btn primary" href="/mantenimiento/">Ver planes y precios</a>
       <a class="more-link" href="/condiciones-mantenimiento/">Condiciones de los planes</a>
@@ -281,25 +285,30 @@
   <div class="wrap contact">
     <div>
       <p class="eyebrow">Contacto</p>
-      <h2 style="margin-top:12px">Llámanos o escríbenos. Contestamos el mismo día.</h2>
+      <h2 style="margin-top:12px">Llámanos o escríbenos.</h2>
+      <p class="contact-lead">Contestamos el mismo día, de lunes a viernes de 8 a 18 h.</p>
+      <div class="contact-acts">
+        <a class="btn primary" href="tel:+34{{TELEFONO_SIN_ESPACIOS}}">Llamar al {{TELEFONO}}</a>
+        <a class="btn" href="https://wa.me/{{WHATSAPP}}" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
     </div>
     <div class="contact-cards">
       <div class="ccard"><div><div class="k">Teléfono y WhatsApp</div><a class="v" id="ph" href="tel:+34{{TELEFONO_SIN_ESPACIOS}}">{{TELEFONO}}</a></div><button class="btn small" type="button" data-copy="{{TELEFONO_SIN_ESPACIOS}}">Copiar</button></div>
       <div class="ccard"><div><div class="k">Correo</div><a class="v" href="mailto:{{EMAIL}}">{{EMAIL}}</a></div><button class="btn small" type="button" data-copy="{{EMAIL}}">Copiar</button></div>
-      <div class="ccard"><div><div class="k">Horario</div><div class="v">L–V · 8:00–18:00</div></div></div>
+      <div class="ccard"><div><div class="k">Presupuesto</div><a class="v small" href="#presupuesto">Calcula un precio orientativo en un minuto →</a></div></div>
       {{OPINIONES}}
     </div>
   </div>
 </section>
 <script>
-/* Calculadora por pasos en el móvil: un paso cada vez, con Anterior / Siguiente y el total a la vista */
+/* Calculadora por pasos: un paso cada vez, con Anterior / Siguiente. En el móvil el resumen es el último paso; en el ordenador está siempre a la derecha */
 document.addEventListener('DOMContentLoaded', function(){
   var sec = document.getElementById('presupuesto'); if (!sec) return;
   var quote = sec.querySelector('.quote'), cont = quote && quote.firstElementChild, resumen = sec.querySelector('.summary');
   if (!cont || !resumen) return;
   var pasos = [].slice.call(cont.querySelectorAll(':scope > .step'));
   var titulos = pasos.map(function(p){ var h = p.querySelector('h3'); return h ? h.textContent : ''; }).concat(['Revisa y envía']);
-  var total = pasos.length + 1, actual = 0, activo = false;
+  var total = pasos.length + 1, actual = 0, activo = true, movil = false;
   var nav = document.createElement('div'); nav.className = 'wz-nav'; nav.hidden = true;
   nav.innerHTML = '<p class="wz-msg" role="status"></p><div class="wz-row"><button type="button" class="btn small wz-prev">Anterior</button><span class="wz-info"><span class="wz-n"></span><b class="wz-total"></b></span><button type="button" class="btn primary small wz-next">Siguiente</button></div>';
   var cab = document.createElement('p'); cab.className = 'wz-cab eyebrow'; cab.hidden = true;
@@ -309,7 +318,7 @@ document.addEventListener('DOMContentLoaded', function(){
   function totalTxt(){ var t = document.getElementById('total'); return t ? t.textContent : ''; }
   function pintar(scroll){
     pasos.forEach(function(p, i){ p.classList.toggle('wz-oculto', activo && i !== actual); });
-    resumen.classList.toggle('wz-oculto', activo && actual !== total - 1);
+    resumen.classList.toggle('wz-oculto', movil && actual !== total - 1);
     nav.hidden = cab.hidden = !activo;
     sec.classList.toggle('wz-on', activo);
     if (!activo) return;
@@ -343,7 +352,11 @@ document.addEventListener('DOMContentLoaded', function(){
   /* mientras se ve la calculadora, el botón «volver arriba» no tapa «Siguiente» */
   if (window.IntersectionObserver) new IntersectionObserver(function(en){ document.body.classList.toggle('en-calc', en[0].isIntersecting); }).observe(sec);
   var mq = window.matchMedia('(max-width: 820px)');
-  function aplicar(){ activo = mq.matches; if (!activo) msg.textContent = ''; pintar(false); }
+  function aplicar(){
+    movil = mq.matches; total = pasos.length + (movil ? 1 : 0); actual = Math.min(actual, total - 1);
+    if (movil) quote.insertAdjacentElement('afterend', nav); else cont.appendChild(nav);
+    sec.classList.toggle('wz-pc', !movil); pintar(false);
+  }
   if (mq.addEventListener) mq.addEventListener('change', aplicar); else mq.addListener(aplicar);
   aplicar();
 });
