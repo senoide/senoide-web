@@ -20,7 +20,7 @@
 <link rel="icon" href="/assets/favicon-48.png" type="image/png" sizes="48x48">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <link rel="preload" href="/assets/fonts/bricolage.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/estilos.css?v=202610180128">
+<link rel="stylesheet" href="/assets/estilos.css?v=202610180129">
 <style>
 /* Menú con desplegables, menú móvil, accesos rápidos, barra inferior y «volver arriba» */
 header.site nav.main{gap:18px}
@@ -183,8 +183,9 @@ main#inicio > section[hidden]{display:none!important}
   main#inicio .trade{gap:8px}
 }
 /* en modo oscuro el resumen de la calculadora mantiene el azul de marca (no se invierte a gris claro) */
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .summary{--ink:#0b2d58;--paper:#eef3f7;border:1px solid #22344f}}
-:root[data-theme="dark"] .summary{--ink:#0b2d58;--paper:#eef3f7;border:1px solid #22344f}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) :is(.summary,.cta-box,.ribbon){--ink:#0b2d58;--paper:#eef3f7}:root:not([data-theme="light"]) :is(.summary,.cta-box){border:1px solid #22344f}}
+:root[data-theme="dark"] :is(.summary,.cta-box,.ribbon){--ink:#0b2d58;--paper:#eef3f7}
+:root[data-theme="dark"] :is(.summary,.cta-box){border:1px solid #22344f}
 /* ordenador: la portada ocupa la primera pantalla */
 @media (min-width:821px){section.hero{min-height:calc(100vh - 98px);min-height:calc(100svh - 98px);display:flex;flex-direction:column;justify-content:center}}
 /* móvil: dentro de la calculadora no se muestra «volver arriba», para no tapar «Siguiente» */
@@ -328,7 +329,7 @@ main#inicio > section[hidden]{display:none!important}
 </ul>
 <h2>¿Y si tengo que cambiar la potencia o dar de alta la luz?</h2>
 <p>El reglamento también regula los cambios de potencia, pero esa parte no se aplica hasta que la CNMC fije los importes correspondientes. Mientras tanto, si necesitas subir potencia o dar de alta un suministro, lo que te pedirá la distribuidora sigue siendo lo mismo: que tu instalación lo admita y, si hace falta, un boletín eléctrico (CIE) nuevo. <a href="/servicios/boletin-electrico/">Te ayudamos con el boletín</a>.</p>
-<p class="src">Fuente: <a href="https://www.boe.es/buscar/act.php?id=BOE-A-2026-3212" target="_blank" rel="noopener">Real Decreto 88/2026, texto consolidado del BOE</a>. Resumen orientativo: para tu caso concreto, consulta el texto oficial o tu comercializadora.</p><p class="src">Publicado el 17 de octubre de 2026 · revisado el 2026-10-17. Si tienes dudas sobre cómo te afecta, pregúntanos.</p><div class="cta-box"><div><p class="eyebrow" style="color:inherit;opacity:.7">¿Tienes un trabajo parecido?</p><h3 style="margin-top:6px">Calcula un precio orientativo en un minuto.</h3></div><a class="btn primary" href="/#presupuesto">Calcular presupuesto</a></div></article></div>
+<p class="src">Fuente: <a href="https://www.boe.es/buscar/act.php?id=BOE-A-2026-3212" target="_blank" rel="noopener">Real Decreto 88/2026, texto consolidado del BOE</a>. Resumen orientativo: para tu caso concreto, consulta el texto oficial o tu comercializadora.</p><p class="src">Publicado el 17 de octubre de 2026 · revisado el 2026-10-17. Si tienes dudas sobre cómo te afecta, pregúntanos.</p><div class="cta-box"><div><p class="eyebrow" style="color:inherit;opacity:.7">¿Necesitas algo parecido?</p><h3 style="margin-top:6px">Calcula un precio orientativo en un minuto.</h3></div><a class="btn primary" href="/#presupuesto">Calcular presupuesto</a></div></article></div>
 
 <script>
 (function(){var c=document.querySelector('nav.crumbs');if(!c)return;var a=c.querySelectorAll('a');if(!a.length)return;var u=a[a.length-1];
@@ -395,8 +396,8 @@ var sc=document.currentScript;sc.parentNode.insertBefore(d,sc);})();
   }
 })();
 </script>
-<script src="/assets/senoide.js?v=202610180128" defer></script>
-<script src="/assets/trabajos.js?v=202610180128" defer></script>
+<script src="/assets/senoide.js?v=202610180129" defer></script>
+<script src="/assets/trabajos.js?v=202610180129" defer></script>
 
 </body>
 </html>

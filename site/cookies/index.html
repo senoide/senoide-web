@@ -20,7 +20,7 @@
 <link rel="icon" href="/assets/favicon-48.png" type="image/png" sizes="48x48">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <link rel="preload" href="/assets/fonts/bricolage.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/estilos.css?v=202610180128">
+<link rel="stylesheet" href="/assets/estilos.css?v=202610180129">
 <style>
 /* Menú con desplegables, menú móvil, accesos rápidos, barra inferior y «volver arriba» */
 header.site nav.main{gap:18px}
@@ -183,8 +183,9 @@ main#inicio > section[hidden]{display:none!important}
   main#inicio .trade{gap:8px}
 }
 /* en modo oscuro el resumen de la calculadora mantiene el azul de marca (no se invierte a gris claro) */
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .summary{--ink:#0b2d58;--paper:#eef3f7;border:1px solid #22344f}}
-:root[data-theme="dark"] .summary{--ink:#0b2d58;--paper:#eef3f7;border:1px solid #22344f}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) :is(.summary,.cta-box,.ribbon){--ink:#0b2d58;--paper:#eef3f7}:root:not([data-theme="light"]) :is(.summary,.cta-box){border:1px solid #22344f}}
+:root[data-theme="dark"] :is(.summary,.cta-box,.ribbon){--ink:#0b2d58;--paper:#eef3f7}
+:root[data-theme="dark"] :is(.summary,.cta-box){border:1px solid #22344f}
 /* ordenador: la portada ocupa la primera pantalla */
 @media (min-width:821px){section.hero{min-height:calc(100vh - 98px);min-height:calc(100svh - 98px);display:flex;flex-direction:column;justify-content:center}}
 /* móvil: dentro de la calculadora no se muestra «volver arriba», para no tapar «Siguiente» */
@@ -387,8 +388,8 @@ var sc=document.currentScript;sc.parentNode.insertBefore(d,sc);})();
   }
 })();
 </script>
-<script src="/assets/senoide.js?v=202610180128" defer></script>
-<script src="/assets/trabajos.js?v=202610180128" defer></script>
+<script src="/assets/senoide.js?v=202610180129" defer></script>
+<script src="/assets/trabajos.js?v=202610180129" defer></script>
 
 </body>
 </html>

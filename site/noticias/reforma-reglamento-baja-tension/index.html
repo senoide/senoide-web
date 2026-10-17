@@ -20,7 +20,7 @@
 <link rel="icon" href="/assets/favicon-48.png" type="image/png" sizes="48x48">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <link rel="preload" href="/assets/fonts/bricolage.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/estilos.css?v=202610180128">
+<link rel="stylesheet" href="/assets/estilos.css?v=202610180129">
 <style>
 /* Menú con desplegables, menú móvil, accesos rápidos, barra inferior y «volver arriba» */
 header.site nav.main{gap:18px}
@@ -183,8 +183,9 @@ main#inicio > section[hidden]{display:none!important}
   main#inicio .trade{gap:8px}
 }
 /* en modo oscuro el resumen de la calculadora mantiene el azul de marca (no se invierte a gris claro) */
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .summary{--ink:#0b2d58;--paper:#eef3f7;border:1px solid #22344f}}
-:root[data-theme="dark"] .summary{--ink:#0b2d58;--paper:#eef3f7;border:1px solid #22344f}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) :is(.summary,.cta-box,.ribbon){--ink:#0b2d58;--paper:#eef3f7}:root:not([data-theme="light"]) :is(.summary,.cta-box){border:1px solid #22344f}}
+:root[data-theme="dark"] :is(.summary,.cta-box,.ribbon){--ink:#0b2d58;--paper:#eef3f7}
+:root[data-theme="dark"] :is(.summary,.cta-box){border:1px solid #22344f}
 /* ordenador: la portada ocupa la primera pantalla */
 @media (min-width:821px){section.hero{min-height:calc(100vh - 98px);min-height:calc(100svh - 98px);display:flex;flex-direction:column;justify-content:center}}
 /* móvil: dentro de la calculadora no se muestra «volver arriba», para no tapar «Siguiente» */
@@ -339,7 +340,7 @@ main#inicio > section[hidden]{display:none!important}
 <h2>Nuestro consejo mientras tanto</h2>
 <p>Si vas a cambiar el cuadro o reformar la instalación ahora, pregúntanos por un diferencial tipo A y por la protección contra sobretensiones. Hoy no son obligatorios en todos los casos, pero el coste extra es pequeño y te ahorras cambiarlo dentro de poco. Te lo indicamos por separado en el presupuesto para que decidas.</p>
 <p>Actualizaremos esta noticia cuando el texto se publique en el BOE.</p>
-<p class="src">Fuentes: <a href="https://www.boe.es/buscar/act.php?id=BOE-A-2002-18099" target="_blank" rel="noopener">Real Decreto 842/2002 (REBT), texto consolidado del BOE</a> · <a href="https://cogiti.es/wp-content/uploads/2026/04/Webinar-COGITI_Novedades-REBT-2026_22-abril-2026.pdf" target="_blank" rel="noopener">COGITI, «Novedades REBT 2026: diferenciales y protección contra sobretensiones» (abril de 2026)</a> · <a href="https://www.interempresas.net/Electricidad/633818-Revision-del-REBT-obligatoriedad-del-diferencial-Tipo-A.html" target="_blank" rel="noopener">Interempresas, «Revisión del REBT: obligatoriedad del diferencial tipo A» (julio de 2026)</a></p><p class="src">Publicado el 17 de octubre de 2026 · revisado el 2026-10-17. Si tienes dudas sobre cómo te afecta, pregúntanos.</p><div class="cta-box"><div><p class="eyebrow" style="color:inherit;opacity:.7">¿Tienes un trabajo parecido?</p><h3 style="margin-top:6px">Calcula un precio orientativo en un minuto.</h3></div><a class="btn primary" href="/#presupuesto">Calcular presupuesto</a></div></article></div>
+<p class="src">Fuentes: <a href="https://www.boe.es/buscar/act.php?id=BOE-A-2002-18099" target="_blank" rel="noopener">Real Decreto 842/2002 (REBT), texto consolidado del BOE</a> · <a href="https://cogiti.es/wp-content/uploads/2026/04/Webinar-COGITI_Novedades-REBT-2026_22-abril-2026.pdf" target="_blank" rel="noopener">COGITI, «Novedades REBT 2026: diferenciales y protección contra sobretensiones» (abril de 2026)</a> · <a href="https://www.interempresas.net/Electricidad/633818-Revision-del-REBT-obligatoriedad-del-diferencial-Tipo-A.html" target="_blank" rel="noopener">Interempresas, «Revisión del REBT: obligatoriedad del diferencial tipo A» (julio de 2026)</a></p><p class="src">Publicado el 17 de octubre de 2026 · revisado el 2026-10-17. Si tienes dudas sobre cómo te afecta, pregúntanos.</p><div class="cta-box"><div><p class="eyebrow" style="color:inherit;opacity:.7">¿Necesitas algo parecido?</p><h3 style="margin-top:6px">Calcula un precio orientativo en un minuto.</h3></div><a class="btn primary" href="/#presupuesto">Calcular presupuesto</a></div></article></div>
 
 <script>
 (function(){var c=document.querySelector('nav.crumbs');if(!c)return;var a=c.querySelectorAll('a');if(!a.length)return;var u=a[a.length-1];
@@ -406,8 +407,8 @@ var sc=document.currentScript;sc.parentNode.insertBefore(d,sc);})();
   }
 })();
 </script>
-<script src="/assets/senoide.js?v=202610180128" defer></script>
-<script src="/assets/trabajos.js?v=202610180128" defer></script>
+<script src="/assets/senoide.js?v=202610180129" defer></script>
+<script src="/assets/trabajos.js?v=202610180129" defer></script>
 
 </body>
 </html>
