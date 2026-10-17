@@ -20,7 +20,7 @@
 <link rel="icon" href="/assets/favicon-48.png" type="image/png" sizes="48x48">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <link rel="preload" href="/assets/fonts/bricolage.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/estilos.css?v=202610180118">
+<link rel="stylesheet" href="/assets/estilos.css?v=202610180128">
 <style>
 /* Menú con desplegables, menú móvil, accesos rápidos, barra inferior y «volver arriba» */
 header.site nav.main{gap:18px}
@@ -82,6 +82,113 @@ header.site nav.main .nav-tel{font-family:var(--f-mono);font-weight:500;color:va
 }
 @keyframes baja{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,6px)}}
 @media (prefers-reduced-motion: reduce){.hero-down{animation:none}}
+/* portada por bloques: cada bloque ocupa la pantalla y el desplazamiento se ajusta al inicio de cada uno */
+html:has(main#inicio){scroll-snap-type:y proximity;scroll-padding-top:var(--cab,62px)}
+main#inicio > section:not(.hero){min-height:calc(100vh - var(--cab,62px));min-height:calc(100svh - var(--cab,62px));display:flex;flex-direction:column;justify-content:center;padding-block:56px;scroll-snap-align:start;border-top:1px solid var(--line)}
+main#inicio > section:not(.hero) > .wrap{width:100%}
+main#inicio > section.hero{scroll-snap-align:start}
+main#inicio > section[hidden]{display:none!important}
+#presupuesto.wz-on .quote{min-height:0!important}
+@media (min-width:821px){html:has(main#inicio){--cab:74px} main#inicio > section:not(.hero){padding-block:72px}}
+@media (max-width:820px){main#inicio > section:not(.hero){padding-block:40px}}
+/* móvil: las tarjetas de cada bloque se deslizan de lado para que el bloque quepa en una pantalla */
+@media (max-width:820px){
+  main#inicio .trades, main#inicio .mt-sum, main#inicio .cards, main#inicio .aud dl{
+    display:grid;grid-auto-flow:column;grid-auto-columns:86%;grid-template-columns:none;gap:12px;
+    overflow-x:auto;scroll-snap-type:x mandatory;overscroll-behavior-x:contain;scrollbar-width:none;
+    margin-inline:-20px;padding:2px 20px 6px;scroll-padding-inline:20px}
+  main#inicio .trades::-webkit-scrollbar, main#inicio .mt-sum::-webkit-scrollbar, main#inicio .cards::-webkit-scrollbar, main#inicio .aud dl::-webkit-scrollbar{display:none}
+  main#inicio .trades > *, main#inicio .mt-sum > *, main#inicio .cards > *, main#inicio .aud dl > div{scroll-snap-align:start}
+  main#inicio .aud dl{border-top:0}
+  main#inicio .aud dl div{border:1px solid var(--line);border-radius:var(--r);background:var(--surface);padding:16px;align-content:start}
+  main#inicio .aud{gap:20px}
+  main#inicio .aud .intro{gap:12px}
+  main#inicio .aud .intro p{font-size:.98rem}
+  main#inicio .tabs{margin-bottom:18px}
+  main#inicio .trade{padding:18px;gap:10px}
+  main#inicio .trade ul{gap:3px;font-size:.93rem}
+  main#inicio .section-head{margin-bottom:22px;gap:8px}
+  main#inicio #servicios .section-head > p:last-child{display:none}
+  main#inicio .card img{aspect-ratio:16/9}
+  main#inicio .process{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:18px}
+  main#inicio .process li{padding:14px 12px 0 0;gap:6px}
+  main#inicio .process p{font-size:.92rem}
+  main#inicio .two{gap:28px}
+  main#inicio .faq details{padding-block:12px}
+  main#inicio .desliza{display:flex}
+}
+.desliza{display:none;align-items:center;gap:6px;margin-top:10px;font-family:var(--f-mono);font-size:.75rem;color:var(--muted);letter-spacing:.06em;text-transform:uppercase}
+@media (max-height:700px) and (max-width:820px){.hero h1{font-size:2.2rem}.hero .lead{font-size:.98rem}}
+/* ordenador: bloques más compactos para que quepan en la pantalla */
+@media (min-width:821px){
+  main#inicio .trade{padding:20px;gap:10px}
+  main#inicio .trade ul{gap:4px}
+  main#inicio .section-head{margin-bottom:28px}
+}
+@media (min-width:821px) and (max-height:860px){
+  .hero{padding-block:32px 28px}
+  .hero h1{font-size:clamp(2.5rem,5.4vw,4.2rem)}
+  main#inicio > section:not(.hero){padding-block:48px}
+  main#inicio .section-head h2{font-size:clamp(1.7rem,3vw,2.3rem)}
+  main#inicio .trade ul{font-size:.94rem}
+}
+/* contacto: mismo azul de marca en claro y en oscuro, para que no se invierta */
+#contacto{background:#0b2d58;color:#eef3f7;border-top:0!important}
+#contacto .eyebrow{color:#9fb3c8}
+#contacto .contact-lead{color:#c3d0dd;font-size:1.05rem;margin-top:12px}
+#contacto .contact-acts{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+#contacto .contact-acts .btn:not(.primary){border-color:#eef3f7;color:#eef3f7}
+#contacto .ccard{border-color:rgba(238,243,247,.22);background:rgba(255,255,255,.04)}
+#contacto .ccard .btn{border-color:#eef3f7;color:#eef3f7}
+#contacto .ccard .v.small{color:#7fe3e6}
+#contacto .contact{align-items:center}
+@media (max-width:820px){#contacto .contact-acts .btn{flex:1 1 auto}#contacto .contact h2{font-size:2rem}}
+/* bloques en el móvil: más compactos para que cada uno quepa en una pantalla */
+@media (max-width:820px){
+  main#inicio > section:not(.hero){padding-block:32px}
+  main#inicio .trade .tag, main#inicio .trade > p:has(.more-link){display:none}
+  main#inicio #mantenimiento .section-head > p:last-child{display:none}
+  main#inicio .mt-acts{margin-top:14px}
+  main#inicio #clientes .aud .intro > p{display:none}
+  main#inicio .towns{gap:6px;margin-top:14px}
+  main#inicio .towns span{padding:5px 11px;font-size:.86rem}
+  main#inicio #zona h2{font-size:1.75rem}
+}
+/* ordenador: el título de la calculadora va a la izquierda y el resumen ocupa toda la altura a la derecha */
+@media (min-width:961px){
+  #presupuesto > .wrap{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);column-gap:28px;align-items:start}
+  #presupuesto > .wrap > .section-head{grid-column:1;margin-bottom:22px}
+  #presupuesto .quote{display:contents}
+  #presupuesto .quote > div:first-child{grid-column:1}
+  #presupuesto .summary{grid-column:2;grid-row:1 / span 2;padding:20px;gap:11px}
+  #presupuesto .summary .note{font-size:.78rem;line-height:1.4}
+  #presupuesto .toast:empty{display:none}
+}
+/* pantallas bajas (móviles pequeños y portátiles): todo un poco más compacto */
+@media (max-width:820px) and (max-height:720px){
+  main#inicio > section:not(.hero){padding-block:24px}
+  main#inicio .section-head{margin-bottom:16px}
+  main#inicio .section-head h2, main#inicio #zona h2, #contacto .contact h2{font-size:1.6rem}
+  main#inicio .trade ul{font-size:.88rem}
+  main#inicio .process li h3{font-size:1.02rem}
+  main#inicio .process p{font-size:.85rem}
+  main#inicio .faq details{padding-block:9px}
+  main#inicio .faq summary{font-size:.95rem}
+  #contacto .contact{gap:20px}
+  #contacto .ccard{padding:12px 14px}
+}
+@media (min-width:821px) and (max-height:860px){
+  main#inicio #servicios .section-head > p:last-child{display:none}
+  main#inicio .trade ul{gap:2px;font-size:.92rem}
+  main#inicio .trade{gap:8px}
+}
+/* en modo oscuro el resumen de la calculadora mantiene el azul de marca (no se invierte a gris claro) */
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .summary{--ink:#0b2d58;--paper:#eef3f7;border:1px solid #22344f}}
+:root[data-theme="dark"] .summary{--ink:#0b2d58;--paper:#eef3f7;border:1px solid #22344f}
+/* ordenador: la portada ocupa la primera pantalla */
+@media (min-width:821px){section.hero{min-height:calc(100vh - 98px);min-height:calc(100svh - 98px);display:flex;flex-direction:column;justify-content:center}}
+/* móvil: dentro de la calculadora no se muestra «volver arriba», para no tapar «Siguiente» */
+@media (max-width:820px){.en-calc .totop{opacity:0!important;pointer-events:none!important}}
 /* resumen de mantenimiento en la portada */
 .mt-sum{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
 .mt-sum article{display:grid;gap:8px;align-content:start;padding:20px;border:1px solid var(--line);border-radius:var(--r);background:var(--surface)}
@@ -136,6 +243,9 @@ header.site nav.main .nav-tel{font-family:var(--f-mono);font-weight:500;color:va
 
 /* calculadora por pasos (solo móvil; lo activa el código de la portada) */
 .wz-oculto{display:none!important}
+.wz-pc .wz-nav{position:static;box-shadow:none;margin-top:4px}
+.wz-pc .wz-nav .wz-total{display:none}
+.wz-pc .step{margin-bottom:12px}
 #presupuesto .quote{scroll-margin-top:84px}
 @media (max-width:820px){
   #presupuesto.wz-on{padding-bottom:28px}
@@ -297,8 +407,8 @@ var sc=document.currentScript;sc.parentNode.insertBefore(d,sc);})();
   }
 })();
 </script>
-<script src="/assets/senoide.js?v=202610180118" defer></script>
-<script src="/assets/trabajos.js?v=202610180118" defer></script>
+<script src="/assets/senoide.js?v=202610180128" defer></script>
+<script src="/assets/trabajos.js?v=202610180128" defer></script>
 
 </body>
 </html>

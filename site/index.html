@@ -20,7 +20,7 @@
 <link rel="icon" href="/assets/favicon-48.png" type="image/png" sizes="48x48">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <link rel="preload" href="/assets/fonts/bricolage.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/estilos.css?v=202610180118">
+<link rel="stylesheet" href="/assets/estilos.css?v=202610180128">
 <style>
 /* Menú con desplegables, menú móvil, accesos rápidos, barra inferior y «volver arriba» */
 header.site nav.main{gap:18px}
@@ -82,6 +82,113 @@ header.site nav.main .nav-tel{font-family:var(--f-mono);font-weight:500;color:va
 }
 @keyframes baja{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,6px)}}
 @media (prefers-reduced-motion: reduce){.hero-down{animation:none}}
+/* portada por bloques: cada bloque ocupa la pantalla y el desplazamiento se ajusta al inicio de cada uno */
+html:has(main#inicio){scroll-snap-type:y proximity;scroll-padding-top:var(--cab,62px)}
+main#inicio > section:not(.hero){min-height:calc(100vh - var(--cab,62px));min-height:calc(100svh - var(--cab,62px));display:flex;flex-direction:column;justify-content:center;padding-block:56px;scroll-snap-align:start;border-top:1px solid var(--line)}
+main#inicio > section:not(.hero) > .wrap{width:100%}
+main#inicio > section.hero{scroll-snap-align:start}
+main#inicio > section[hidden]{display:none!important}
+#presupuesto.wz-on .quote{min-height:0!important}
+@media (min-width:821px){html:has(main#inicio){--cab:74px} main#inicio > section:not(.hero){padding-block:72px}}
+@media (max-width:820px){main#inicio > section:not(.hero){padding-block:40px}}
+/* móvil: las tarjetas de cada bloque se deslizan de lado para que el bloque quepa en una pantalla */
+@media (max-width:820px){
+  main#inicio .trades, main#inicio .mt-sum, main#inicio .cards, main#inicio .aud dl{
+    display:grid;grid-auto-flow:column;grid-auto-columns:86%;grid-template-columns:none;gap:12px;
+    overflow-x:auto;scroll-snap-type:x mandatory;overscroll-behavior-x:contain;scrollbar-width:none;
+    margin-inline:-20px;padding:2px 20px 6px;scroll-padding-inline:20px}
+  main#inicio .trades::-webkit-scrollbar, main#inicio .mt-sum::-webkit-scrollbar, main#inicio .cards::-webkit-scrollbar, main#inicio .aud dl::-webkit-scrollbar{display:none}
+  main#inicio .trades > *, main#inicio .mt-sum > *, main#inicio .cards > *, main#inicio .aud dl > div{scroll-snap-align:start}
+  main#inicio .aud dl{border-top:0}
+  main#inicio .aud dl div{border:1px solid var(--line);border-radius:var(--r);background:var(--surface);padding:16px;align-content:start}
+  main#inicio .aud{gap:20px}
+  main#inicio .aud .intro{gap:12px}
+  main#inicio .aud .intro p{font-size:.98rem}
+  main#inicio .tabs{margin-bottom:18px}
+  main#inicio .trade{padding:18px;gap:10px}
+  main#inicio .trade ul{gap:3px;font-size:.93rem}
+  main#inicio .section-head{margin-bottom:22px;gap:8px}
+  main#inicio #servicios .section-head > p:last-child{display:none}
+  main#inicio .card img{aspect-ratio:16/9}
+  main#inicio .process{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:18px}
+  main#inicio .process li{padding:14px 12px 0 0;gap:6px}
+  main#inicio .process p{font-size:.92rem}
+  main#inicio .two{gap:28px}
+  main#inicio .faq details{padding-block:12px}
+  main#inicio .desliza{display:flex}
+}
+.desliza{display:none;align-items:center;gap:6px;margin-top:10px;font-family:var(--f-mono);font-size:.75rem;color:var(--muted);letter-spacing:.06em;text-transform:uppercase}
+@media (max-height:700px) and (max-width:820px){.hero h1{font-size:2.2rem}.hero .lead{font-size:.98rem}}
+/* ordenador: bloques más compactos para que quepan en la pantalla */
+@media (min-width:821px){
+  main#inicio .trade{padding:20px;gap:10px}
+  main#inicio .trade ul{gap:4px}
+  main#inicio .section-head{margin-bottom:28px}
+}
+@media (min-width:821px) and (max-height:860px){
+  .hero{padding-block:32px 28px}
+  .hero h1{font-size:clamp(2.5rem,5.4vw,4.2rem)}
+  main#inicio > section:not(.hero){padding-block:48px}
+  main#inicio .section-head h2{font-size:clamp(1.7rem,3vw,2.3rem)}
+  main#inicio .trade ul{font-size:.94rem}
+}
+/* contacto: mismo azul de marca en claro y en oscuro, para que no se invierta */
+#contacto{background:#0b2d58;color:#eef3f7;border-top:0!important}
+#contacto .eyebrow{color:#9fb3c8}
+#contacto .contact-lead{color:#c3d0dd;font-size:1.05rem;margin-top:12px}
+#contacto .contact-acts{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+#contacto .contact-acts .btn:not(.primary){border-color:#eef3f7;color:#eef3f7}
+#contacto .ccard{border-color:rgba(238,243,247,.22);background:rgba(255,255,255,.04)}
+#contacto .ccard .btn{border-color:#eef3f7;color:#eef3f7}
+#contacto .ccard .v.small{color:#7fe3e6}
+#contacto .contact{align-items:center}
+@media (max-width:820px){#contacto .contact-acts .btn{flex:1 1 auto}#contacto .contact h2{font-size:2rem}}
+/* bloques en el móvil: más compactos para que cada uno quepa en una pantalla */
+@media (max-width:820px){
+  main#inicio > section:not(.hero){padding-block:32px}
+  main#inicio .trade .tag, main#inicio .trade > p:has(.more-link){display:none}
+  main#inicio #mantenimiento .section-head > p:last-child{display:none}
+  main#inicio .mt-acts{margin-top:14px}
+  main#inicio #clientes .aud .intro > p{display:none}
+  main#inicio .towns{gap:6px;margin-top:14px}
+  main#inicio .towns span{padding:5px 11px;font-size:.86rem}
+  main#inicio #zona h2{font-size:1.75rem}
+}
+/* ordenador: el título de la calculadora va a la izquierda y el resumen ocupa toda la altura a la derecha */
+@media (min-width:961px){
+  #presupuesto > .wrap{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);column-gap:28px;align-items:start}
+  #presupuesto > .wrap > .section-head{grid-column:1;margin-bottom:22px}
+  #presupuesto .quote{display:contents}
+  #presupuesto .quote > div:first-child{grid-column:1}
+  #presupuesto .summary{grid-column:2;grid-row:1 / span 2;padding:20px;gap:11px}
+  #presupuesto .summary .note{font-size:.78rem;line-height:1.4}
+  #presupuesto .toast:empty{display:none}
+}
+/* pantallas bajas (móviles pequeños y portátiles): todo un poco más compacto */
+@media (max-width:820px) and (max-height:720px){
+  main#inicio > section:not(.hero){padding-block:24px}
+  main#inicio .section-head{margin-bottom:16px}
+  main#inicio .section-head h2, main#inicio #zona h2, #contacto .contact h2{font-size:1.6rem}
+  main#inicio .trade ul{font-size:.88rem}
+  main#inicio .process li h3{font-size:1.02rem}
+  main#inicio .process p{font-size:.85rem}
+  main#inicio .faq details{padding-block:9px}
+  main#inicio .faq summary{font-size:.95rem}
+  #contacto .contact{gap:20px}
+  #contacto .ccard{padding:12px 14px}
+}
+@media (min-width:821px) and (max-height:860px){
+  main#inicio #servicios .section-head > p:last-child{display:none}
+  main#inicio .trade ul{gap:2px;font-size:.92rem}
+  main#inicio .trade{gap:8px}
+}
+/* en modo oscuro el resumen de la calculadora mantiene el azul de marca (no se invierte a gris claro) */
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .summary{--ink:#0b2d58;--paper:#eef3f7;border:1px solid #22344f}}
+:root[data-theme="dark"] .summary{--ink:#0b2d58;--paper:#eef3f7;border:1px solid #22344f}
+/* ordenador: la portada ocupa la primera pantalla */
+@media (min-width:821px){section.hero{min-height:calc(100vh - 98px);min-height:calc(100svh - 98px);display:flex;flex-direction:column;justify-content:center}}
+/* móvil: dentro de la calculadora no se muestra «volver arriba», para no tapar «Siguiente» */
+@media (max-width:820px){.en-calc .totop{opacity:0!important;pointer-events:none!important}}
 /* resumen de mantenimiento en la portada */
 .mt-sum{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
 .mt-sum article{display:grid;gap:8px;align-content:start;padding:20px;border:1px solid var(--line);border-radius:var(--r);background:var(--surface)}
@@ -136,6 +243,9 @@ header.site nav.main .nav-tel{font-family:var(--f-mono);font-weight:500;color:va
 
 /* calculadora por pasos (solo móvil; lo activa el código de la portada) */
 .wz-oculto{display:none!important}
+.wz-pc .wz-nav{position:static;box-shadow:none;margin-top:4px}
+.wz-pc .wz-nav .wz-total{display:none}
+.wz-pc .step{margin-bottom:12px}
 #presupuesto .quote{scroll-margin-top:84px}
 @media (max-width:820px){
   #presupuesto.wz-on{padding-bottom:28px}
@@ -289,6 +399,7 @@ header.site nav.main .nav-tel{font-family:var(--f-mono);font-weight:500;color:va
         <p class="trade-note">Solo como complemento de un trabajo eléctrico. No hacemos reformas de albañilería por separado.</p>
       </article>
     </div>
+    <p class="desliza" aria-hidden="true">Desliza para ver más →</p>
   </div>
 </section>
 
@@ -314,6 +425,7 @@ header.site nav.main .nav-tel{font-family:var(--f-mono);font-weight:500;color:va
         <div><dt>Coche eléctrico en casa</dt><dd>Línea, protecciones y certificado del punto de recarga en vivienda unifamiliar o garaje.</dd></div>
         <div><dt>Arreglos en baño o cocina</dt><dd>Enchufes, puntos de luz, extractor o grifos. Si hay que abrir rozas o reponer azulejo, lo dejamos rematado.</dd></div>
       </dl>
+      <p class="desliza" aria-hidden="true">Desliza para ver más →</p>
     </div>
     <div class="aud" id="pane-pro" role="tabpanel" aria-labelledby="tab-pro" hidden>
       <div class="intro">
@@ -327,6 +439,7 @@ header.site nav.main .nav-tel{font-family:var(--f-mono);font-weight:500;color:va
         <div><dt>Apartamentos turísticos</dt><dd>Mantenimiento entre temporadas y averías con huésped dentro. <a class="more-link" href="/servicios/apartamentos-turisticos/">Más información →</a></dd></div>
         <div><dt>Inmobiliarias</dt><dd>Boletines y pequeñas reparaciones antes de alquilar o vender.</dd></div>
       </dl>
+      <p class="desliza" aria-hidden="true">Desliza para ver más →</p>
     </div>
   </div>
 </section>
@@ -441,6 +554,7 @@ header.site nav.main .nav-tel{font-family:var(--f-mono);font-weight:500;color:va
       <article><div class="cable neutral"></div><h3>Locales y oficinas</h3><p class="p"><small>desde</small> 35 € <small>/ mes + IVA</small></p><p>Comercios, oficinas y pequeños negocios.</p></article>
       <article><div class="cable earth"></div><h3>Apartamentos turísticos</h3><p class="p"><small>desde</small> 8 € <small>/ mes por apartamento + IVA</small></p><p>Revisión antes de la temporada y atención con huéspedes dentro. También revisión suelta.</p></article>
     </div>
+    <p class="desliza" aria-hidden="true">Desliza para ver más →</p>
     <div class="mt-acts">
       <a class="btn primary" href="/mantenimiento/">Ver planes y precios</a>
       <a class="more-link" href="/condiciones-mantenimiento/">Condiciones de los planes</a>
@@ -449,7 +563,7 @@ header.site nav.main .nav-tel{font-family:var(--f-mono);font-weight:500;color:va
 </section>
 
 <section id="trabajos-home" style="padding-top:0" hidden><div class="wrap"><div class="section-head"><p class="eyebrow">Trabajos</p><h2>Trabajos recientes</h2></div><div class="cards" data-trabajos="3"></div><p class="more"><a class="btn" href="/trabajos/">Ver todos los trabajos</a></p></div></section>
-<section style="padding-top:0"><div class="wrap"><div class="section-head"><p class="eyebrow">Noticias y consejos</p><h2>Normativa y consejos para tu instalación</h2></div><div class="cards"><a class="card" href="/noticias/nuevo-reglamento-suministro-electrico/"><div class="body"><span class="meta">Normativa · 17 de octubre de 2026</span><h3>Nuevo reglamento de suministro eléctrico: lo que cambia en tu contrato de luz</h3><p>El Real Decreto 88/2026 está en vigor desde el 12 de febrero de 2026. Más avisos antes de subir precios, plazos para cambiar de compañía y la devolución de las fianzas que guardaban las distribuidoras.</p></div></a><a class="card" href="/noticias/reforma-reglamento-baja-tension/"><div class="body"><span class="meta">Normativa · 17 de octubre de 2026</span><h3>Reforma del reglamento de baja tensión: qué se sabe y a quién afecta</h3><p>El Ministerio de Industria prepara cambios en el REBT: diferenciales tipo A en viviendas, protección contra sobretensiones y nuevas reglas para recarga y autoconsumo. Te contamos en qué punto está y qué significa para ti.</p></div></a><a class="card" href="/consejos/casa-de-verano-revision-antes-de-abrir/"><div class="body"><span class="meta">Mantenimiento · 13 de octubre de 2026</span><h3>Casa de verano cerrada meses: revisión antes de abrirla</h3><p>Lista de comprobación de electricidad y fontanería para una segunda residencia o un apartamento turístico que ha estado cerrado.</p></div></a></div><p class="more"><a class="btn" href="/noticias/">Ver noticias</a> <a class="btn" href="/consejos/">Ver consejos</a></p></div></section>
+<section style="padding-top:0"><div class="wrap"><div class="section-head"><p class="eyebrow">Noticias y consejos</p><h2>Normativa y consejos para tu instalación</h2></div><div class="cards"><a class="card" href="/noticias/nuevo-reglamento-suministro-electrico/"><div class="body"><span class="meta">Normativa · 17 de octubre de 2026</span><h3>Nuevo reglamento de suministro eléctrico: lo que cambia en tu contrato de luz</h3><p>El Real Decreto 88/2026 está en vigor desde el 12 de febrero de 2026. Más avisos antes de subir precios, plazos para cambiar de compañía y la devolución de las fianzas que guardaban las distribuidoras.</p></div></a><a class="card" href="/noticias/reforma-reglamento-baja-tension/"><div class="body"><span class="meta">Normativa · 17 de octubre de 2026</span><h3>Reforma del reglamento de baja tensión: qué se sabe y a quién afecta</h3><p>El Ministerio de Industria prepara cambios en el REBT: diferenciales tipo A en viviendas, protección contra sobretensiones y nuevas reglas para recarga y autoconsumo. Te contamos en qué punto está y qué significa para ti.</p></div></a><a class="card" href="/consejos/casa-de-verano-revision-antes-de-abrir/"><div class="body"><span class="meta">Mantenimiento · 13 de octubre de 2026</span><h3>Casa de verano cerrada meses: revisión antes de abrirla</h3><p>Lista de comprobación de electricidad y fontanería para una segunda residencia o un apartamento turístico que ha estado cerrado.</p></div></a></div><p class="desliza" aria-hidden="true">Desliza para ver más →</p><p class="more"><a class="btn" href="/noticias/">Ver noticias</a> <a class="btn" href="/consejos/">Ver consejos</a></p></div></section>
 <section id="proceso">
   <div class="wrap">
     <div class="section-head">
@@ -489,25 +603,30 @@ header.site nav.main .nav-tel{font-family:var(--f-mono);font-weight:500;color:va
   <div class="wrap contact">
     <div>
       <p class="eyebrow">Contacto</p>
-      <h2 style="margin-top:12px">Llámanos o escríbenos. Contestamos el mismo día.</h2>
+      <h2 style="margin-top:12px">Llámanos o escríbenos.</h2>
+      <p class="contact-lead">Contestamos el mismo día, de lunes a viernes de 8 a 18 h.</p>
+      <div class="contact-acts">
+        <a class="btn primary" href="tel:+34621018374">Llamar al 621 018 374</a>
+        <a class="btn" href="https://wa.me/34621018374" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
     </div>
     <div class="contact-cards">
       <div class="ccard"><div><div class="k">Teléfono y WhatsApp</div><a class="v" id="ph" href="tel:+34621018374">621 018 374</a></div><button class="btn small" type="button" data-copy="621018374">Copiar</button></div>
       <div class="ccard"><div><div class="k">Correo</div><a class="v" href="mailto:info@senoide.es">info@senoide.es</a></div><button class="btn small" type="button" data-copy="info@senoide.es">Copiar</button></div>
-      <div class="ccard"><div><div class="k">Horario</div><div class="v">L–V · 8:00–18:00</div></div></div>
+      <div class="ccard"><div><div class="k">Presupuesto</div><a class="v small" href="#presupuesto">Calcula un precio orientativo en un minuto →</a></div></div>
       
     </div>
   </div>
 </section>
 <script>
-/* Calculadora por pasos en el móvil: un paso cada vez, con Anterior / Siguiente y el total a la vista */
+/* Calculadora por pasos: un paso cada vez, con Anterior / Siguiente. En el móvil el resumen es el último paso; en el ordenador está siempre a la derecha */
 document.addEventListener('DOMContentLoaded', function(){
   var sec = document.getElementById('presupuesto'); if (!sec) return;
   var quote = sec.querySelector('.quote'), cont = quote && quote.firstElementChild, resumen = sec.querySelector('.summary');
   if (!cont || !resumen) return;
   var pasos = [].slice.call(cont.querySelectorAll(':scope > .step'));
   var titulos = pasos.map(function(p){ var h = p.querySelector('h3'); return h ? h.textContent : ''; }).concat(['Revisa y envía']);
-  var total = pasos.length + 1, actual = 0, activo = false;
+  var total = pasos.length + 1, actual = 0, activo = true, movil = false;
   var nav = document.createElement('div'); nav.className = 'wz-nav'; nav.hidden = true;
   nav.innerHTML = '<p class="wz-msg" role="status"></p><div class="wz-row"><button type="button" class="btn small wz-prev">Anterior</button><span class="wz-info"><span class="wz-n"></span><b class="wz-total"></b></span><button type="button" class="btn primary small wz-next">Siguiente</button></div>';
   var cab = document.createElement('p'); cab.className = 'wz-cab eyebrow'; cab.hidden = true;
@@ -517,7 +636,7 @@ document.addEventListener('DOMContentLoaded', function(){
   function totalTxt(){ var t = document.getElementById('total'); return t ? t.textContent : ''; }
   function pintar(scroll){
     pasos.forEach(function(p, i){ p.classList.toggle('wz-oculto', activo && i !== actual); });
-    resumen.classList.toggle('wz-oculto', activo && actual !== total - 1);
+    resumen.classList.toggle('wz-oculto', movil && actual !== total - 1);
     nav.hidden = cab.hidden = !activo;
     sec.classList.toggle('wz-on', activo);
     if (!activo) return;
@@ -551,7 +670,11 @@ document.addEventListener('DOMContentLoaded', function(){
   /* mientras se ve la calculadora, el botón «volver arriba» no tapa «Siguiente» */
   if (window.IntersectionObserver) new IntersectionObserver(function(en){ document.body.classList.toggle('en-calc', en[0].isIntersecting); }).observe(sec);
   var mq = window.matchMedia('(max-width: 820px)');
-  function aplicar(){ activo = mq.matches; if (!activo) msg.textContent = ''; pintar(false); }
+  function aplicar(){
+    movil = mq.matches; total = pasos.length + (movil ? 1 : 0); actual = Math.min(actual, total - 1);
+    if (movil) quote.insertAdjacentElement('afterend', nav); else cont.appendChild(nav);
+    sec.classList.toggle('wz-pc', !movil); pintar(false);
+  }
   if (mq.addEventListener) mq.addEventListener('change', aplicar); else mq.addListener(aplicar);
   aplicar();
 });
@@ -623,8 +746,8 @@ var sc=document.currentScript;sc.parentNode.insertBefore(d,sc);})();
   }
 })();
 </script>
-<script src="/assets/senoide.js?v=202610180118" defer></script>
-<script src="/assets/trabajos.js?v=202610180118" defer></script>
+<script src="/assets/senoide.js?v=202610180128" defer></script>
+<script src="/assets/trabajos.js?v=202610180128" defer></script>
 
 </body>
 </html>
