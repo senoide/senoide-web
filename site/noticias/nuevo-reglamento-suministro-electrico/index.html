@@ -20,7 +20,7 @@
 <link rel="icon" href="/assets/favicon-48.png" type="image/png" sizes="48x48">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <link rel="preload" href="/assets/fonts/bricolage.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/estilos.css?v=202610180138">
+<link rel="stylesheet" href="/assets/estilos.css?v=202610180151">
 <style>
 /* Menú con desplegables, menú móvil, accesos rápidos, barra inferior y «volver arriba» */
 header.site nav.main{gap:18px}
@@ -93,12 +93,13 @@ main#inicio > section[hidden]{display:none!important}
 @media (max-width:820px){main#inicio > section:not(.hero){padding-block:40px}}
 /* móvil: las tarjetas de cada bloque se deslizan de lado para que el bloque quepa en una pantalla */
 @media (max-width:820px){
-  main#inicio .trades, main#inicio .mt-sum, main#inicio .cards, main#inicio .aud dl{
+  main#inicio .trades, main#inicio .mt-sum, .cards, main#inicio .aud dl{
     display:grid;grid-auto-flow:column;grid-auto-columns:86%;grid-template-columns:none;gap:12px;
     overflow-x:auto;scroll-snap-type:x mandatory;overscroll-behavior-x:contain;scrollbar-width:none;
     margin-inline:-20px;padding:2px 20px 6px;scroll-padding-inline:20px}
-  main#inicio .trades::-webkit-scrollbar, main#inicio .mt-sum::-webkit-scrollbar, main#inicio .cards::-webkit-scrollbar, main#inicio .aud dl::-webkit-scrollbar{display:none}
-  main#inicio .trades > *, main#inicio .mt-sum > *, main#inicio .cards > *, main#inicio .aud dl > div{scroll-snap-align:start}
+  main#inicio .trades::-webkit-scrollbar, main#inicio .mt-sum::-webkit-scrollbar, .cards::-webkit-scrollbar, main#inicio .aud dl::-webkit-scrollbar{display:none}
+  main#inicio .trades > *, main#inicio .mt-sum > *, .cards > *, main#inicio .aud dl > div{scroll-snap-align:start}
+  .desliza{display:flex}
   main#inicio .aud dl{border-top:0}
   main#inicio .aud dl div{border:1px solid var(--line);border-radius:var(--r);background:var(--surface);padding:16px;align-content:start}
   main#inicio .aud{gap:20px}
@@ -329,11 +330,14 @@ main#inicio > section[hidden]{display:none!important}
 </ul>
 <h2>¿Y si tengo que cambiar la potencia o dar de alta la luz?</h2>
 <p>El reglamento también regula los cambios de potencia, pero esa parte no se aplica hasta que la CNMC fije los importes correspondientes. Mientras tanto, si necesitas subir potencia o dar de alta un suministro, lo que te pedirá la distribuidora sigue siendo lo mismo: que tu instalación lo admita y, si hace falta, un boletín eléctrico (CIE) nuevo. <a href="/servicios/boletin-electrico/">Te ayudamos con el boletín</a>.</p>
-<p class="src">Fuente: <a href="https://www.boe.es/buscar/act.php?id=BOE-A-2026-3212" target="_blank" rel="noopener">Real Decreto 88/2026, texto consolidado del BOE</a>. Resumen orientativo: para tu caso concreto, consulta el texto oficial o tu comercializadora.</p><p class="src">Publicado el 17 de octubre de 2026 · revisado el 2026-10-17. Si tienes dudas sobre cómo te afecta, pregúntanos.</p><div class="cta-box"><div><p class="eyebrow" style="color:inherit;opacity:.7">¿Necesitas algo parecido?</p><h3 style="margin-top:6px">Calcula un precio orientativo en un minuto.</h3></div><a class="btn primary" href="/#presupuesto">Calcular presupuesto</a></div></article></div>
+<p class="src">Fuente: <a href="https://www.boe.es/buscar/act.php?id=BOE-A-2026-3212" target="_blank" rel="noopener">Real Decreto 88/2026, texto consolidado del BOE</a>.</p><p class="src">Publicado el 17 de octubre de 2026.</p><div class="cta-box"><div><p class="eyebrow" style="color:inherit;opacity:.7">¿Necesitas algo parecido?</p><h3 style="margin-top:6px">Calcula un precio orientativo en un minuto.</h3></div><a class="btn primary" href="/#presupuesto">Calcular presupuesto</a></div></article></div>
 
 <script>
 (function(){var c=document.querySelector('nav.crumbs');if(!c)return;var a=c.querySelectorAll('a');if(!a.length)return;var u=a[a.length-1];
 var d=document.createElement('div');d.className='volver';var l=document.createElement('a');l.href=u.getAttribute('href');l.textContent='← Volver a '+(u.textContent==='Inicio'?'la portada':u.textContent.toLowerCase());d.appendChild(l);
+/* si se llegó desde otra página de esta web, «Volver» regresa a esa página y al mismo punto */
+var vieneDeAqui=false;try{vieneDeAqui=document.referrer&&new URL(document.referrer).origin===location.origin&&new URL(document.referrer).pathname!==location.pathname;}catch(e){}
+if(vieneDeAqui&&history.length>1){l.textContent='← Volver';l.addEventListener('click',function(e){e.preventDefault();history.back();});}
 var sc=document.currentScript;sc.parentNode.insertBefore(d,sc);})();
 </script>
 <footer><div class="wrap">
@@ -370,6 +374,31 @@ var sc=document.currentScript;sc.parentNode.insertBefore(d,sc);})();
     var a=e.target.closest('a');if(!a)return;
     cerrarMenu();
   });
+  /* los saltos dentro de la misma página (menú, botones) no añaden pasos al historial:
+     así el botón «atrás» del móvil vuelve a la página anterior y no a cada apartado visitado */
+  document.addEventListener('click',function(e){
+    var a=e.target.closest&&e.target.closest('a[href*="#"]');if(!a||e.defaultPrevented||e.metaKey||e.ctrlKey)return;
+    var u;try{u=new URL(a.href,location.href);}catch(x){return;}
+    if(u.origin!==location.origin||u.pathname!==location.pathname||!u.hash)return;
+    var id=decodeURIComponent(u.hash.slice(1)),dest=document.getElementById(id);
+    var esPestana=u.hash==='#particulares'||u.hash==='#profesionales';
+    if(!dest&&!esPestana)return;
+    e.preventDefault();
+    history.replaceState(history.state,'',u.hash);
+    if(esPestana)pestana();else dest.scrollIntoView({behavior:'smooth'});
+  });
+  /* al volver a una página, recupera el punto exacto donde estabas (sin que el ajuste por bloques lo mueva) */
+  try{
+    if('scrollRestoration' in history)history.scrollRestoration='manual';
+    var clave='pos:'+location.pathname;
+    window.addEventListener('pagehide',function(){try{sessionStorage.setItem(clave,String(window.scrollY));}catch(x){}});
+    var volverA=function(){var v=null;try{v=sessionStorage.getItem(clave);}catch(x){}
+      if(v===null||location.hash)return;var html=document.documentElement;html.style.scrollSnapType='none';
+      window.scrollTo(0,parseInt(v,10)||0);setTimeout(function(){window.scrollTo(0,parseInt(v,10)||0);html.style.scrollSnapType='';},150);};
+    var nav0=performance.getEntriesByType&&performance.getEntriesByType('navigation')[0];
+    if(nav0&&nav0.type==='back_forward'){if(document.readyState==='complete')volverA();else window.addEventListener('load',volverA);}
+    window.addEventListener('pageshow',function(e){if(e.persisted)volverA();});
+  }catch(x){}
   function pestana(){
     var m={'#particulares':'tab-part','#profesionales':'tab-pro'}[location.hash];
     var tab=m&&document.getElementById(m),sec=document.getElementById('clientes');
@@ -396,8 +425,8 @@ var sc=document.currentScript;sc.parentNode.insertBefore(d,sc);})();
   }
 })();
 </script>
-<script src="/assets/senoide.js?v=202610180138" defer></script>
-<script src="/assets/trabajos.js?v=202610180138" defer></script>
+<script src="/assets/senoide.js?v=202610180151" defer></script>
+<script src="/assets/trabajos.js?v=202610180151" defer></script>
 
 </body>
 </html>
