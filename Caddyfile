@@ -39,7 +39,7 @@ www.senoide.es {
 	redir https://senoide.es{uri} permanent
 }
 
-# Gestión SENOIDE: puerta de entrada a la app en Cloudflare
+# Gestión SENOIDE: puerta de entrada a la app (el Worker solo acepta a este servidor)
 app.senoide.es {
 	import seguridad
 	encode zstd gzip
