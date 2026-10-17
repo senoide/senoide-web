@@ -18,6 +18,13 @@ senoide.es {
 	import seguridad
 	encode zstd gzip
 	# Horas libres de la agenda: se piden a la app (Cloudflare) desde el servidor
+	# Presupuestos que el cliente acepta desde un enlace: los sirve la app (Cloudflare)
+	handle /presupuesto/* {
+		reverse_proxy https://origin-app.senoide.es {
+			header_up Host {upstream_hostport}
+			header_up X-Forwarded-Host senoide.es
+		}
+	}
 	handle /api/disponibilidad {
 		reverse_proxy https://origin-app.senoide.es {
 			header_up Host {upstream_hostport}
