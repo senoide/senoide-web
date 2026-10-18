@@ -46,7 +46,9 @@ Estas son las condiciones generales de los planes de mantenimiento de SENOIDE (L
 - Viviendas grandes, con equipamiento complejo o instalaciones en mal estado: te damos un precio a medida.
 - **Altas y bajas en la cartera:** las bajas de apartamentos valen sin que tengas que aceptar nada; te enviamos el anexo actualizado para que te conste. Las altas sí te las enviamos para que las aceptes antes de aplicarlas.
 - **Si la cartera se queda con un solo apartamento**, sigue con su precio hasta el final del periodo; entonces el contrato termina y pasas a la revisión puntual. Te avisamos con al menos 30 días.
-- Durante los 14 días de desistimiento no hacemos la revisión, salvo que nos lo pidas por escrito.
+- Si contratas como consumidor fuera de nuestro local o a distancia, tienes 14 días para desistir (30 si el contrato surge de una visita a tu casa que no pediste). Durante ese plazo no hacemos la revisión, salvo que nos lo pidas por escrito.
+- Si te das de baja con pago mensual después de la revisión, no nos debes la parte que faltaba por pagar: la asumimos nosotros.
+- Si quieres adelantar la revisión, te enviamos antes una propuesta por escrito con el importe pendiente y solo la hacemos si la aceptas.
 
 ## Qué no incluye
 
