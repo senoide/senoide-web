@@ -27,6 +27,13 @@ Estas son las condiciones generales de los planes de mantenimiento de SENOIDE (L
 - Plazos de respuesta: en los planes Plus, si avisas en día laborable antes de las 13 h, te respondemos y valoramos la avería ese mismo día; si avisas más tarde, el siguiente día laborable. En los planes Básico y de apartamentos, primera respuesta en 48 h laborables. Responder y valorar no siempre significa ir en el momento: si hace falta visita, la acordamos contigo lo antes posible.
 - Fuera de horario (L–V antes de las 8 h o después de las 18 h, sábados, domingos y festivos) se aplica la tarifa general: +60 € por salida y +50 % sobre las horas de mano de obra, con el descuento del plan sobre la mano de obra.
 
+## Comunidades y locales
+
+- Los precios corresponden a instalaciones estándar. El número de cuadros, los garajes, la superficie y las instalaciones adicionales pueden requerir un presupuesto personalizado.
+- **Revisión eléctrica preventiva sin contrato:** comunidades de propietarios, **195 € + IVA**; locales y oficinas, **180 € + IVA**. Incluye hasta dos horas de revisión presencial de las instalaciones eléctricas accesibles, comprobaciones funcionales y mediciones seleccionadas, identificación de anomalías e informe técnico en PDF con fotografías y recomendaciones, además del desplazamiento dentro de Oropesa del Mar. No incluye materiales, reparaciones, certificados reglamentarios ni inspecciones de un organismo de control. Las instalaciones de mayor tamaño, con varios cuadros o equipamientos especiales, se presupuestan aparte. Hora adicional de revisión: 45 € + IVA, siempre que la aceptes antes.
+- **Baja antes de 12 meses:** puedes darte de baja cuando quieras, con el aviso de los 15 primeros días del mes. Si en el periodo en curso ya has recibido más de lo que has pagado, abonas la diferencia, como mucho las cuotas que faltarían hasta completar el año. Lo recibido se valora con los precios publicados: cada visita hecha, al precio de la revisión sin contrato (195 € en comunidades, 180 € en locales), y en los planes Plus, cada hora de reparación del bono usada, a 45 €. Si lo pagado ya cubre lo recibido, no pagas nada más. Tampoco pagas nada si la baja es por un incumplimiento nuestro o por un cambio de precio o de condiciones.
+- **Locales de pública concurrencia:** en la Comunitat Valenciana necesitan una revisión anual con BRA (Boletín de Revisión Anual) emitido por una empresa instaladora habilitada, y los del anexo I de la Orden 6/2022, además, un contrato de mantenimiento. Los planes de local no incluyen el BRA: te lo presupuestamos aparte después de comprobar la clasificación de tu local.
+
 ## Apartamentos turísticos
 
 - **Revisión puntual sin contrato:** 150 € + IVA por visita.

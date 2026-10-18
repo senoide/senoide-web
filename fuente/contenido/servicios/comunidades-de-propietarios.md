@@ -19,7 +19,7 @@ No trabajamos en ascensores, protección contra incendios, telecomunicaciones ni
 
 ## Inspecciones periódicas
 
-Algunas instalaciones comunes deben pasar una **inspección periódica por un Organismo de Control Autorizado (OCA)**. Por ejemplo, según la ITC-BT-05 del reglamento, las instalaciones comunes de edificios de viviendas de más de 100 kW de potencia instalada, cada cinco años. Te decimos si a vuestra comunidad le toca y dejamos la instalación preparada para la inspección.
+Algunas instalaciones comunes deben pasar una **inspección periódica por un Organismo de Control Autorizado (OCA)**. Según la ITC-BT-05 del reglamento, las instalaciones comunes de edificios de viviendas de más de 100 kW de potencia instalada, cada diez años; otras instalaciones de baja tensión que necesitaron inspección inicial, cada cinco años. Te decimos si a vuestra comunidad le toca y dejamos la instalación preparada para la inspección.
 
 Si un trabajo necesita una empresa de categoría especialista, te lo decimos desde el principio.
 
