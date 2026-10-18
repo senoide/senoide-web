@@ -176,6 +176,7 @@
     vatWrap.hidden = !isPart; vatNote.hidden = !isPart;
     if (!isPart) $('#v21').checked = true;
     var vat = +val('vat') / 100;
+    vatNote.classList.toggle('activo', vat === 0.1);
 
     var list = $('#sum-list'); list.innerHTML = '';
     var wMin = 0, wMax = 0, hMin = 0, hMax = 0, lines = [], items = [], code = CODE[client], needSal = false, diag = false;
@@ -244,7 +245,7 @@
       if (dn) {
         dn.textContent = day < OPEN_DAY ? 'Empezamos a atender el 2 de noviembre de 2026; elige un día a partir de esa fecha.' :
           fest ? 'El ' + dayTxt + ' es festivo (' + fest + '). Te propondremos otro día, salvo urgencia.' :
-          full ? 'El ' + dayTxt + ' ya está completo. Elige otro de los días con huecos libres.' :
+          full ? 'El ' + dayTxt + ' ya está completo. Elige otro día.' :
           (wd === 0 || wd === 6) ? 'Los fines de semana solo atendemos urgencias. Te propondremos un día laborable.' :
           'Es una preferencia: te confirmamos día y hora por WhatsApp según la agenda.';
         dn.classList.toggle('warn', day < OPEN_DAY || !!fest || full || wd === 0 || wd === 6);
@@ -257,7 +258,7 @@
       (town ? 'Municipio: ' + town + '\n' : '') +
       (day || slot ? 'Visita preferida: ' + [dayTxt, slot ? 'a las ' + (+slot) + ':00' : ''].filter(Boolean).join(', ') + ' — pendiente de confirmar\n' : '') +
       (urg ? 'Urgencia: ' + URG_LABEL[urg] + '\n' : '') +
-      (has ? 'Trabajos:\n' + lines.join('\n') + '\nTotal con IVA ' + Math.round(vat * 100) + '%: ' + desde(bMin * (1 + vat)) + '\n' : '') +
+      (has ? 'Trabajos:\n' + lines.join('\n') + '\nTotal con IVA ' + Math.round(vat * 100) + '%: ' + desde(bMin * (1 + vat)) + (vat === 0.1 ? ' (IVA del 10 % pendiente de comprobar requisitos)' : '') + '\n' : '') +
       (desc ? 'Detalle: ' + desc : '') +
       (fotos ? '\nTe adjunto fotos en este chat.' : '');
     last.text = t;
