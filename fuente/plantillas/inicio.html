@@ -329,8 +329,9 @@ document.addEventListener('DOMContentLoaded', function(){
     nav.classList.toggle('wz-ultimo', actual === total - 1);
     nav.querySelector('.wz-total').textContent = totalTxt();
     /* al cambiar de paso, el principio del paso queda justo bajo la cabecera (sin saltos si ya se ve) */
-    if (scroll) { var q = sec.querySelector('.quote'), hc = document.querySelector('header.site'), off = (hc ? hc.offsetHeight : 0) + 8, top = q.getBoundingClientRect().top;
-      if (top < off || top > window.innerHeight * 0.35) window.scrollTo({top: top + window.scrollY - off, behavior: 'instant'}); }
+    /* al cambiar de paso, la sección queda encuadrada igual que al llegar: su principio justo bajo la cabecera */
+    if (scroll) { var hc = document.querySelector('header.site'); window.scrollTo({top: sec.getBoundingClientRect().top + window.scrollY - (hc ? hc.offsetHeight : 0), behavior: 'instant'}); }
+    window.__wzPaso = actual;
   }
   function ir(n){ msg.textContent = ''; actual = Math.max(0, Math.min(total - 1, n)); pintar(true); }
   nav.querySelector('.wz-prev').addEventListener('click', function(){ ir(actual - 1); });
