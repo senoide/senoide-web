@@ -20,7 +20,7 @@
 <link rel="icon" href="/assets/favicon-48.png" type="image/png" sizes="48x48">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <link rel="preload" href="/assets/fonts/bricolage.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/estilos.css?v=202610181624">
+<link rel="stylesheet" href="/assets/estilos.css?v=202610181630">
 <style>
 /* Menú con desplegables, menú móvil, accesos rápidos, barra inferior y «volver arriba» */
 header.site nav.main{gap:18px}
@@ -489,7 +489,10 @@ var sc=document.currentScript;sc.parentNode.insertBefore(d,sc);})();
   try{
     if('scrollRestoration' in history)history.scrollRestoration='manual';
     var clave='pos:'+location.pathname;
-    var guardar=function(){try{sessionStorage.setItem(clave,String(Math.round(window.scrollY)));}catch(x){}};
+    /* se guarda la posición y, en la portada, la sección que se estaba viendo y el paso de la calculadora */
+    var seccionVista=function(){var cab=document.querySelector('header.site'),lim=(cab?cab.offsetHeight:0)+2,id='';
+      [].forEach.call(document.querySelectorAll('main#inicio > section[id]'),function(x){if(x.getBoundingClientRect().top<=lim+window.innerHeight*0.3)id=x.id;});return id;};
+    var guardar=function(){try{sessionStorage.setItem(clave,String(Math.round(window.scrollY)));sessionStorage.setItem(clave+':sec',seccionVista()+'|'+(window.__wzPaso==null?'':window.__wzPaso));}catch(x){}};
     window.addEventListener('pagehide',guardar);
     document.addEventListener('visibilitychange',function(){if(document.visibilityState==='hidden')guardar();});
     var tg;window.addEventListener('scroll',function(){clearTimeout(tg);tg=setTimeout(guardar,250);},{passive:true});
@@ -500,7 +503,11 @@ var sc=document.currentScript;sc.parentNode.insertBefore(d,sc);})();
     var nav0=performance.getEntriesByType&&performance.getEntriesByType('navigation')[0];
     esVuelta=!!(nav0&&nav0.type==='back_forward');
     var leer=function(){var v=null;try{v=sessionStorage.getItem(clave);}catch(x){}return v===null?null:(parseInt(v,10)||0);};
-    var volverA=function(){var y=leer();if(y===null)return false;colocar(function(){mover(y);});return true;};
+    var volverA=function(){var y=leer();if(y===null)return false;
+      /* la calculadora vuelve a empezar por el paso 1: si estabas en ella con otro paso, se encuadra la sección desde su principio */
+      var sv='';try{sv=sessionStorage.getItem(clave+':sec')||'';}catch(x){}var ps=sv.split('|'),sec=ps[0]&&document.getElementById(ps[0]);
+      if(sec&&ps[0]==='presupuesto'&&ps[1]!==String(window.__wzPaso==null?'':window.__wzPaso)){var cab=document.querySelector('header.site');colocar(function(){mover(sec.getBoundingClientRect().top+window.scrollY-(cab?cab.offsetHeight:0));});return true;}
+      colocar(function(){mover(y);});return true;};
     var irAlApartado=function(){
       var h=location.hash;if(!h||h.length<2)return;
       var id=decodeURIComponent(h.slice(1)),el=document.getElementById(id);
@@ -538,8 +545,8 @@ var sc=document.currentScript;sc.parentNode.insertBefore(d,sc);})();
   }
 })();
 </script>
-<script src="/assets/senoide.js?v=202610181624" defer></script>
-<script src="/assets/trabajos.js?v=202610181624" defer></script>
+<script src="/assets/senoide.js?v=202610181630" defer></script>
+<script src="/assets/trabajos.js?v=202610181630" defer></script>
 
 </body>
 </html>
