@@ -20,7 +20,7 @@
 <link rel="icon" href="/assets/favicon-48.png" type="image/png" sizes="48x48">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <link rel="preload" href="/assets/fonts/bricolage.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/estilos.css?v=202610180222">
+<link rel="stylesheet" href="/assets/estilos.css?v=202610180234">
 <style>
 /* Menú con desplegables, menú móvil, accesos rápidos, barra inferior y «volver arriba» */
 header.site nav.main{gap:18px}
@@ -446,6 +446,20 @@ var sc=document.currentScript;sc.parentNode.insertBefore(d,sc);})();
     var volverA=function(){var v=null;try{v=sessionStorage.getItem(clave);}catch(x){}
       if(v===null||location.hash)return;var html=document.documentElement;html.style.scrollSnapType='none';
       window.scrollTo(0,parseInt(v,10)||0);setTimeout(function(){window.scrollTo(0,parseInt(v,10)||0);html.style.scrollSnapType='';},150);};
+    /* al llegar desde otra página con un apartado (/#presupuesto, /#contacto…), colócalo bien aunque el navegador
+       (sobre todo Safari en iPhone) no lo haga por el ajuste por bloques o porque la página aún se está montando */
+    var irAlApartado=function(){
+      var h=location.hash;if(!h||h.length<2)return;
+      var id=decodeURIComponent(h.slice(1)),el=document.getElementById(id);
+      if(!el&&(id==='particulares'||id==='profesionales'))el=document.getElementById('clientes');
+      if(!el)return;var html=document.documentElement;html.style.scrollSnapType='none';
+      var cab=document.querySelector('header.site'),off=cab?cab.offsetHeight:0;
+      var colocar=function(){window.scrollTo(0,el.getBoundingClientRect().top+window.scrollY-off);};
+      colocar();setTimeout(colocar,120);setTimeout(colocar,450);
+      setTimeout(function(){colocar();html.style.scrollSnapType='';},900);
+    };
+    if(location.hash){if(document.readyState==='complete')irAlApartado();else window.addEventListener('load',irAlApartado);
+      if(document.fonts&&document.fonts.ready)document.fonts.ready.then(function(){setTimeout(irAlApartado,50);});}
     var nav0=performance.getEntriesByType&&performance.getEntriesByType('navigation')[0];
     if(nav0&&nav0.type==='back_forward'){if(document.readyState==='complete')volverA();else window.addEventListener('load',volverA);}
     window.addEventListener('pageshow',function(e){if(e.persisted)volverA();});
@@ -476,8 +490,8 @@ var sc=document.currentScript;sc.parentNode.insertBefore(d,sc);})();
   }
 })();
 </script>
-<script src="/assets/senoide.js?v=202610180222" defer></script>
-<script src="/assets/trabajos.js?v=202610180222" defer></script>
+<script src="/assets/senoide.js?v=202610180234" defer></script>
+<script src="/assets/trabajos.js?v=202610180234" defer></script>
 
 </body>
 </html>
