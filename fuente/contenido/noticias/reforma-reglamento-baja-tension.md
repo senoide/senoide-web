@@ -1,5 +1,7 @@
 ---
 titulo: Reforma del reglamento de baja tensión: qué se sabe y a quién afecta
+titulo_seo: Reforma del REBT: qué se sabe y a quién afecta | SENOIDE
+descripcion: Diferencial tipo A, sobretensiones, recarga y autoconsumo: en qué punto está la reforma del reglamento de baja tensión y a quién afecta.
 resumen: El Ministerio de Industria prepara cambios en el REBT: diferenciales tipo A en viviendas, protección contra sobretensiones y nuevas reglas para recarga y autoconsumo. Te contamos en qué punto está y qué significa para ti.
 fecha: 2026-10-17
 categoria: Normativa

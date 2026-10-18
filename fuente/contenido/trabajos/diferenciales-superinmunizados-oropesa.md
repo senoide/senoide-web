@@ -1,5 +1,6 @@
 ---
 titulo: Cambio a diferenciales superinmunizados en Oropesa del Mar
+titulo_seo: Diferenciales superinmunizados en Oropesa | SENOIDE
 resumen: El diferencial de esta vivienda saltaba con cada tormenta. Sustituimos los dos del cuadro por modelos superinmunizados.
 municipio: Oropesa del Mar
 servicio: Averías

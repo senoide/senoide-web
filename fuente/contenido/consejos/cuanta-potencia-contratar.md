@@ -1,5 +1,6 @@
 ---
 titulo: ¿Cuánta potencia necesitas? Cómo saber si pagas de más o te quedas corto
+titulo_seo: Cuánta potencia contratar: cómo calcularla | SENOIDE
 resumen: La potencia contratada se paga todos los meses, la uses o no. Te explicamos cómo calcular la que necesitas y cuándo conviene subirla o bajarla.
 fecha: 2026-10-18
 categoria: Ahorro

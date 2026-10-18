@@ -1,5 +1,7 @@
 ---
 titulo: Punto de recarga en casa: la deducción en el IRPF acaba el 31 de diciembre de 2026
+titulo_seo: Deducción IRPF por punto de recarga 2026 | SENOIDE
+descripcion: Instala el punto de recarga antes del 31/12/2026 y deduce el 15 % en el IRPF (hasta 600 €). Requisitos y fin del MOVES III en la Comunitat Valenciana.
 resumen: Si instalas un punto de recarga para tu coche eléctrico y la instalación termina antes de fin de año, puedes deducirte el 15 % en la renta. Las ayudas MOVES III ya no admiten solicitudes en la Comunitat Valenciana.
 fecha: 2026-10-18
 categoria: Ayudas

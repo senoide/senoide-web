@@ -1,5 +1,6 @@
 ---
 titulo: Tormentas y picos de tensión: cómo proteger tu casa y tus aparatos
+titulo_seo: Tormentas y picos de tensión: protege tu casa | SENOIDE
 resumen: Qué hacer cuando hay tormenta, por qué a veces salta la luz y cuándo merece la pena poner un protector contra sobretensiones en el cuadro.
 fecha: 2026-10-18
 categoria: Seguridad
@@ -20,7 +21,7 @@ En otoño llegan las tormentas fuertes a la costa de Castellón. Un rayo que cae
 Puede ser por dos cosas:
 
 - **Humedad.** El agua entra en una caja o un enchufe exterior, en una luz de jardín o en una terraza, y provoca una pequeña fuga. El diferencial corta para protegerte. Si salta siempre que llueve, hay que buscar el punto que se moja.
-- **Perturbaciones de la red.** Los picos de una tormenta pueden hacer saltar un diferencial normal aunque no haya ninguna avería. Para esos casos existen los diferenciales **superinmunizados**, que protegen igual pero toleran mejor esas perturbaciones.
+- **Perturbaciones de la red.** Los picos de una tormenta pueden hacer saltar un diferencial normal aunque no haya ninguna avería. Para esos casos existen los diferenciales **superinmunizados**, que protegen igual pero toleran mejor esas perturbaciones.{{si:/trabajos/diferenciales-superinmunizados-oropesa/}} [Mira un caso real en Oropesa](/trabajos/diferenciales-superinmunizados-oropesa/).{{/si}}
 
 Si salta y no sabes por qué, sigue los pasos de [Salta el diferencial: qué hacer](/consejos/salta-el-diferencial-que-hacer/).
 

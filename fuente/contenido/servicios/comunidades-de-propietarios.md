@@ -1,6 +1,7 @@
 ---
 titulo: Electricista para comunidades de propietarios
-titulo_seo: Mantenimiento eléctrico de comunidades de propietarios en Oropesa del Mar y Castellón | SENOIDE
+titulo_seo: Electricista para comunidades en Oropesa | SENOIDE
+descripcion: Mantenimiento eléctrico de zonas comunes, alumbrado, garajes y puntos de recarga comunitarios en Oropesa del Mar y Castellón, con informe de cada visita.
 resumen: Alumbrado de zonas comunes, garaje, cuadros y puntos de recarga en el garaje comunitario. Revisiones programadas e informe para el administrador después de cada visita.
 slug: comunidades-de-propietarios
 ---

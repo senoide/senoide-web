@@ -1,5 +1,6 @@
 ---
 titulo: Punto de recarga en el garaje de tu comunidad: lo que dice la ley
+titulo_seo: Punto de recarga en garaje comunitario | SENOIDE
 resumen: Para instalar un cargador en tu plaza de garaje no necesitas permiso de la junta, solo comunicarlo antes. Te explicamos los pasos.
 fecha: 2026-10-13
 categoria: Normativa

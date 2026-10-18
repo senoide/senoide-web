@@ -140,8 +140,20 @@ def ruta_foto(nombre):
     return "/fotos/" + nombre
 
 
+PUBLICADAS = None   # rutas publicadas (se rellena al construir); None = mostrar todo
+
+
+def condicionales(md):
+    """{{si:/trabajos/slug/}}texto{{/si}} -> el texto solo aparece si esa ruta ya está publicada."""
+    def f(m):
+        ruta = m.group(1).strip()
+        return m.group(2) if PUBLICADAS is None or ruta in PUBLICADAS else ""
+    return re.sub(r"\{\{si:([^}]+)\}\}(.*?)\{\{/si\}\}", f, md, flags=re.S)
+
+
 def markdown(md):
     """Markdown sencillo: ## títulos, párrafos, listas, **negrita**, *cursiva*, [enlaces](url), ![fotos](x.jpg)."""
+    md = condicionales(md)
     out, lista, parrafo = [], None, []
 
     def cerrar_parrafo():
@@ -226,7 +238,7 @@ def pagina(ruta_url, titulo, descripcion, contenido, jsonld=None, og_tipo="websi
         "OG_TIPO": og_tipo, "IMAGEN": imagen or d["DOMINIO"] + "/assets/og-senoide.jpg",
         "JSONLD": json.dumps({"@context": "https://schema.org", "@graph": grafo}, ensure_ascii=False).replace("</", "<\\/"),
         "WHATSAPP": d["WHATSAPP"], "AVISO": d["AVISO"], "TITULAR": esc(d["TITULAR"]), "NIF": esc(d["NIF"]),
-        "TELEFONO": d["TELEFONO"], "TELEFONO_SIN_ESPACIOS": d["TELEFONO"].replace(" ", ""), "VERSION": VERSION, "ANALITICA": analitica,
+        "TELEFONO": d["TELEFONO"], "EMAIL": d["EMAIL"], "TELEFONO_SIN_ESPACIOS": d["TELEFONO"].replace(" ", ""), "VERSION": VERSION, "ANALITICA": analitica,
         "API": d["API"], "APERTURA": d["APERTURA"], "AVISO_ABIERTO": esc(d["AVISO_ABIERTO"]),
         "PIE_OPINIONES": (f' · <a href="{esc(d["PERFIL_GOOGLE"] or d["RESENAS_URL"])}" target="_blank" rel="noopener">Opiniones en Google</a>'
                           if (d["PERFIL_GOOGLE"] or d["RESENAS_URL"]) else ""),
@@ -355,11 +367,13 @@ def construir():
         cuerpo = (cabecera(eyebrow, t["titulo"], t.get("resumen", ""),
                            [("Inicio", "/"), ("Trabajos", "/trabajos/"), (t["titulo"], None)])
                   + f'<div class="wrap"><article class="prose">{facts}{markdown(t["_cuerpo"])}{galeria}{bloque_cta()}</article></div>')
-        pagina(f"/trabajos/{t['slug']}/", f"{t['titulo']} · {t.get('municipio', 'Oropesa del Mar')} | SENOIDE",
-               t.get("resumen", t["titulo"]), cuerpo,
+        pagina(f"/trabajos/{t['slug']}/", t.get("titulo_seo") or f"{t['titulo']} · {t.get('municipio', 'Oropesa del Mar')} | SENOIDE",
+               t.get("descripcion") or t.get("resumen", t["titulo"]), cuerpo,
                imagen=d["DOMINIO"] + ruta_foto(t["portada"]) if t.get("portada") else None, og_tipo="article",
                indexar=not t["_oculto"])
     trabajos = [t for t in trabajos if not t["_oculto"]]   # los ocultos no salen en listados ni en la portada
+    global PUBLICADAS
+    PUBLICADAS = {f"/trabajos/{t['slug']}/" for t in trabajos}
 
     lista_t = ('<div class="cards" data-trabajos="">' + "".join(
         tarjeta(t, "/trabajos/", f'{t.get("municipio", "")} · {t.get("servicio", "")}'.strip(" ·")) for t in trabajos) + "</div>"
@@ -383,7 +397,7 @@ def construir():
                "author": {"@type": "Person", "name": d["TITULAR"]},
                "publisher": {"@id": d["DOMINIO"] + "/#empresa"},
                "mainEntityOfPage": d["DOMINIO"] + f"/consejos/{c['slug']}/", "inLanguage": "es-ES"}
-        pagina(f"/consejos/{c['slug']}/", f"{c['titulo']} | SENOIDE", c.get("resumen", c["titulo"]), cuerpo,
+        pagina(f"/consejos/{c['slug']}/", c.get("titulo_seo") or f"{c['titulo']} | SENOIDE", c.get("descripcion") or c.get("resumen", c["titulo"]), cuerpo,
                jsonld=art, og_tipo="article", indexar=not c["_oculto"])
     consejos = [c for c in consejos if not c["_oculto"]]
 
@@ -409,7 +423,7 @@ def construir():
                "author": {"@type": "Organization", "name": "SENOIDE", "url": d["DOMINIO"] + "/"},
                "publisher": {"@id": d["DOMINIO"] + "/#empresa"},
                "mainEntityOfPage": d["DOMINIO"] + f"/noticias/{n['slug']}/", "inLanguage": "es-ES"}
-        pagina(f"/noticias/{n['slug']}/", f"{n['titulo']} | SENOIDE", n.get("resumen", n["titulo"]), cuerpo,
+        pagina(f"/noticias/{n['slug']}/", n.get("titulo_seo") or f"{n['titulo']} | SENOIDE", n.get("descripcion") or n.get("resumen", n["titulo"]), cuerpo,
                jsonld=art, og_tipo="article", indexar=not n["_oculto"])
     noticias = [n for n in noticias if not n["_oculto"]]
 
@@ -432,7 +446,7 @@ def construir():
                "provider": {"@id": d["DOMINIO"] + "/#empresa"},
                "areaServed": [{"@type": "City", "name": m} for m in d["MUNICIPIOS"]]}
         pagina(f"/servicios/{s['slug']}/", s.get("titulo_seo", s["titulo"] + " | SENOIDE"),
-               s.get("resumen", ""), cuerpo, jsonld=srv)
+               s.get("descripcion") or s.get("resumen", ""), cuerpo, jsonld=srv)
 
     # --- mantenimiento (página propia; en la portada queda un resumen) ---
     planes = (PLANTILLAS / "mantenimiento.html").read_text(encoding="utf-8")
@@ -441,7 +455,7 @@ def construir():
                 "provider": {"@id": d["DOMINIO"] + "/#empresa"},
                 "areaServed": [{"@type": "City", "name": m} for m in d["MUNICIPIOS"]]}
     pagina("/mantenimiento/", "Mantenimiento eléctrico con cuota fija | SENOIDE",
-           "Planes de mantenimiento eléctrico para comunidades de propietarios, locales y apartamentos turísticos en Oropesa del Mar y la Plana. Visitas programadas, informe y prioridad en averías.",
+           "Planes de mantenimiento eléctrico con cuota fija para comunidades, locales y apartamentos turísticos en Oropesa del Mar: visitas, informe y prioridad.",
            cabecera("Mantenimiento", "Tu electricista de referencia, con cuota fija.",
                     "Visitas programadas, informe de cada visita y prioridad cuando surge una avería. Contrato de 12 meses que se renueva solo; si no quieres continuar, avísanos 30 días antes del vencimiento.",
                     [("Inicio", "/"), ("Mantenimiento", None)])

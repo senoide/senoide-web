@@ -1,6 +1,6 @@
 ---
 titulo: Punto de recarga para coche eléctrico
-titulo_seo: Instalar punto de recarga de coche eléctrico en Oropesa del Mar | SENOIDE
+titulo_seo: Punto de recarga coche eléctrico en Oropesa | SENOIDE
 resumen: Instalamos el cargador de tu coche eléctrico en vivienda unifamiliar o en tu plaza del garaje comunitario, con línea, protecciones y certificado.
 slug: punto-recarga-coche-electrico
 ---

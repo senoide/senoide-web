@@ -1,5 +1,7 @@
 ---
 titulo: Nuevo reglamento de suministro eléctrico: lo que cambia en tu contrato de luz
+titulo_seo: Nuevo reglamento de suministro eléctrico 2026 | SENOIDE
+descripcion: El Real Decreto 88/2026 cambia tu contrato de luz: avisos antes de subir precios, cambio de compañía y devolución de fianzas. Lo que te afecta.
 resumen: El Real Decreto 88/2026 está en vigor desde el 12 de febrero de 2026. Más avisos antes de subir precios, plazos para cambiar de compañía y la devolución de las fianzas que guardaban las distribuidoras.
 fecha: 2026-10-17
 categoria: Normativa

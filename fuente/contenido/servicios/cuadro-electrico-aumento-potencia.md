@@ -1,6 +1,7 @@
 ---
 titulo: Cambio de cuadro eléctrico y aumento de potencia
-titulo_seo: Cambiar cuadro eléctrico y subir potencia en Oropesa del Mar | SENOIDE
+titulo_seo: Cuadro eléctrico y subir potencia en Oropesa | SENOIDE
+descripcion: Cambiamos cuadros antiguos por uno nuevo con diferencial y protección por circuito, y te ayudamos a subir la potencia en Oropesa del Mar y Castellón.
 resumen: Sustituimos cuadros antiguos por uno nuevo con diferencial y protección por circuito, y te ayudamos a subir la potencia contratada cuando tu instalación lo necesita.
 slug: cuadro-electrico-aumento-potencia
 ---

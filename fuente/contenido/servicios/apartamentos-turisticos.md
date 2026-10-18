@@ -1,6 +1,7 @@
 ---
 titulo: Electricista para apartamentos turísticos y viviendas de alquiler
-titulo_seo: Mantenimiento eléctrico de apartamentos turísticos en Oropesa del Mar | SENOIDE
+titulo_seo: Mantenimiento apartamentos turísticos Oropesa | SENOIDE
+descripcion: Revisión antes de la temporada y averías con huéspedes dentro: electricidad y fontanería básica para apartamentos turísticos en Oropesa del Mar.
 resumen: Revisión antes de la temporada, averías resueltas entre huéspedes y un plan de mantenimiento por apartamento. Para propietarios y gestores en Oropesa del Mar y la costa.
 slug: apartamentos-turisticos
 ---

@@ -1,6 +1,7 @@
 ---
 titulo: Averías eléctricas y urgencias en Oropesa del Mar y alrededores
-titulo_seo: Electricista urgente y averías en Oropesa del Mar y Castellón | SENOIDE
+titulo_seo: Electricista urgente en Oropesa del Mar | SENOIDE
+descripcion: Averías eléctricas, cortes de luz y diferenciales que saltan en Oropesa del Mar, Benicàssim y Castellón. Llámanos o escríbenos por WhatsApp.
 resumen: Salta el diferencial, no hay luz en parte de la casa, huele a quemado o un enchufe se ha fundido. Localizamos la avería, la reparamos y te explicamos qué ha pasado.
 slug: averias-electricas-urgencias
 ---
