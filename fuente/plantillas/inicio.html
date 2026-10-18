@@ -328,7 +328,9 @@ document.addEventListener('DOMContentLoaded', function(){
     nav.querySelector('.wz-n').textContent = (actual + 1) + ' / ' + total;
     nav.classList.toggle('wz-ultimo', actual === total - 1);
     nav.querySelector('.wz-total').textContent = totalTxt();
-    if (scroll) sec.querySelector('.quote').scrollIntoView({block: 'start'});
+    /* al cambiar de paso, el principio del paso queda justo bajo la cabecera (sin saltos si ya se ve) */
+    if (scroll) { var q = sec.querySelector('.quote'), hc = document.querySelector('header.site'), off = (hc ? hc.offsetHeight : 0) + 8, top = q.getBoundingClientRect().top;
+      if (top < off || top > window.innerHeight * 0.35) window.scrollTo({top: top + window.scrollY - off, behavior: 'instant'}); }
   }
   function ir(n){ msg.textContent = ''; actual = Math.max(0, Math.min(total - 1, n)); pintar(true); }
   nav.querySelector('.wz-prev').addEventListener('click', function(){ ir(actual - 1); });
