@@ -29,7 +29,7 @@ Los datos marcados como obligatorios en el formulario son necesarios para poder 
 ## Cuánto tiempo los conservamos
 
 - **Solicitudes de la web y presupuestos que no se aceptan**: 12 meses desde la última gestión (el último cambio o comunicación). Después se anonimizan: se borran el nombre, el teléfono, el correo, la dirección, la constancia de la respuesta, el PDF y las fotos, y solo se conservan el tipo de trabajo, el municipio y el importe para estadísticas internas.
-- **Fichas de cliente sin ningún trabajo, contrato ni factura vigente**: se borran a los 12 meses sin cambios.
+- **Fichas de personas que pidieron presupuesto pero no llegaron a contratar**: se revisan a los 12 meses sin cambios y se borran si ya no son necesarias. Las fichas de los clientes con trabajos se conservan con su expediente.
 - **Citas de la agenda**: a los 12 meses se borran los datos de contacto y solo quedan la fecha y el tipo de visita.
 - **Presupuestos aceptados, partes de trabajo y garantía**: mientras dure la relación y, después, mientras se puedan exigir responsabilidades por el trabajo (la garantía legal para consumidores es de tres años desde la entrega).
 - **Facturas y contabilidad**: durante los plazos fiscales y mercantiles (como referencia, cuatro años para Hacienda y seis años para los libros y documentos contables).
