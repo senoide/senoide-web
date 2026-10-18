@@ -2,7 +2,7 @@
 titulo: Electricista para apartamentos turísticos y viviendas de alquiler
 titulo_seo: Mantenimiento apartamentos turísticos Oropesa | SENOIDE
 descripcion: Revisión antes de la temporada y averías con huéspedes dentro: electricidad y fontanería básica para apartamentos turísticos en Oropesa del Mar.
-resumen: Revisión antes de la temporada, averías resueltas entre huéspedes y un plan de mantenimiento por apartamento. Para propietarios y gestores en Oropesa del Mar y la costa.
+resumen: Revisión antes de la temporada, averías resueltas entre huéspedes y un plan de mantenimiento para carteras de dos o más apartamentos. Para propietarios y gestores en Oropesa del Mar y la costa.
 slug: apartamentos-turisticos
 ---
 
@@ -21,6 +21,6 @@ La humedad y la salinidad del mar estropean antes los enchufes, las luces de ext
 
 ## Planes de mantenimiento
 
-Tenemos un plan para **un apartamento** y otro para **carteras de varios apartamentos**, con precio por apartamento que baja según cuántos sean. Incluyen las revisiones programadas, un informe después de cada visita y prioridad en averías. [Consulta los planes y precios](/#mantenimiento).
+Si tienes **un apartamento**, te hacemos la revisión puntual cuando la necesites, sin contrato. Si tienes **dos o más**, el plan de cartera incluye una revisión al año por apartamento, un parte después de cada visita y prioridad en averías, con un precio por apartamento que baja a partir del sexto. Puedes pagarlo al año o al mes. [Consulta los planes y precios](/mantenimiento/).
 
 Si gestionas varios apartamentos, cuéntanos cuántos son y en qué zona y te preparamos una propuesta.

@@ -3,14 +3,15 @@ Estas son las condiciones generales de los planes de mantenimiento de SENOIDE (L
 ## Duración, renovación y baja
 
 - El contrato dura **12 meses** desde la fecha de firma.
-- Al terminar se renueva solo por otros 12 meses, con las mismas condiciones salvo que te avisemos de un cambio de precio con antelación. Si cambiamos el precio, puedes no renovar sin ninguna penalización.
-- **Puedes darte de baja cuando quieras**, por el mismo medio por el que contrataste o por escrito (correo a info@senoide.es o WhatsApp al 621 018 374). Si nos avisas en los **15 primeros días del mes**, la baja es a final de ese mes; si avisas después, a final del mes siguiente. Así nos da tiempo a tramitarla y anular la domiciliación. Te confirmamos por escrito la fecha de la baja.
-- La baja no tiene penalización. En los planes de apartamentos hay una regularización de la revisión, explicada en su apartado.
+- Al terminar se renueva solo por otros 12 meses, con las mismas condiciones. Si cambiamos el precio o las condiciones, te avisamos por escrito con dos meses de antelación y puedes darte de baja antes sin ningún coste. Si pagas por adelantado, te avisamos al menos 30 días antes de cobrar el nuevo periodo.
+- **Puedes darte de baja cuando quieras**, sin dar explicaciones: con el [formulario de baja](/baja/), por correo a info@senoide.es, por WhatsApp al 621 018 374, por escrito o en persona.
+- La baja tiene efecto **en la fecha que nos digas** (nunca antes de recibirla). Si lo prefieres, mantienes el servicio hasta el último día del mes. Te confirmamos por escrito la fecha de recepción y la de efecto.
+- **Sin penalización** y sin cobrarte cuotas futuras. Si la baja es a mitad de mes, ese mes se cobra por días. Si habías pagado algo por adelantado que no llegas a usar, te lo devolvemos en 14 días (en la cartera de apartamentos, según su apartado).
 
 ## Precios y pago
 
 - Los precios de la web son **sin IVA**. Se aplica el IVA vigente (21 %).
-- La cuota es mensual y se factura cada mes.
+- En comunidades y locales la cuota es mensual y se factura cada mes. En la cartera de apartamentos eliges pago anual por adelantado o mensual.
 - El desplazamiento es el mismo que en el presupuestador de la web: **incluido dentro de Oropesa del Mar**; fuera, **15 € por visita hasta 20 km** y **30 € por visita de 20 a 40 km**. Se aplica tanto a las visitas programadas como a los avisos. Más de 40 km, precio a medida.
 - En la cartera de apartamentos se cobra un desplazamiento por día de visita, no por apartamento.
 
@@ -31,19 +32,21 @@ Estas son las condiciones generales de los planes de mantenimiento de SENOIDE (L
 
 - Los precios corresponden a instalaciones estándar. El número de cuadros, los garajes, la superficie y las instalaciones adicionales pueden requerir un presupuesto personalizado.
 - **Revisión eléctrica preventiva sin contrato:** comunidades de propietarios, **195 € + IVA**; locales y oficinas, **180 € + IVA**. Incluye hasta dos horas de revisión presencial de las instalaciones eléctricas accesibles, comprobaciones funcionales y mediciones seleccionadas, identificación de anomalías e informe técnico en PDF con fotografías y recomendaciones, además del desplazamiento dentro de Oropesa del Mar. No incluye materiales, reparaciones, certificados reglamentarios ni inspecciones de un organismo de control. Las instalaciones de mayor tamaño, con varios cuadros o equipamientos especiales, se presupuestan aparte. Hora adicional de revisión: 45 € + IVA, siempre que la aceptes antes.
-- **Baja antes de 12 meses:** puedes darte de baja cuando quieras, con el aviso de los 15 primeros días del mes. Si en el periodo en curso ya has recibido más de lo que has pagado, abonas la diferencia, como mucho las cuotas que faltarían hasta completar el año. Lo recibido se valora con los precios publicados: cada visita hecha, al precio de la revisión sin contrato (195 € en comunidades, 180 € en locales), y en los planes Plus, cada hora de reparación del bono usada, a 45 €. Si lo pagado ya cubre lo recibido, no pagas nada más. Tampoco pagas nada si la baja es por un incumplimiento nuestro o por un cambio de precio o de condiciones.
 - **Locales de pública concurrencia:** en la Comunitat Valenciana necesitan una revisión anual con BRA (Boletín de Revisión Anual) emitido por una empresa instaladora habilitada, y los del anexo I de la Orden 6/2022, además, un contrato de mantenimiento. Los planes de local no incluyen el BRA: te lo presupuestamos aparte después de comprobar la clasificación de tu local.
 
 ## Apartamentos turísticos
 
-- **Revisión puntual sin contrato:** 150 € + IVA por visita.
-- **Un apartamento:** 12 € + IVA al mes, con una revisión al año antes de la temporada.
-- **Cartera** (2 apartamentos o más del mismo propietario o gestor), por apartamento y mes: de 2 a 5, 10 € + IVA; de 6 a 10, 9 € + IVA; más de 10, 8 € + IVA. El tramo de más de 10 exige apartamentos en la misma zona y revisiones agrupadas en el mismo día.
+- **Un apartamento:** revisión puntual sin contrato, **150 € + IVA** por visita, cuando la necesites. Antes de cada temporada te podemos enviar un recordatorio (puedes pedir que no lo hagamos).
+- **Cartera** (2 apartamentos o más del mismo propietario o gestor): precio escalonado según el puesto de cada apartamento en la lista: del 1.º al 5.º, **10 € + IVA** al mes; del 6.º al 10.º, **9 € + IVA**; del 11.º en adelante, **8 € + IVA**. Cada apartamento conserva su precio, así que dar uno de baja nunca sube el de los demás. El tramo del 11.º en adelante exige apartamentos en la misma zona y revisiones agrupadas en el mismo día.
+- **Qué pagas con la cartera:** el precio anual de cada apartamento es una **revisión anual** (84 €, 72 € o 60 € según su puesto, frente a 150 € sin contrato) más el **seguimiento** durante el año (3 € al mes: atención preferente, avisos sin suplemento de urgencia en horario y descuento en la mano de obra).
+- **Pago anual por adelantado** (recomendado): pagas el año al empezar y hacemos la revisión cuando acordemos, también antes de la temporada. Si te das de baja, te devolvemos el seguimiento que falte, por meses y días, y la revisión si aún no se ha hecho.
+- **Pago mensual:** 10, 9 u 8 € al mes por apartamento, de los que 3 € son de seguimiento y el resto va a cuenta de la revisión. La revisión se hace a partir del cuarto mes. Si te das de baja antes de la revisión, te devolvemos lo pagado a cuenta; si es después, no pagas nada más. Si quieres la revisión antes, pagas en ese momento su precio menos lo ya pagado a cuenta y, desde entonces, solo 3 € al mes: el total del año no cambia.
 - **Qué incluye la revisión** (hasta 60 minutos en una vivienda estándar): electricidad, con revisión visual del cuadro, prueba del diferencial cuando sea viable, mecanismos accesibles y comprobación básica del alumbrado; termo eléctrico, con comprobación exterior, funcionamiento básico y fugas visibles; grifería, con apertura y cierre y goteos o fugas aparentes; y un parte digital breve con las incidencias y las reparaciones recomendadas.
 - La revisión no incluye desmontajes, reparaciones ni piezas, que se presupuestan aparte. No es una certificación reglamentaria de la instalación. La prueba del diferencial corta la luz unos segundos: avísanos si hay huéspedes dentro o aparatos que no deban apagarse.
 - Viviendas grandes, con equipamiento complejo o instalaciones en mal estado: te damos un precio a medida.
-- **Baja antes de 12 meses:** puedes dar de baja el plan o un apartamento cuando quieras, con el aviso de los 15 primeros días del mes. Si ese apartamento ya tuvo su revisión del año, abonas la diferencia hasta el precio de la revisión sin contrato (150 € + IVA), como mucho las cuotas que faltarían hasta completar el año. Si la revisión aún no se ha hecho, no pagas nada más. Tampoco pagas nada si la baja es por un incumplimiento nuestro o por un cambio de precio o de condiciones.
-- **Altas y bajas de apartamentos en la cartera:** cada cambio se recoge en una nueva versión del anexo de apartamentos, que te enviamos para que la aceptes. La cuota se recalcula con el tramo que corresponda al nuevo total desde el mes en que tiene efecto el cambio.
+- **Altas y bajas en la cartera:** las bajas de apartamentos valen sin que tengas que aceptar nada; te enviamos el anexo actualizado para que te conste. Las altas sí te las enviamos para que las aceptes antes de aplicarlas.
+- **Si la cartera se queda con un solo apartamento**, sigue con su precio hasta el final del periodo; entonces el contrato termina y pasas a la revisión puntual. Te avisamos con al menos 30 días.
+- Durante los 14 días de desistimiento no hacemos la revisión, salvo que nos lo pidas por escrito.
 
 ## Qué no incluye
 

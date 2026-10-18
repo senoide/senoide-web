@@ -457,7 +457,7 @@ def construir():
     pagina("/mantenimiento/", "Mantenimiento eléctrico con cuota fija | SENOIDE",
            "Planes de mantenimiento eléctrico con cuota fija para comunidades, locales y apartamentos turísticos en Oropesa del Mar: visitas, informe y prioridad.",
            cabecera("Mantenimiento", "Tu electricista de referencia, con cuota fija.",
-                    "Visitas programadas, informe de cada visita y prioridad cuando surge una avería. Contrato de 12 meses que se renueva solo; si no quieres continuar, avísanos 30 días antes del vencimiento.",
+                    "Visitas programadas, informe de cada visita y prioridad cuando surge una avería. Contrato de 12 meses que se renueva solo. Puedes darte de baja cuando quieras, sin penalización.",
                     [("Inicio", "/"), ("Mantenimiento", None)])
            + f'<section id="planes" style="padding-top:32px"><div class="wrap">{planes}</div></section>', jsonld=srv_mant)
 
@@ -518,6 +518,33 @@ def construir():
         pagina(f"/{slug}/", f"{titulo} | SENOIDE", f"{titulo} de la web de SENOIDE.",
                cabecera("Información legal", titulo, migas=[("Inicio", "/"), (titulo, None)])
                + f'<div class="wrap"><article class="prose">{markdown(texto)}</article></div>', indexar=False)
+
+    # --- baja del mantenimiento (cláusula 6.2: también se puede pedir por la web) ---
+    form_baja = (
+        '<div class="wrap" style="padding-block:24px 64px"><article class="prose">'
+        '<p>Puedes darte de baja del plan de mantenimiento, o de uno o varios apartamentos de tu cartera, cuando quieras y sin indicar el motivo. '
+        'No tiene penalización. Al enviar el formulario recibirás un justificante con la fecha y la hora de recepción, y después la confirmación por escrito de la fecha de efecto y, si corresponde, de lo que te devolvemos.</p>'
+        '<form class="form" id="baja-form" novalidate>'
+        '<div class="field"><label for="b-nombre">Titular del contrato</label><input id="b-nombre" autocomplete="name" placeholder="Nombre y apellidos o razón social"></div>'
+        '<div class="field"><label for="b-email">Correo</label><input id="b-email" type="email" autocomplete="email" placeholder="Para enviarte el justificante"></div>'
+        '<div class="field"><label for="b-tel">Teléfono (opcional)</label><input id="b-tel" type="tel" autocomplete="tel"></div>'
+        '<div class="field"><label for="b-contrato">N.º de contrato (si lo tienes)</label><input id="b-contrato" placeholder="CT-2026-0001"></div>'
+        '<div class="field"><span style="font-weight:600">¿De qué te das de baja?</span>'
+        '<label style="display:flex;gap:10px;align-items:center;font-weight:400;margin:8px 0 0"><input type="radio" name="b-alc" id="b-alc-todo" checked style="width:auto;margin:0"> De todo el contrato</label>'
+        '<label style="display:flex;gap:10px;align-items:center;font-weight:400;margin:8px 0 0"><input type="radio" name="b-alc" id="b-alc-aptos" style="width:auto;margin:0"> De algunos apartamentos de mi cartera</label></div>'
+        '<div class="field" id="b-aptos-w" hidden><label for="b-aptos">Apartamentos que das de baja</label><textarea id="b-aptos" rows="2" placeholder="Nombre o dirección de cada apartamento"></textarea></div>'
+        '<div class="field"><label for="b-fecha">Fecha de efecto (opcional)</label><input id="b-fecha" type="date"><small>Si la dejas en blanco, la baja tiene efecto el último día de este mes. No puede ser anterior a hoy.</small></div>'
+        '<div class="field"><label for="b-com">Comentario (opcional)</label><textarea id="b-com" rows="3"></textarea></div>'
+        '<input id="b-web" type="text" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">'
+        '<label class="priv"><input type="checkbox" id="b-priv"><span>He leído la <a href="/privacidad/" target="_blank">política de privacidad</a> y he sido informado del tratamiento de mis datos para gestionar la baja.</span></label>'
+        '<p><button class="btn primary" id="b-send" type="submit">Enviar la solicitud de baja</button></p>'
+        '<div id="b-msg" role="status"></div></form>'
+        f'<p class="small">También puedes pedir la baja por correo a {d["EMAIL"]}, por WhatsApp al {d["TELEFONO"]}, por escrito o en persona. '
+        '<a href="/condiciones-mantenimiento/">Condiciones de los planes</a>.</p>'
+        '</article></div><script src="/assets/baja.js?v=' + VERSION + '" defer></script>')
+    pagina("/baja/", "Darse de baja del mantenimiento | SENOIDE", "Formulario para darse de baja de un plan de mantenimiento de SENOIDE, sin penalización.",
+           cabecera("Mantenimiento", "Darte de baja", "Sin permanencia ni penalización.", [("Inicio", "/"), ("Mantenimiento", "/mantenimiento/"), ("Baja", None)])
+           + form_baja, indexar=False)
 
     # --- 404, sitemap, robots ---
     pagina("/404-tmp/", "Página no encontrada | SENOIDE", "La página que buscas no existe.",
