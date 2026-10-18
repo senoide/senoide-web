@@ -25,6 +25,13 @@ senoide.es {
 			header_up X-Forwarded-Host senoide.es
 		}
 	}
+	# Anexos de apartamentos que el cliente acepta desde un enlace: los sirve la app (Cloudflare)
+	handle /anexo/* {
+		reverse_proxy https://origin-app.senoide.es {
+			header_up Host {upstream_hostport}
+			header_up X-Forwarded-Host senoide.es
+		}
+	}
 	handle /api/disponibilidad {
 		reverse_proxy https://origin-app.senoide.es {
 			header_up Host {upstream_hostport}
