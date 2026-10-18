@@ -175,7 +175,7 @@
             <div class="field full"><label for="f-town">Municipio</label><input id="f-town" placeholder="Oropesa del Mar"></div>
             <div class="field"><label for="f-day">Día preferido para la visita</label><input id="f-day" type="date"></div>
             <div class="field"><label for="f-slot">Hora</label><select id="f-slot"><option value="">Me da igual</option><option value="08">8:00 a 9:00</option><option value="09">9:00 a 10:00</option><option value="10">10:00 a 11:00</option><option value="11">11:00 a 12:00</option><option value="12">12:00 a 13:00</option><option value="15">15:00 a 16:00</option><option value="16">16:00 a 17:00</option><option value="17">17:00 a 18:00</option></select></div>
-            <div class="full disp" id="disp" hidden><p class="disp-t">Próximos días con huecos libres</p><div class="disp-chips" id="disp-chips"></div></div>
+            <div class="full disp" id="disp" hidden><p class="disp-t">Indica tu fecha y horario preferidos</p><div class="disp-chips" id="disp-chips"></div></div>
             <p class="note full" id="day-note">Es una preferencia: te confirmamos día y hora por teléfono o WhatsApp según la agenda. Atendemos de lunes a viernes, de 8 a 18 h.</p>
             <div class="field full"><label for="f-desc">Cuéntanos el trabajo</label><textarea id="f-desc" placeholder="Ej.: el diferencial salta cuando enciendo el horno"></textarea></div>
           </form>
@@ -185,7 +185,7 @@
           <p class="step-hint">Con fotos te damos un precio más ajustado y a veces nos ahorramos la visita. Las fotos se envían por WhatsApp; esta web no las guarda.</p>
           <ul class="photo-tips">
             <li>La zona del trabajo, una de lejos y otra de cerca</li>
-            <li>El cuadro eléctrico con la tapa abierta, si es una avería eléctrica</li>
+            <li>Una fotografía del cuadro eléctrico, sin desmontar protecciones ni manipular la instalación, si es una avería eléctrica</li>
             <li>La etiqueta del aparato: termo, cargador o similar</li>
           </ul>
           <span class="chip"><input type="checkbox" id="f-fotos"><label for="f-fotos">Voy a enviar fotos</label></span>
@@ -208,9 +208,9 @@
         </div>
         <div class="vat" id="vat-wrap" role="radiogroup" aria-label="Tipo de IVA">
           <span class="chip"><input type="radio" name="vat" id="v21" value="21" checked><label for="v21">IVA 21 %</label></span>
-          <span class="chip"><input type="radio" name="vat" id="v10" value="10"><label for="v10">IVA 10 % (reforma de vivienda)</label></span>
+          <span class="chip"><input type="radio" name="vat" id="v10" value="10"><label for="v10">IVA 10 % (sujeto a requisitos)</label></span>
         </div>
-        <p class="note" id="vat-note">El IVA del 10 % se aplica a reparaciones de vivienda de uso particular con más de dos años, si el material aportado no supera el 40 % del precio. Lo confirmamos en la visita.</p>
+        <p class="note vat-aviso" id="vat-note" role="note"><strong>IVA del 10 %: sujeto a comprobación de requisitos.</strong> Solo se aplica a reparaciones de vivienda de uso particular con más de dos años, si el material aportado no supera el 40 % del precio. Lo comprobamos antes del presupuesto definitivo; si no se cumplen, se aplica el 21 %.</p>
         <div class="acts">
           <button class="btn primary" type="button" id="send">Enviar solicitud</button>
           <a class="btn" id="wa" href="https://wa.me/{{WHATSAPP}}" target="_blank" rel="noopener">Enviar por WhatsApp</a>
