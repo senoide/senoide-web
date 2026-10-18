@@ -3,8 +3,9 @@ Estas son las condiciones generales de los planes de mantenimiento de SENOIDE (L
 ## Duración, renovación y baja
 
 - El contrato dura **12 meses** desde la fecha de firma.
-- Al terminar se renueva solo por otros 12 meses, con las mismas condiciones salvo que te avisemos de un cambio de precio con antelación.
-- Si no quieres continuar, avísanos por escrito (correo a info@senoide.es o WhatsApp al 621 018 374) **al menos 30 días antes del vencimiento**.
+- Al terminar se renueva solo por otros 12 meses, con las mismas condiciones salvo que te avisemos de un cambio de precio con antelación. Si cambiamos el precio, puedes no renovar sin ninguna penalización.
+- **Puedes darte de baja cuando quieras**, por el mismo medio por el que contrataste o por escrito (correo a info@senoide.es o WhatsApp al 621 018 374). Si nos avisas en los **15 primeros días del mes**, la baja es a final de ese mes; si avisas después, a final del mes siguiente. Así nos da tiempo a tramitarla y anular la domiciliación. Te confirmamos por escrito la fecha de la baja.
+- La baja no tiene penalización. En los planes de apartamentos hay una regularización de la revisión, explicada en su apartado.
 
 ## Precios y pago
 
@@ -34,6 +35,8 @@ Estas son las condiciones generales de los planes de mantenimiento de SENOIDE (L
 - **Qué incluye la revisión** (hasta 60 minutos en una vivienda estándar): electricidad, con revisión visual del cuadro, prueba del diferencial cuando sea viable, mecanismos accesibles y comprobación básica del alumbrado; termo eléctrico, con comprobación exterior, funcionamiento básico y fugas visibles; grifería, con apertura y cierre y goteos o fugas aparentes; y un parte digital breve con las incidencias y las reparaciones recomendadas.
 - La revisión no incluye desmontajes, reparaciones ni piezas, que se presupuestan aparte. No es una certificación reglamentaria de la instalación. La prueba del diferencial corta la luz unos segundos: avísanos si hay huéspedes dentro o aparatos que no deban apagarse.
 - Viviendas grandes, con equipamiento complejo o instalaciones en mal estado: te damos un precio a medida.
+- **Baja antes de 12 meses:** puedes dar de baja el plan o un apartamento cuando quieras, con el aviso de los 15 primeros días del mes. Si ese apartamento ya tuvo su revisión del año, abonas la diferencia hasta el precio de la revisión sin contrato (150 € + IVA), como mucho las cuotas que faltarían hasta completar el año. Si la revisión aún no se ha hecho, no pagas nada más. Tampoco pagas nada si la baja es por un incumplimiento nuestro o por un cambio de precio o de condiciones.
+- **Altas y bajas de apartamentos en la cartera:** cada cambio se recoge en una nueva versión del anexo de apartamentos, que te enviamos para que la aceptes. La cuota se recalcula con el tramo que corresponda al nuevo total desde el mes en que tiene efecto el cambio.
 
 ## Qué no incluye
 
