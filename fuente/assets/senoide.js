@@ -266,10 +266,33 @@
       dia: day, hora: slot, urgencia: urg, zona: zone, iva: Math.round(vat * 100), fotos: fotos, totalDesde: has ? Math.round(bMin * (1 + vat) * 100) / 100 : 0, trabajos: items};
     renderDisp();
     $('#wa').href = 'https://wa.me/' + PHONE + '?text=' + encodeURIComponent(t);
+    guardarCalc();
+  }
+
+  /* La calculadora recuerda lo marcado y escrito mientras no se cierre la pestaña (sessionStorage),
+     para que al volver atrás desde otra página no haya que rellenarla otra vez. Se borra al enviar la solicitud. */
+  var CALC_KEY = 'calc:v1', calcListo = false;
+  var CAMPOS = ['f-name','f-phone','f-email','f-town','f-desc','f-day','f-slot'];
+  function guardarCalc(){
+    if (!calcListo) return;
+    var q = {}; Object.keys(qty).forEach(function(k){ if (qty[k] > 0) q[k] = qty[k]; });
+    var c = {}; CAMPOS.forEach(function(id){ var el = document.getElementById(id); if (el && el.value) c[id] = el.value; });
+    var d = {client: val('client'), zone: val('zone'), urg: val('urg'), vat: val('vat'), fotos: !!($('#f-fotos') && $('#f-fotos').checked), q: q, c: c};
+    try { sessionStorage.setItem(CALC_KEY, JSON.stringify(d)); } catch (x) {}
+  }
+  function borrarCalc(){ try { sessionStorage.removeItem(CALC_KEY); } catch (x) {} }
+  function restaurarCalc(){
+    var d = null; try { d = JSON.parse(sessionStorage.getItem(CALC_KEY) || 'null'); } catch (x) {}
+    if (!d) return;
+    var radio = function(name, v){ if (v == null) return; var el = document.querySelector('input[name="' + name + '"][value="' + v + '"]'); if (el) el.checked = true; };
+    radio('client', d.client); radio('zone', d.zone); radio('urg', d.urg); radio('vat', d.vat);
+    Object.keys(d.q || {}).forEach(function(k){ var el = document.getElementById('q-' + k); if (el && k in qty){ el.value = d.q[k]; qty[k] = +d.q[k] || 0; } });
+    Object.keys(d.c || {}).forEach(function(id){ var el = document.getElementById(id); if (el && CAMPOS.indexOf(id) >= 0) el.value = d.c[id]; });
+    if ($('#f-fotos')) $('#f-fotos').checked = !!d.fotos;
   }
 
   document.querySelectorAll('input[name="client"],input[name="zone"],input[name="urg"],input[name="vat"]').forEach(function(r){r.addEventListener('change', update)});
-  ['#f-name','#f-phone','#f-town','#f-desc','#f-day','#f-slot'].forEach(function(s){ if ($(s)) { $(s).addEventListener('input', update); $(s).addEventListener('change', update); } });
+  ['#f-name','#f-phone','#f-email','#f-town','#f-desc','#f-day','#f-slot'].forEach(function(s){ if ($(s)) { $(s).addEventListener('input', update); $(s).addEventListener('change', update); } });
   if ($('#f-day')) { var tm = new Date(Date.now() + 864e5), iso = function(d){ return d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0') + '-' + String(d.getDate()).padStart(2,'0'); }; $('#f-day').min = iso(tm) > OPEN_DAY ? iso(tm) : OPEN_DAY; }
   if ($('#f-fotos')) $('#f-fotos').addEventListener('change', update);
   $('#wa').addEventListener('click', function(){
@@ -301,7 +324,7 @@
       .then(function(x){
         if (x.ok && x.j.ok){
           sendMsg('<b>¡Recibida!</b> Te llamamos o escribimos en horario laboral (L–V, 8 a 18 h) para confirmar la visita.' + (d.email ? ' Te hemos enviado una copia a tu correo.' : '') + (d.fotos ? ' Si quieres, mándanos ya las fotos por WhatsApp con el botón de al lado.' : ''), true);
-          b.textContent = 'Solicitud enviada';
+          b.textContent = 'Solicitud enviada'; borrarCalc(); try { sessionStorage.removeItem('calc:paso'); } catch (x) {}
         } else { sendMsg((x.j && x.j.error ? x.j.error : 'No se ha podido enviar.') + ' También puedes enviarla por WhatsApp o llamarnos al 621 018 374.'); b.disabled = false; b.textContent = 'Enviar solicitud'; }
       })
       .catch(function(){ sendMsg('No se ha podido enviar (sin conexión o servidor no disponible). Envíala por WhatsApp o llámanos al 621 018 374.'); b.disabled = false; b.textContent = 'Enviar solicitud'; })
@@ -338,8 +361,11 @@
     });
   });
 
-  /* el presupuestador arranca vacío */
+  /* el presupuestador arranca vacío, salvo que en esta pestaña ya se hubiera rellenado */
+  restaurarCalc();
+  calcListo = true;
   update();
+  /* al volver atrás con la página guardada en memoria (bfcache) ya está todo; si el navegador la recarga, se restaura arriba */
 
   /* hero sine wave */
   var cv = $('#wave'), ctx = cv.getContext('2d');
