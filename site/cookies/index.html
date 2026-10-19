@@ -20,7 +20,7 @@
 <link rel="icon" href="/assets/favicon-48.png" type="image/png" sizes="48x48">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <link rel="preload" href="/assets/fonts/bricolage.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/estilos.css?v=202610181934">
+<link rel="stylesheet" href="/assets/estilos.css?v=202610191841">
 <style>
 /* Menú con desplegables, menú móvil, accesos rápidos, barra inferior y «volver arriba» */
 header.site nav.main{gap:18px}
@@ -336,8 +336,7 @@ footer .foot-legal{display:flex;justify-content:space-between;gap:10px 20px;flex
 <p>No. Esta web no instala cookies propias ni de terceros, ni con fines técnicos ni publicitarios, y no usa herramientas de estadísticas ni de publicidad. Las fuentes tipográficas se sirven desde el propio dominio, sin conexiones a servicios externos.</p>
 <p>Si en algún momento activamos estadísticas de visitas, usaremos un sistema que no instala cookies y lo indicaremos en esta página.</p>
 <h2>Almacenamiento en tu navegador</h2>
-<p>La calculadora de presupuesto no guarda en tu navegador nada de lo que escribes ni de lo que marcas: si cierras la página, los datos se pierden.</p>
-<p>Lo único que guarda la web en tu navegador es la posición de la página en la que estabas, para devolverte al mismo punto cuando pulsas «Volver». Se guarda en el almacenamiento de sesión (sessionStorage), no contiene datos personales, no se envía a ningún servidor y se borra solo al cerrar la pestaña. Es imprescindible para el funcionamiento que pides al navegar, por lo que no necesita consentimiento.</p>
+<p>La web solo guarda en tu navegador dos cosas, en el almacenamiento de sesión (sessionStorage): la posición de la página en la que estabas, para devolverte al mismo punto cuando pulsas «Volver», y lo que vas marcando y escribiendo en la calculadora de presupuesto (trabajos, paso en el que estás y, si los has escrito, tus datos de contacto), para que no tengas que rellenarla otra vez si sales a otra página y vuelves. No se envía a ningún servidor hasta que tú pulsas «Enviar solicitud», se borra al enviarla y, en cualquier caso, al cerrar la pestaña. Es imprescindible para el funcionamiento que pides, por lo que no necesita consentimiento.</p>
 <p>Comprobado técnicamente el 18 de octubre de 2026: la web no crea cookies, no usa localStorage ni IndexedDB y solo se conecta a senoide.es y app.senoide.es (envío de solicitudes y trabajos publicados), ambos del titular.</p></article></div>
 
 <script>
@@ -445,7 +444,7 @@ var sc=document.currentScript;sc.parentNode.insertBefore(d,sc);})();
     esVuelta=!!(nav0&&nav0.type==='back_forward');
     var leer=function(){var v=null;try{v=sessionStorage.getItem(clave);}catch(x){}return v===null?null:(parseInt(v,10)||0);};
     var volverA=function(){var y=leer();if(y===null)return false;
-      /* la calculadora vuelve a empezar por el paso 1: si estabas en ella con otro paso, se encuadra la sección desde su principio */
+      /* la calculadora recuerda su paso; si al volver no coincide con el guardado, se encuadra la sección desde su principio */
       var sv='';try{sv=sessionStorage.getItem(clave+':sec')||'';}catch(x){}var ps=sv.split('|'),sec=ps[0]&&document.getElementById(ps[0]);
       if(sec&&ps[0]==='presupuesto'&&ps[1]!==String(window.__wzPaso==null?'':window.__wzPaso)){var cab=document.querySelector('header.site');colocar(function(){mover(sec.getBoundingClientRect().top+window.scrollY-(cab?cab.offsetHeight:0));});return true;}
       colocar(function(){mover(y);});return true;};
@@ -486,8 +485,8 @@ var sc=document.currentScript;sc.parentNode.insertBefore(d,sc);})();
   }
 })();
 </script>
-<script src="/assets/senoide.js?v=202610181934" defer></script>
-<script src="/assets/trabajos.js?v=202610181934" defer></script>
+<script src="/assets/senoide.js?v=202610191841" defer></script>
+<script src="/assets/trabajos.js?v=202610191841" defer></script>
 
 </body>
 </html>
