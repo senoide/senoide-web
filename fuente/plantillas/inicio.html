@@ -301,7 +301,7 @@
   </div>
 </section>
 <script>
-/* Calculadora por pasos: un paso cada vez, con Anterior / Siguiente. En el móvil el resumen es el último paso; en el ordenador está siempre a la derecha */
+/* Calculadora por pasos: un paso cada vez, con Anterior / Siguiente; recuerda el paso mientras no se cierre la pestaña. En el móvil el resumen es el último paso; en el ordenador está siempre a la derecha */
 document.addEventListener('DOMContentLoaded', function(){
   var sec = document.getElementById('presupuesto'); if (!sec) return;
   var quote = sec.querySelector('.quote'), cont = quote && quote.firstElementChild, resumen = sec.querySelector('.summary');
@@ -309,6 +309,8 @@ document.addEventListener('DOMContentLoaded', function(){
   var pasos = [].slice.call(cont.querySelectorAll(':scope > .step'));
   var titulos = pasos.map(function(p){ var h = p.querySelector('h3'); return h ? h.textContent : ''; }).concat(['Revisa y envía']);
   var total = pasos.length + 1, actual = 0, activo = true, movil = false;
+  /* si en esta pestaña ya estabas rellenándola, vuelve al mismo paso */
+  try { var pg = parseInt(sessionStorage.getItem('calc:paso'), 10); if (pg > 0) actual = pg; } catch (x) {}
   var nav = document.createElement('div'); nav.className = 'wz-nav'; nav.hidden = true;
   nav.innerHTML = '<p class="wz-msg" role="status"></p><div class="wz-row"><button type="button" class="btn small wz-prev">Anterior</button><span class="wz-info"><span class="wz-n"></span><b class="wz-total"></b></span><button type="button" class="btn primary small wz-next">Siguiente</button></div>';
   var cab = document.createElement('p'); cab.className = 'wz-cab eyebrow'; cab.hidden = true;
@@ -332,6 +334,7 @@ document.addEventListener('DOMContentLoaded', function(){
     /* al cambiar de paso, la sección queda encuadrada igual que al llegar: su principio justo bajo la cabecera */
     if (scroll) { var hc = document.querySelector('header.site'); window.scrollTo({top: sec.getBoundingClientRect().top + window.scrollY - (hc ? hc.offsetHeight : 0), behavior: 'instant'}); }
     window.__wzPaso = actual;
+    try { sessionStorage.setItem('calc:paso', String(actual)); } catch (x) {}
   }
   function ir(n){ msg.textContent = ''; actual = Math.max(0, Math.min(total - 1, n)); pintar(true); }
   nav.querySelector('.wz-prev').addEventListener('click', function(){ ir(actual - 1); });

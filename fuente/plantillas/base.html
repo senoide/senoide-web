@@ -439,7 +439,7 @@ var sc=document.currentScript;sc.parentNode.insertBefore(d,sc);})();
     esVuelta=!!(nav0&&nav0.type==='back_forward');
     var leer=function(){var v=null;try{v=sessionStorage.getItem(clave);}catch(x){}return v===null?null:(parseInt(v,10)||0);};
     var volverA=function(){var y=leer();if(y===null)return false;
-      /* la calculadora vuelve a empezar por el paso 1: si estabas en ella con otro paso, se encuadra la sección desde su principio */
+      /* la calculadora recuerda su paso; si al volver no coincide con el guardado, se encuadra la sección desde su principio */
       var sv='';try{sv=sessionStorage.getItem(clave+':sec')||'';}catch(x){}var ps=sv.split('|'),sec=ps[0]&&document.getElementById(ps[0]);
       if(sec&&ps[0]==='presupuesto'&&ps[1]!==String(window.__wzPaso==null?'':window.__wzPaso)){var cab=document.querySelector('header.site');colocar(function(){mover(sec.getBoundingClientRect().top+window.scrollY-(cab?cab.offsetHeight:0));});return true;}
       colocar(function(){mover(y);});return true;};
