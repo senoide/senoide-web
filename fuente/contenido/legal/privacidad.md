@@ -24,6 +24,7 @@ Los datos marcados como obligatorios en el formulario son necesarios para poder 
 - **Hacer el trabajo, facturarlo y atender la garantía**, y gestionar el contrato si contratas un plan de mantenimiento: visitas, avisos, citas, recordatorios y partes de trabajo. Base legal: ejecución del contrato (artículo 6.1.b del RGPD).
 - **Cumplir obligaciones legales**: facturación y contabilidad, y la documentación técnica de las instalaciones que exige la normativa de seguridad industrial (por ejemplo, el certificado de instalación eléctrica y su tramitación ante la Generalitat Valenciana y la empresa distribuidora). Base legal: obligación legal (artículo 6.1.c del RGPD).
 - **Guardar constancia de que has aceptado o rechazado un presupuesto**, mantener la seguridad de la web y de la aplicación, y tratar los datos de contacto profesional de proveedores y de los representantes de comunidades y empresas. Base legal: nuestro interés legítimo en poder acreditar lo acordado y en proteger los sistemas (artículo 6.1.f del RGPD). Puedes oponerte escribiendo a info@senoide.es.
+- **Enviarte, si ya eres cliente, un aviso de revisión de tu instalación (por ejemplo, al año del trabajo) u ofertas de servicios nuestros parecidos a los que contrataste.** Base legal: nuestro interés legítimo (artículo 6.1.f del RGPD) y el artículo 21.2 de la Ley 34/2002 de servicios de la sociedad de la información, que lo permite con clientes para servicios similares. Puedes oponerte gratis cuando quieras: al darnos tus datos, respondiendo a cualquiera de esos correos o escribiendo a info@senoide.es. No enviamos publicidad a quien no es cliente sin su consentimiento.
 - **Publicar fotos de un trabajo en la web.** Solo publicamos fotos de la instalación en las que no se te pueda identificar (sin caras, matrículas, direcciones ni documentos). Si alguna vez quisiéramos publicar algo que permita identificarte, te pediríamos antes tu consentimiento (artículo 6.1.a del RGPD), que podrás retirar cuando quieras.
 
 ## Cuánto tiempo los conservamos
@@ -75,4 +76,4 @@ Si crees que no hemos atendido bien tu petición, puedes reclamar ante la [Agenc
 
 ## Cambios en esta política
 
-Si cambiamos cómo tratamos los datos, actualizaremos esta página. Última actualización: 18 de octubre de 2026.
+Si cambiamos cómo tratamos los datos, actualizaremos esta página. Última actualización: 20 de octubre de 2026.
