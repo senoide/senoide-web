@@ -1,12 +1,21 @@
 ---
 titulo: Salta el diferencial: qué hacer paso a paso
-resumen: Cómo encontrar qué aparato o circuito hace saltar el diferencial, qué puedes revisar tú y cuándo hay que llamar a un electricista.
+resumen: Cómo comprobar que tu diferencial funciona, encontrar qué aparato o circuito lo hace saltar y cuándo hay que llamar a un electricista.
 fecha: 2026-10-13
 categoria: Seguridad
 slug: salta-el-diferencial-que-hacer
 ---
 
 El diferencial es el interruptor del cuadro que corta la luz cuando detecta una fuga de corriente. Si salta, está haciendo su trabajo: te protege de una descarga. Nunca lo puentees ni lo dejes forzado.
+
+## Antes de nada: comprueba que funciona
+
+Todos los diferenciales tienen un botón de prueba, marcado con una **T** o con la palabra «Test». Al pulsarlo, el aparato simula una pequeña fuga y debe saltar al momento.
+
+1. Antes de pulsarlo, guarda lo que estés haciendo en el ordenador. Se apagará todo lo que dependa de ese diferencial: la nevera, el router, el reloj del horno…
+2. Pulsa el botón. La palanca debe bajar sola y cortar la luz.
+3. Vuelve a subir la palanca y la luz vuelve. Si tienes más de un diferencial, prueba cada uno.
+4. Si al pulsarlo **no salta**, el diferencial no te está protegiendo. No esperes a que haya un problema: llámanos.
 
 ## 1. Desenchufa y prueba
 
