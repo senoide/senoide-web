@@ -300,6 +300,8 @@ footer .wrap{display:flex;justify-content:space-between;align-items:end;gap:16px
 .summary .priv{display:flex;gap:8px;align-items:flex-start;font-size:.82rem;line-height:1.4;margin-top:4px}
 .summary .priv input{margin-top:3px;flex:none;width:16px;height:16px}
 .summary .priv a{color:inherit}
+.summary .priv.falta{outline:2px solid #c0392b;outline-offset:4px;border-radius:6px}
+.summary .priv{margin:6px 0 10px}
 .send-msg{font-size:.9rem;padding:10px 12px;border-radius:var(--r);margin-top:8px}
 .send-msg.ok{background:color-mix(in srgb,#1d7a46 18%,transparent)}
 .send-msg.err{background:color-mix(in srgb,#b42318 22%,transparent)}

@@ -295,7 +295,10 @@
   ['#f-name','#f-phone','#f-email','#f-town','#f-desc','#f-day','#f-slot'].forEach(function(s){ if ($(s)) { $(s).addEventListener('input', update); $(s).addEventListener('change', update); } });
   if ($('#f-day')) { var tm = new Date(Date.now() + 864e5), iso = function(d){ return d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0') + '-' + String(d.getDate()).padStart(2,'0'); }; $('#f-day').min = iso(tm) > OPEN_DAY ? iso(tm) : OPEN_DAY; }
   if ($('#f-fotos')) $('#f-fotos').addEventListener('change', update);
-  $('#wa').addEventListener('click', function(){
+  // La política de privacidad se acepta antes de enviar por cualquier vía (formulario, WhatsApp o copiando el resumen)
+  function privOk(){ if ($('#f-priv') && !$('#f-priv').checked){ var t = $('#toast'); t.innerHTML = 'Marca la casilla de la política de privacidad para poder enviarla.'; setTimeout(function(){ t.textContent=''; }, 8000); $('#f-priv').focus(); var l = $('#f-priv').closest('label'); if (l){ l.classList.add('falta'); setTimeout(function(){ l.classList.remove('falta'); }, 2500); } return false; } return true; }
+  $('#wa').addEventListener('click', function(e){
+    if (!privOk()){ e.preventDefault(); return; }
     if ($('#f-fotos') && $('#f-fotos').checked){ var t = $('#toast'); t.textContent = 'Envía el mensaje en WhatsApp y después adjunta las fotos con el clip.'; setTimeout(function(){t.textContent=''}, 8000); }
   });
   $('#req').addEventListener('submit', function(e){e.preventDefault()});
@@ -342,7 +345,7 @@
     var ta = document.createElement('textarea'); ta.value = text; document.body.appendChild(ta); ta.select();
     try{document.execCommand('copy')}catch(e){} ta.remove();
   }
-  $('#copy').addEventListener('click', function(){ copyText(last.text, 'Resumen copiado. Pégalo en WhatsApp o en un correo.'); });
+  $('#copy').addEventListener('click', function(){ if (!privOk()) return; copyText(last.text, 'Resumen copiado. Pégalo en WhatsApp o en un correo.'); });
   document.querySelectorAll('[data-copy]').forEach(function(b){
     b.addEventListener('click', function(){ copyText(b.dataset.copy); b.textContent = 'Copiado'; setTimeout(function(){b.textContent='Copiar'}, 2000); });
   });
