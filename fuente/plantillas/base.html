@@ -150,7 +150,7 @@ main#inicio > section[hidden]{display:none!important}
   main#inicio #mantenimiento .section-head > p:last-child{display:none}
   main#inicio .mt-acts{margin-top:14px}
   main#inicio #clientes .aud .intro > p{display:none}
-  main#inicio .towns{gap:6px;margin-top:14px}
+  main#inicio .towns{gap:6px;margin-top:8px}
   main#inicio .towns span{padding:5px 11px;font-size:.86rem}
   main#inicio #zona h2{font-size:1.75rem}
 }
@@ -279,6 +279,13 @@ footer .foot-legal{display:flex;justify-content:space-between;gap:10px 20px;flex
 .wz-msg{color:#c0392b;font-weight:600;font-size:.9rem;margin-bottom:6px}
 .wz-msg:empty{display:none}
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .dd-panel{box-shadow:0 14px 34px rgba(0,0,0,.4)}}
+/* zona de trabajo por tramos de desplazamiento y municipio en la calculadora */
+.tramos{display:grid;gap:14px;margin-top:18px}
+.tramo .towns{margin-top:8px}
+.tramo-t{margin:0;font-size:.9rem;color:var(--muted)}
+.tramo-t b{color:var(--ink);font-weight:600}
+.field.muni{margin-bottom:12px;max-width:420px}
+.field.muni select{width:100%}
 </style>
 <script type="application/ld+json">{{JSONLD}}</script>
 </head>

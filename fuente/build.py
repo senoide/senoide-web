@@ -48,8 +48,13 @@ CONFIG = {
     # Enlace a la ficha de Google para leer las opiniones (por ejemplo, el de «Compartir» del perfil). Vacío = no se muestra.
     "PERFIL_GOOGLE": "",
     "HORARIO": [("Mo", "Fr", "08:00", "18:00")],
-    "MUNICIPIOS": ["Oropesa del Mar", "Benicàssim", "Cabanes", "Torreblanca", "Vilafamés",
-                   "La Pobla Tornesa", "Borriol", "Castelló de la Plana", "Alcalà de Xivert"],
+    # Zona de trabajo: una sola lista para la portada, la calculadora y Google.
+    # Tramo de desplazamiento: 0 = incluido (Oropesa), 1 = hasta 20 km (+15 €), 2 = de 20 a 40 km (+30 €).
+    # Más de 40 km: precio a medida. Si cambias un municipio aquí, cámbialo también en el Perfil de Empresa de Google.
+    "ZONA": [("Oropesa del Mar", 0),
+             ("Benicàssim", 1), ("Cabanes", 1), ("Torreblanca", 1),
+             ("La Pobla Tornesa", 2), ("Benlloc", 2), ("Vilafamés", 2), ("Borriol", 2),
+             ("Castelló de la Plana", 2), ("Alcalà de Xivert-Alcossebre", 2), ("Almassora", 2), ("Vila-real", 2)],
     # Cloudflare Web Analytics (sin cookies). Pega aquí el token cuando lo tengas; vacío = sin analítica.
     "CLOUDFLARE_ANALYTICS_TOKEN": "",
     # Enlaces a perfiles (Perfil de Empresa de Google, Instagram...). Ayudan a Google a unir la web con la ficha.
@@ -207,7 +212,7 @@ def jsonld_empresa():
         "founder": {"@type": "Person", "name": d["TITULAR"]},
         "address": {"@type": "PostalAddress", "addressLocality": "Oropesa del Mar",
                     "postalCode": "12594", "addressRegion": "Castellón", "addressCountry": "ES"},
-        "areaServed": [{"@type": "City", "name": m} for m in d["MUNICIPIOS"]],
+        "areaServed": [{"@type": "City", "name": m} for m, _z in d["ZONA"]],
         "openingHoursSpecification": [
             {"@type": "OpeningHoursSpecification",
              "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
@@ -444,7 +449,7 @@ def construir():
                   + f'<div class="wrap"><article class="prose">{markdown(s["_cuerpo"])}{bloque_cta()}</article></div>')
         srv = {"@type": "Service", "name": s["titulo"], "description": s.get("resumen", ""),
                "provider": {"@id": d["DOMINIO"] + "/#empresa"},
-               "areaServed": [{"@type": "City", "name": m} for m in d["MUNICIPIOS"]]}
+               "areaServed": [{"@type": "City", "name": m} for m, _z in d["ZONA"]]}
         pagina(f"/servicios/{s['slug']}/", s.get("titulo_seo", s["titulo"] + " | SENOIDE"),
                s.get("descripcion") or s.get("resumen", ""), cuerpo, jsonld=srv)
 
@@ -453,7 +458,7 @@ def construir():
     srv_mant = {"@type": "Service", "name": "Mantenimiento eléctrico con cuota fija",
                 "description": "Planes de mantenimiento eléctrico para comunidades de propietarios, locales y apartamentos turísticos.",
                 "provider": {"@id": d["DOMINIO"] + "/#empresa"},
-                "areaServed": [{"@type": "City", "name": m} for m in d["MUNICIPIOS"]]}
+                "areaServed": [{"@type": "City", "name": m} for m, _z in d["ZONA"]]}
     pagina("/mantenimiento/", "Mantenimiento eléctrico con cuota fija | SENOIDE",
            "Planes de mantenimiento eléctrico con cuota fija para comunidades, locales y apartamentos turísticos en Oropesa del Mar: visitas, informe y prioridad.",
            cabecera("Mantenimiento", "Tu electricista de referencia, con cuota fija.",
@@ -495,6 +500,17 @@ def construir():
                      + (f'<a class="v small" href="{esc(d["RESENAS_URL"])}" target="_blank" rel="noopener">¿Ya has trabajado con nosotros? Déjanos tu opinión</a>' if d["RESENAS_URL"] else "")
                      + '</div></div>')
     inicio = inicio.replace("{{OPINIONES}}", opiniones)
+    # zona de trabajo (portada) y municipios de la calculadora, desde la misma lista
+    TRAMOS = [("Sin desplazamiento", "incluido"), ("Hasta 20 km", "+15 € por visita"), ("De 20 a 40 km", "+30 € por visita")]
+    zona_html = "".join(
+        f'<div class="tramo"><p class="tramo-t"><b>{t}</b> · {pr}</p><div class="towns">'
+        + "".join('<span class="home">' + esc(m) + '</span>' if z == 0 else '<span>' + esc(m) + '</span>' for m, z in d["ZONA"] if z == i)
+        + '</div></div>' for i, (t, pr) in enumerate(TRAMOS))
+    inicio = inicio.replace("{{ZONA_TRAMOS}}", zona_html)
+    muni_opts = '<option value="">Elige el municipio</option>' + "".join(
+        f'<optgroup label="{t} ({pr})">' + "".join(f'<option value="{esc(m)}" data-z="{z}">{esc(m)}</option>' for m, z in d["ZONA"] if z == i) + '</optgroup>'
+        for i, (t, pr) in enumerate(TRAMOS)) + '<option value="otro" data-z="">Otro municipio</option>'
+    inicio = inicio.replace("{{MUNI_OPCIONES}}", muni_opts)
     inicio = (inicio.replace("{{TELEFONO}}", d["TELEFONO"])
               .replace("{{TELEFONO_SIN_ESPACIOS}}", d["TELEFONO"].replace(" ", ""))
               .replace("{{EMAIL}}", d["EMAIL"]).replace("{{WHATSAPP}}", d["WHATSAPP"]))

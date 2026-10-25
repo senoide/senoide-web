@@ -152,11 +152,13 @@
 
         <div class="step">
           <div class="step-title"><span class="n">03</span><h3>¿Dónde y cuándo?</h3></div>
-          <div class="chips" role="radiogroup" aria-label="Distancia">
-            <span class="chip"><input type="radio" name="zone" id="z0" value="0" checked><label for="z0">Oropesa del Mar</label></span>
-            <span class="chip"><input type="radio" name="zone" id="z1" value="1"><label for="z1">Hasta 20 km</label></span>
-            <span class="chip"><input type="radio" name="zone" id="z2" value="2"><label for="z2">20 a 40 km</label></span>
+          <div class="field muni"><label for="f-muni">¿En qué municipio es el trabajo?</label><select id="f-muni">{{MUNI_OPCIONES}}</select></div>
+          <div class="chips" role="radiogroup" aria-label="Desplazamiento">
+            <span class="chip"><input type="radio" name="zone" id="z0" value="0" checked><label for="z0">Oropesa del Mar · incluido</label></span>
+            <span class="chip"><input type="radio" name="zone" id="z1" value="1"><label for="z1">Hasta 20 km · +15 €</label></span>
+            <span class="chip"><input type="radio" name="zone" id="z2" value="2"><label for="z2">20 a 40 km · +30 €</label></span>
           </div>
+          <p class="note" id="muni-note" hidden></p>
           <div class="chips" role="radiogroup" aria-label="Urgencia">
             <span class="chip"><input type="radio" name="urg" id="u0" value="0" checked><label for="u0">Sin prisa</label></span>
             <span class="chip"><input type="radio" name="urg" id="u1" value="1"><label for="u1">Urgente, en 24 h</label></span>
@@ -266,10 +268,8 @@
     <div>
       <p class="eyebrow">Zona de trabajo</p>
       <h2 style="margin-top:12px">Desde Oropesa del Mar a toda la Plana.</h2>
-      <div class="towns">
-        <span class="home">Oropesa del Mar</span><span>Benicàssim</span><span>Cabanes</span><span>Torreblanca</span><span>Vilafamés</span><span>La Pobla Tornesa</span><span>Borriol</span><span>Castelló de la Plana</span><span>Alcalà de Xivert</span>
-      </div>
-      <p style="color:var(--muted);margin-top:16px">¿Tu municipio no aparece? Pregúntanos.</p>
+      <div class="tramos">{{ZONA_TRAMOS}}</div>
+      <p style="color:var(--muted);margin-top:16px">¿Tu municipio no aparece o está a más de 40 km? Pregúntanos y te damos precio.</p>
     </div>
     <div class="faq">
       <p class="eyebrow" style="margin-bottom:8px">Preguntas frecuentes</p>

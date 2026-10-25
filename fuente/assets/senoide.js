@@ -272,7 +272,7 @@
   /* La calculadora recuerda lo marcado y escrito mientras no se cierre la pestaña (sessionStorage),
      para que al volver atrás desde otra página no haya que rellenarla otra vez. Se borra al enviar la solicitud. */
   var CALC_KEY = 'calc:v1', calcListo = false;
-  var CAMPOS = ['f-name','f-phone','f-email','f-town','f-desc','f-day','f-slot'];
+  var CAMPOS = ['f-muni','f-name','f-phone','f-email','f-town','f-desc','f-day','f-slot'];
   function guardarCalc(){
     if (!calcListo) return;
     var q = {}; Object.keys(qty).forEach(function(k){ if (qty[k] > 0) q[k] = qty[k]; });
@@ -292,6 +292,16 @@
   }
 
   document.querySelectorAll('input[name="client"],input[name="zone"],input[name="urg"],input[name="vat"]').forEach(function(r){r.addEventListener('change', update)});
+  /* municipio: marca solo el tramo de desplazamiento y rellena el municipio de tus datos */
+  var muni = $('#f-muni');
+  function aplicarMuni(){
+    if (!muni) return; var o = muni.options[muni.selectedIndex], z = o ? o.getAttribute('data-z') : '', note = $('#muni-note'), town = $('#f-town');
+    if (z !== '' && z != null){ var r = document.getElementById('z' + z); if (r) r.checked = true; if (town && (!town.value || town.dataset.auto === '1')){ town.value = muni.value; town.dataset.auto = '1'; } }
+    if (note){ if (muni.value === 'otro'){ note.hidden = false; note.textContent = 'Elige la distancia desde Oropesa del Mar y escribe tu municipio en el paso de tus datos. A más de 40 km te damos un precio a medida.'; if (town && town.dataset.auto === '1'){ town.value = ''; town.dataset.auto = ''; } } else note.hidden = true; }
+    update();
+  }
+  if (muni) muni.addEventListener('change', aplicarMuni);
+  if ($('#f-town')) $('#f-town').addEventListener('input', function(){ this.dataset.auto = ''; });
   ['#f-name','#f-phone','#f-email','#f-town','#f-desc','#f-day','#f-slot'].forEach(function(s){ if ($(s)) { $(s).addEventListener('input', update); $(s).addEventListener('change', update); } });
   if ($('#f-day')) { var tm = new Date(Date.now() + 864e5), iso = function(d){ return d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0') + '-' + String(d.getDate()).padStart(2,'0'); }; $('#f-day').min = iso(tm) > OPEN_DAY ? iso(tm) : OPEN_DAY; }
   if ($('#f-fotos')) $('#f-fotos').addEventListener('change', update);
