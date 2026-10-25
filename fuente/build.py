@@ -44,7 +44,7 @@ CONFIG = {
     # App de gestión: recibe las solicitudes de la calculadora y publica los trabajos de los partes
     "API": "https://app.senoide.es",
     # Opiniones: enlace «Pedir reseñas» del Perfil de Empresa de Google (https://g.page/r/.../review). Vacío = no se muestra.
-    "RESENAS_URL": "",
+    "RESENAS_URL": "https://g.page/r/CcEAwUZu5RxeEBM/review",
     # Enlace a la ficha de Google para leer las opiniones (por ejemplo, el de «Compartir» del perfil). Vacío = no se muestra.
     "PERFIL_GOOGLE": "",
     "HORARIO": [("Mo", "Fr", "08:00", "18:00")],
