@@ -46,7 +46,7 @@ CONFIG = {
     # Opiniones: enlace «Pedir reseñas» del Perfil de Empresa de Google (https://g.page/r/.../review). Vacío = no se muestra.
     "RESENAS_URL": "https://g.page/r/CcEAwUZu5RxeEBM/review",
     # Enlace a la ficha de Google para leer las opiniones (por ejemplo, el de «Compartir» del perfil). Vacío = no se muestra.
-    "PERFIL_GOOGLE": "",
+    "PERFIL_GOOGLE": "https://share.google/tdtfLiFDOJaDpnz7n",
     "HORARIO": [("Mo", "Fr", "08:00", "18:00")],
     # Zona de trabajo: una sola lista para la portada, la calculadora y Google.
     # Tramo de desplazamiento: 0 = incluido (Oropesa), 1 = hasta 20 km (+15 €), 2 = de 20 a 40 km (+30 €).
@@ -58,7 +58,7 @@ CONFIG = {
     # Cloudflare Web Analytics (sin cookies). Pega aquí el token cuando lo tengas; vacío = sin analítica.
     "CLOUDFLARE_ANALYTICS_TOKEN": "",
     # Enlaces a perfiles (Perfil de Empresa de Google, Instagram...). Ayudan a Google a unir la web con la ficha.
-    "PERFILES": [],
+    "PERFILES": ["https://share.google/tdtfLiFDOJaDpnz7n", "https://www.instagram.com/senoide.es"],
 }
 # ================================================================
 
