@@ -20,7 +20,7 @@
 <link rel="icon" href="/assets/favicon-48.png" type="image/png" sizes="48x48">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <link rel="preload" href="/assets/fonts/bricolage.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/estilos.css?v=202610251854">
+<link rel="stylesheet" href="/assets/estilos.css?v=202610251902">
 <style>
 /* Menú con desplegables, menú móvil, accesos rápidos, barra inferior y «volver arriba» */
 header.site nav.main{gap:18px}
@@ -150,7 +150,7 @@ main#inicio > section[hidden]{display:none!important}
   main#inicio #mantenimiento .section-head > p:last-child{display:none}
   main#inicio .mt-acts{margin-top:14px}
   main#inicio #clientes .aud .intro > p{display:none}
-  main#inicio .towns{gap:6px;margin-top:14px}
+  main#inicio .towns{gap:6px;margin-top:8px}
   main#inicio .towns span{padding:5px 11px;font-size:.86rem}
   main#inicio #zona h2{font-size:1.75rem}
 }
@@ -279,8 +279,15 @@ footer .foot-legal{display:flex;justify-content:space-between;gap:10px 20px;flex
 .wz-msg{color:#c0392b;font-weight:600;font-size:.9rem;margin-bottom:6px}
 .wz-msg:empty{display:none}
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .dd-panel{box-shadow:0 14px 34px rgba(0,0,0,.4)}}
+/* zona de trabajo por tramos de desplazamiento y municipio en la calculadora */
+.tramos{display:grid;gap:14px;margin-top:18px}
+.tramo .towns{margin-top:8px}
+.tramo-t{margin:0;font-size:.9rem;color:var(--muted)}
+.tramo-t b{color:var(--ink);font-weight:600}
+.field.muni{margin-bottom:12px;max-width:420px}
+.field.muni select{width:100%}
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@context": "https://schema.org", "@type": "Electrician", "@id": "https://senoide.es/#empresa", "name": "SENOIDE", "description": "Instalaciones eléctricas, averías, boletines, puntos de recarga, fontanería y remates de albañilería.", "url": "https://senoide.es/", "logo": "https://senoide.es/assets/icono-512.png", "image": "https://senoide.es/assets/og-senoide.jpg", "telephone": "+34621018374", "email": "info@senoide.es", "founder": {"@type": "Person", "name": "Luis M. Sierra Mena"}, "address": {"@type": "PostalAddress", "addressLocality": "Oropesa del Mar", "postalCode": "12594", "addressRegion": "Castellón", "addressCountry": "ES"}, "areaServed": [{"@type": "City", "name": "Oropesa del Mar"}, {"@type": "City", "name": "Benicàssim"}, {"@type": "City", "name": "Cabanes"}, {"@type": "City", "name": "Torreblanca"}, {"@type": "City", "name": "Vilafamés"}, {"@type": "City", "name": "La Pobla Tornesa"}, {"@type": "City", "name": "Borriol"}, {"@type": "City", "name": "Castelló de la Plana"}, {"@type": "City", "name": "Alcalà de Xivert"}], "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "08:00", "closes": "18:00"}], "priceRange": "€€"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@context": "https://schema.org", "@type": "Electrician", "@id": "https://senoide.es/#empresa", "name": "SENOIDE", "description": "Instalaciones eléctricas, averías, boletines, puntos de recarga, fontanería y remates de albañilería.", "url": "https://senoide.es/", "logo": "https://senoide.es/assets/icono-512.png", "image": "https://senoide.es/assets/og-senoide.jpg", "telephone": "+34621018374", "email": "info@senoide.es", "founder": {"@type": "Person", "name": "Luis M. Sierra Mena"}, "address": {"@type": "PostalAddress", "addressLocality": "Oropesa del Mar", "postalCode": "12594", "addressRegion": "Castellón", "addressCountry": "ES"}, "areaServed": [{"@type": "City", "name": "Oropesa del Mar"}, {"@type": "City", "name": "Benicàssim"}, {"@type": "City", "name": "Cabanes"}, {"@type": "City", "name": "Torreblanca"}, {"@type": "City", "name": "La Pobla Tornesa"}, {"@type": "City", "name": "Benlloc"}, {"@type": "City", "name": "Vilafamés"}, {"@type": "City", "name": "Borriol"}, {"@type": "City", "name": "Castelló de la Plana"}, {"@type": "City", "name": "Alcalà de Xivert-Alcossebre"}, {"@type": "City", "name": "Almassora"}, {"@type": "City", "name": "Vila-real"}], "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "08:00", "closes": "18:00"}], "priceRange": "€€"}]}</script>
 </head>
 <body data-whatsapp="34621018374" data-api="https://app.senoide.es">
 <div class="ribbon"><div class="wrap"><span id="aviso" data-abierto="Atendemos de lunes a viernes, de 8 a 18 h · Urgencias: &lt;a href=&quot;tel:+34621018374&quot;&gt;621 018 374&lt;/a&gt;" data-desde="2026-11-02">Abrimos el <b>2 de noviembre de 2026</b> · ya puedes pedir presupuesto</span><span class="mono">230 V · 50 Hz</span></div></div>
@@ -485,8 +492,8 @@ var sc=document.currentScript;sc.parentNode.insertBefore(d,sc);})();
   }
 })();
 </script>
-<script src="/assets/senoide.js?v=202610251854" defer></script>
-<script src="/assets/trabajos.js?v=202610251854" defer></script>
+<script src="/assets/senoide.js?v=202610251902" defer></script>
+<script src="/assets/trabajos.js?v=202610251902" defer></script>
 
 </body>
 </html>

@@ -20,7 +20,7 @@
 <link rel="icon" href="/assets/favicon-48.png" type="image/png" sizes="48x48">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <link rel="preload" href="/assets/fonts/bricolage.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/estilos.css?v=202610251854">
+<link rel="stylesheet" href="/assets/estilos.css?v=202610251902">
 <style>
 /* Menú con desplegables, menú móvil, accesos rápidos, barra inferior y «volver arriba» */
 header.site nav.main{gap:18px}
@@ -150,7 +150,7 @@ main#inicio > section[hidden]{display:none!important}
   main#inicio #mantenimiento .section-head > p:last-child{display:none}
   main#inicio .mt-acts{margin-top:14px}
   main#inicio #clientes .aud .intro > p{display:none}
-  main#inicio .towns{gap:6px;margin-top:14px}
+  main#inicio .towns{gap:6px;margin-top:8px}
   main#inicio .towns span{padding:5px 11px;font-size:.86rem}
   main#inicio #zona h2{font-size:1.75rem}
 }
@@ -279,8 +279,15 @@ footer .foot-legal{display:flex;justify-content:space-between;gap:10px 20px;flex
 .wz-msg{color:#c0392b;font-weight:600;font-size:.9rem;margin-bottom:6px}
 .wz-msg:empty{display:none}
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .dd-panel{box-shadow:0 14px 34px rgba(0,0,0,.4)}}
+/* zona de trabajo por tramos de desplazamiento y municipio en la calculadora */
+.tramos{display:grid;gap:14px;margin-top:18px}
+.tramo .towns{margin-top:8px}
+.tramo-t{margin:0;font-size:.9rem;color:var(--muted)}
+.tramo-t b{color:var(--ink);font-weight:600}
+.field.muni{margin-bottom:12px;max-width:420px}
+.field.muni select{width:100%}
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@context": "https://schema.org", "@type": "Electrician", "@id": "https://senoide.es/#empresa", "name": "SENOIDE", "description": "Instalaciones eléctricas, averías, boletines, puntos de recarga, fontanería y remates de albañilería.", "url": "https://senoide.es/", "logo": "https://senoide.es/assets/icono-512.png", "image": "https://senoide.es/assets/og-senoide.jpg", "telephone": "+34621018374", "email": "info@senoide.es", "founder": {"@type": "Person", "name": "Luis M. Sierra Mena"}, "address": {"@type": "PostalAddress", "addressLocality": "Oropesa del Mar", "postalCode": "12594", "addressRegion": "Castellón", "addressCountry": "ES"}, "areaServed": [{"@type": "City", "name": "Oropesa del Mar"}, {"@type": "City", "name": "Benicàssim"}, {"@type": "City", "name": "Cabanes"}, {"@type": "City", "name": "Torreblanca"}, {"@type": "City", "name": "Vilafamés"}, {"@type": "City", "name": "La Pobla Tornesa"}, {"@type": "City", "name": "Borriol"}, {"@type": "City", "name": "Castelló de la Plana"}, {"@type": "City", "name": "Alcalà de Xivert"}], "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "08:00", "closes": "18:00"}], "priceRange": "€€"}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "¿Qué es el boletín eléctrico?", "acceptedAnswer": {"@type": "Answer", "text": "Es el Certificado de Instalación Eléctrica (CIE). Lo firma un instalador habilitado y lo pide la distribuidora para dar de alta la luz, cambiar de titular tras años sin suministro o subir la potencia."}}, {"@type": "Question", "name": "¿El precio de la calculadora es el definitivo?", "acceptedAnswer": {"@type": "Answer", "text": "No. Es un precio medio con material de gama comercial incluido. Si quieres otra gama o un modelo concreto, se presupuesta aparte. En la visita vemos tu caso y te damos el presupuesto por escrito antes de empezar. Si al abrir aparece algo que no se veía, te lo explicamos y no hacemos nada sin tu aprobación."}}]}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@context": "https://schema.org", "@type": "Electrician", "@id": "https://senoide.es/#empresa", "name": "SENOIDE", "description": "Instalaciones eléctricas, averías, boletines, puntos de recarga, fontanería y remates de albañilería.", "url": "https://senoide.es/", "logo": "https://senoide.es/assets/icono-512.png", "image": "https://senoide.es/assets/og-senoide.jpg", "telephone": "+34621018374", "email": "info@senoide.es", "founder": {"@type": "Person", "name": "Luis M. Sierra Mena"}, "address": {"@type": "PostalAddress", "addressLocality": "Oropesa del Mar", "postalCode": "12594", "addressRegion": "Castellón", "addressCountry": "ES"}, "areaServed": [{"@type": "City", "name": "Oropesa del Mar"}, {"@type": "City", "name": "Benicàssim"}, {"@type": "City", "name": "Cabanes"}, {"@type": "City", "name": "Torreblanca"}, {"@type": "City", "name": "La Pobla Tornesa"}, {"@type": "City", "name": "Benlloc"}, {"@type": "City", "name": "Vilafamés"}, {"@type": "City", "name": "Borriol"}, {"@type": "City", "name": "Castelló de la Plana"}, {"@type": "City", "name": "Alcalà de Xivert-Alcossebre"}, {"@type": "City", "name": "Almassora"}, {"@type": "City", "name": "Vila-real"}], "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "08:00", "closes": "18:00"}], "priceRange": "€€"}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "¿Qué es el boletín eléctrico?", "acceptedAnswer": {"@type": "Answer", "text": "Es el Certificado de Instalación Eléctrica (CIE). Lo firma un instalador habilitado y lo pide la distribuidora para dar de alta la luz, cambiar de titular tras años sin suministro o subir la potencia."}}, {"@type": "Question", "name": "¿El precio de la calculadora es el definitivo?", "acceptedAnswer": {"@type": "Answer", "text": "No. Es un precio medio con material de gama comercial incluido. Si quieres otra gama o un modelo concreto, se presupuesta aparte. En la visita vemos tu caso y te damos el presupuesto por escrito antes de empezar. Si al abrir aparece algo que no se veía, te lo explicamos y no hacemos nada sin tu aprobación."}}]}]}</script>
 </head>
 <body data-whatsapp="34621018374" data-api="https://app.senoide.es">
 <div class="ribbon"><div class="wrap"><span id="aviso" data-abierto="Atendemos de lunes a viernes, de 8 a 18 h · Urgencias: &lt;a href=&quot;tel:+34621018374&quot;&gt;621 018 374&lt;/a&gt;" data-desde="2026-11-02">Abrimos el <b>2 de noviembre de 2026</b> · ya puedes pedir presupuesto</span><span class="mono">230 V · 50 Hz</span></div></div>
@@ -486,11 +493,13 @@ footer .foot-legal{display:flex;justify-content:space-between;gap:10px 20px;flex
 
         <div class="step">
           <div class="step-title"><span class="n">03</span><h3>¿Dónde y cuándo?</h3></div>
-          <div class="chips" role="radiogroup" aria-label="Distancia">
-            <span class="chip"><input type="radio" name="zone" id="z0" value="0" checked><label for="z0">Oropesa del Mar</label></span>
-            <span class="chip"><input type="radio" name="zone" id="z1" value="1"><label for="z1">Hasta 20 km</label></span>
-            <span class="chip"><input type="radio" name="zone" id="z2" value="2"><label for="z2">20 a 40 km</label></span>
+          <div class="field muni"><label for="f-muni">¿En qué municipio es el trabajo?</label><select id="f-muni"><option value="">Elige el municipio</option><optgroup label="Sin desplazamiento (incluido)"><option value="Oropesa del Mar" data-z="0">Oropesa del Mar</option></optgroup><optgroup label="Hasta 20 km (+15 € por visita)"><option value="Benicàssim" data-z="1">Benicàssim</option><option value="Cabanes" data-z="1">Cabanes</option><option value="Torreblanca" data-z="1">Torreblanca</option></optgroup><optgroup label="De 20 a 40 km (+30 € por visita)"><option value="La Pobla Tornesa" data-z="2">La Pobla Tornesa</option><option value="Benlloc" data-z="2">Benlloc</option><option value="Vilafamés" data-z="2">Vilafamés</option><option value="Borriol" data-z="2">Borriol</option><option value="Castelló de la Plana" data-z="2">Castelló de la Plana</option><option value="Alcalà de Xivert-Alcossebre" data-z="2">Alcalà de Xivert-Alcossebre</option><option value="Almassora" data-z="2">Almassora</option><option value="Vila-real" data-z="2">Vila-real</option></optgroup><option value="otro" data-z="">Otro municipio</option></select></div>
+          <div class="chips" role="radiogroup" aria-label="Desplazamiento">
+            <span class="chip"><input type="radio" name="zone" id="z0" value="0" checked><label for="z0">Oropesa del Mar · incluido</label></span>
+            <span class="chip"><input type="radio" name="zone" id="z1" value="1"><label for="z1">Hasta 20 km · +15 €</label></span>
+            <span class="chip"><input type="radio" name="zone" id="z2" value="2"><label for="z2">20 a 40 km · +30 €</label></span>
           </div>
+          <p class="note" id="muni-note" hidden></p>
           <div class="chips" role="radiogroup" aria-label="Urgencia">
             <span class="chip"><input type="radio" name="urg" id="u0" value="0" checked><label for="u0">Sin prisa</label></span>
             <span class="chip"><input type="radio" name="urg" id="u1" value="1"><label for="u1">Urgente, en 24 h</label></span>
@@ -600,10 +609,8 @@ footer .foot-legal{display:flex;justify-content:space-between;gap:10px 20px;flex
     <div>
       <p class="eyebrow">Zona de trabajo</p>
       <h2 style="margin-top:12px">Desde Oropesa del Mar a toda la Plana.</h2>
-      <div class="towns">
-        <span class="home">Oropesa del Mar</span><span>Benicàssim</span><span>Cabanes</span><span>Torreblanca</span><span>Vilafamés</span><span>La Pobla Tornesa</span><span>Borriol</span><span>Castelló de la Plana</span><span>Alcalà de Xivert</span>
-      </div>
-      <p style="color:var(--muted);margin-top:16px">¿Tu municipio no aparece? Pregúntanos.</p>
+      <div class="tramos"><div class="tramo"><p class="tramo-t"><b>Sin desplazamiento</b> · incluido</p><div class="towns"><span class="home">Oropesa del Mar</span></div></div><div class="tramo"><p class="tramo-t"><b>Hasta 20 km</b> · +15 € por visita</p><div class="towns"><span>Benicàssim</span><span>Cabanes</span><span>Torreblanca</span></div></div><div class="tramo"><p class="tramo-t"><b>De 20 a 40 km</b> · +30 € por visita</p><div class="towns"><span>La Pobla Tornesa</span><span>Benlloc</span><span>Vilafamés</span><span>Borriol</span><span>Castelló de la Plana</span><span>Alcalà de Xivert-Alcossebre</span><span>Almassora</span><span>Vila-real</span></div></div></div>
+      <p style="color:var(--muted);margin-top:16px">¿Tu municipio no aparece o está a más de 40 km? Pregúntanos y te damos precio.</p>
     </div>
     <div class="faq">
       <p class="eyebrow" style="margin-bottom:8px">Preguntas frecuentes</p>
@@ -849,8 +856,8 @@ var sc=document.currentScript;sc.parentNode.insertBefore(d,sc);})();
   }
 })();
 </script>
-<script src="/assets/senoide.js?v=202610251854" defer></script>
-<script src="/assets/trabajos.js?v=202610251854" defer></script>
+<script src="/assets/senoide.js?v=202610251902" defer></script>
+<script src="/assets/trabajos.js?v=202610251902" defer></script>
 
 </body>
 </html>
