@@ -32,12 +32,12 @@ Estas son las condiciones generales de los planes de mantenimiento de SENOIDE (L
 
 ## Avisos y averías
 
-- La mano de obra de las reparaciones se factura aparte con el descuento del plan: **5 %** en Básico y apartamentos, **10 %** en Plus. El descuento se aplica solo a la mano de obra (también cuando lleva el recargo de fuera de horario), no a la salida, al desplazamiento ni al material.
-- Los planes Plus incluyen el derecho a usar **hasta 3 horas de mano de obra de reparación en cada año de contrato** en la instalación cubierta, para reparaciones que autorices. Las horas usadas se anotan en el parte de trabajo. Se pueden usar fuera de horario: cada hora trabajada cuenta como 1,5 h del bono y la salida (60 €) se paga aparte. El bono no incluye materiales ni desplazamientos.
+- La mano de obra de las reparaciones se factura aparte con el descuento del plan: **5 %** en Básico y apartamentos, **10 %** en Plus. El descuento se aplica solo a la mano de obra (también cuando lleva el recargo de fuera de horario), no a la salida, al suplemento por servicio fuera de horario, al desplazamiento ni al material.
+- Los planes Plus incluyen el derecho a usar **hasta 3 horas de mano de obra de reparación en cada año de contrato** en la instalación cubierta, para reparaciones que autorices. Las horas usadas se anotan en el parte de trabajo. Se pueden usar fuera de horario: cada hora trabajada cuenta como 1,5 h del bono y el suplemento por servicio fuera de horario (60 €) se paga aparte. El bono no incluye materiales ni desplazamientos.
 - **Horas no usadas:** si el año de contrato termina con horas sin usar, no pasan al año siguiente ni se devuelven. Si te das de baja antes, en la liquidación solo cuentan las horas que hayas usado (45 € por hora del bono, como máximo 135 € al año); las no usadas no se cobran.
 - Urgencias en horario (L–V de 8 a 18 h): los planes Plus y los de apartamentos no pagan el suplemento de urgencia; los planes Básico pagan +30 € por intervención. «Sin suplemento» significa sin recargo por urgencia: la mano de obra, el material, la salida y el desplazamiento se cobran según el plan y el bono.
 - Plazos de respuesta: en los planes Plus, si avisas en día laborable antes de las 13 h, te respondemos y valoramos la avería ese mismo día; si avisas más tarde, el siguiente día laborable. En los planes Básico y de apartamentos, primera respuesta y valoración en un máximo de 2 días laborables desde el aviso. Responder y valorar no siempre significa ir en el momento: si hace falta visita, la acordamos contigo lo antes posible.
-- Fuera de horario (L–V antes de las 8 h o después de las 18 h, sábados, domingos y festivos) se aplica la tarifa general: +60 € por salida y +50 % sobre las horas de mano de obra, con el descuento del plan sobre la mano de obra.
+- Fuera de horario (L–V antes de las 8 h o después de las 18 h, sábados, domingos y festivos) se aplica la tarifa general: suplemento por servicio fuera de horario de 60 € por intervención y +50 % sobre las horas de mano de obra, con el descuento del plan sobre la mano de obra.
 
 ## Comunidades y locales
 

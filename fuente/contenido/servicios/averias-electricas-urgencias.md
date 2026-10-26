@@ -28,14 +28,14 @@ Si el diferencial salta, antes de llamar puedes hacer una prueba sencilla: [te e
 ## Urgencias
 
 - **Urgente en horario** (lunes a viernes, de 8 a 18 h, en 24 horas): suplemento de 30 € + IVA (36,30 €) por intervención.
-- **Fuera de horario**: salida de 60 € + IVA (72,60 €) y un 50 % más sobre las horas trabajadas.
+- **Fuera de horario**: suplemento por servicio fuera de horario de 60 € + IVA (72,60 €) por intervención y un 50 % más sobre las horas trabajadas.
 
 Las urgencias dependen de la agenda del día. Llámanos al **621 018 374** y te decimos cuándo podemos ir.
 
 ### Ejemplos de precio (avería de una hora, sin material, en Oropesa del Mar)
 
 - **Urgente en horario:** visita y diagnóstico 65 € + suplemento de urgencia 30 € = **95 € + IVA (114,95 € con IVA)**.
-- **Fuera de horario:** visita y diagnóstico 65 € + salida fuera de horario 60 € + 50 % sobre la primera hora, que se calcula sobre los 65 € de la visita y diagnóstico (32,50 €) = **157,50 € + IVA (190,58 € con IVA)**. La salida fuera de horario se cobra una sola vez por intervención.
+- **Fuera de horario:** visita y diagnóstico 65 € (incluye la salida y la primera hora) + suplemento por servicio fuera de horario 60 € + recargo del 50 % sobre la mano de obra, que se calcula sobre los 65 € de la visita y diagnóstico (32,50 €) = **157,50 € + IVA (190,58 € con IVA)**. El suplemento se cobra una sola vez por intervención; no hay una segunda salida.
 - Cada hora adicional fuera de horario: 45 € + 50 % = 67,50 € + IVA.
 - Fuera de Oropesa del Mar se suma el desplazamiento: 15 € + IVA hasta 20 km y 30 € + IVA de 20 a 40 km.
 
