@@ -20,7 +20,7 @@
 <link rel="icon" href="/assets/favicon-48.png" type="image/png" sizes="48x48">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <link rel="preload" href="/assets/fonts/bricolage.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/estilos.css?v=202610261745">
+<link rel="stylesheet" href="/assets/estilos.css?v=202610261904">
 <style>
 /* Menú con desplegables, menú móvil, accesos rápidos, barra inferior y «volver arriba» */
 header.site nav.main{gap:18px}
@@ -47,8 +47,12 @@ header.site nav.main .nav-tel{font-family:var(--f-mono);font-weight:500;color:va
 .burger[aria-expanded="true"] .burger-i::before{transform:translateY(6px) rotate(45deg)}
 .burger[aria-expanded="true"] .burger-i::after{transform:translateY(-6px) rotate(-45deg)}
 @media (max-width:1240px){header.site nav.main .nav-tel{display:none}}
+.hdr-tel{display:none}
 @media (max-width:1100px){
   .burger{display:inline-flex}
+  .hdr-tel{display:inline-flex;align-items:center;gap:8px;margin-left:auto;font:600 .95rem var(--f-body);color:var(--signal-ink);background:var(--signal);border-radius:999px;padding:9px 16px;text-decoration:none}
+  .hdr-tel:hover{filter:brightness(.95)}
+  header.site .wrap > .burger{margin-left:0}
   header.site nav.main{display:none;position:absolute;left:0;right:0;top:100%;flex-direction:column;align-items:stretch;gap:0;background:var(--surface);border-bottom:1px solid var(--line);box-shadow:0 18px 30px rgba(4,33,63,.12);padding:8px 20px 20px;max-height:calc(100vh - 120px);max-height:calc(100dvh - 120px);overflow-y:auto}
   header.site nav.main.open{display:flex}
   header.site nav.main > a:not(.btn),.dd-btn{display:flex!important;justify-content:space-between;align-items:center;width:100%;padding:14px 4px;font-size:1.05rem;color:var(--ink);border-bottom:1px solid var(--line);text-align:left}
@@ -298,6 +302,7 @@ footer .foot-legal{display:flex;justify-content:space-between;gap:10px 20px;flex
     <img class="logo-l" src="/assets/logo.png" alt="SENOIDE" width="164" height="34">
     <img class="logo-d" src="/assets/logo-blanco.png" alt="SENOIDE" width="164" height="34">
   </a>
+  <a class="hdr-tel" href="tel:+34621018374" aria-label="Llamar al 621 018 374"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.1 9.9a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Llamar</a>
   <button class="burger" type="button" aria-controls="menu-principal" aria-expanded="false"><span class="burger-i" aria-hidden="true"></span>Menú</button>
   <nav class="main" id="menu-principal" aria-label="Principal">
     <a class="nav-inicio" href="/">Inicio</a>
@@ -499,8 +504,8 @@ var sc=document.currentScript;sc.parentNode.insertBefore(d,sc);})();
   }
 })();
 </script>
-<script src="/assets/senoide.js?v=202610261745" defer></script>
-<script src="/assets/trabajos.js?v=202610261745" defer></script>
+<script src="/assets/senoide.js?v=202610261904" defer></script>
+<script src="/assets/trabajos.js?v=202610261904" defer></script>
 
 </body>
 </html>
