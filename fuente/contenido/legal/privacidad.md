@@ -2,8 +2,8 @@
 
 - **Responsable:** Luis M. Sierra Mena (SENOIDE)
 - **NIF:** 46927518C
-- **Domicilio:** C/ Moncayo, 28, 12594 Oropesa del Mar (Castellón)
 - **Contacto:** info@senoide.es · 621 018 374
+- El resto de datos del titular están en el [aviso legal](/aviso-legal/).
 
 ## Qué datos tratamos y de dónde vienen
 
