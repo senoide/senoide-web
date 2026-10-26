@@ -7,7 +7,10 @@ Estas son las condiciones generales de los planes de mantenimiento de SENOIDE (L
 - **Puedes darte de baja cuando quieras**, sin dar explicaciones: con el [formulario de baja](/baja/), por correo a info@senoide.es, por WhatsApp al 621 018 374, por escrito o en persona.
 - La baja tiene efecto **en la fecha que nos digas** (nunca antes de recibirla). Si lo prefieres, mantienes el servicio hasta el último día del mes. Te confirmamos por escrito la fecha de recepción y la de efecto.
 - **Sin penalización** y sin cobrarte cuotas futuras. Si la baja es a mitad de mes, ese mes se cobra por días. Si habías pagado algo por adelantado que no llegas a usar, te lo devolvemos en 14 días (en la cartera de apartamentos, según su apartado).
-- **Solo se liquida lo que ya hayas recibido y no hayas pagado.** Al darte de baja comparamos lo que has recibido en el periodo en curso (las visitas hechas, las horas de reparación usadas en los planes Plus y el seguimiento hasta la fecha de baja) con lo que has pagado hasta esa fecha. Si has recibido más, te detallamos la diferencia por escrito y te la facturamos; si no, no pagas nada más. Las cuotas de los meses ya pasados no se devuelven. El valor de cada parte está en el apartado de cada plan.
+- **Al darte de baja se liquida lo recibido frente a lo pagado.** Comparamos lo que has recibido en el periodo en curso (las visitas hechas, el seguimiento hasta la fecha de baja y, en los planes Plus, las horas de reparación usadas o, si son más, la parte del bono que corresponde al tiempo transcurrido) con lo que has pagado hasta esa fecha, y te lo detallamos por escrito:
+- Si has recibido más de lo que has pagado, pagas solo la diferencia.
+- Si has pagado más de lo que has recibido y contratas como particular o comunidad de propietarios, te devolvemos la diferencia en 14 días. Si contratas como empresa o profesional, las cuotas de los meses ya pasados no se devuelven.
+- El valor de cada parte está en el apartado de cada plan.
 
 ## Precios y pago
 
@@ -38,7 +41,7 @@ Estas son las condiciones generales de los planes de mantenimiento de SENOIDE (L
 - Local Básico, 420 €: 2 visitas de 165 € y 90 € de seguimiento.
 - Local Plus, 948 €: 4 visitas de 165 €, 3 horas de reparación de 45 € (135 €) y 153 € de seguimiento.
 - El seguimiento cubre la atención de avisos, la prioridad y el descuento en mano de obra durante el año.
-- **Ejemplo de baja:** Comunidad Básico con una visita en el primer mes y baja al final del segundo. Has recibido 162 € de la visita y 10 € de seguimiento (172 €) y has pagado dos cuotas (118 €): pagas 54 € + IVA y nada más. Si la baja es antes de la visita, no pagas nada más que las cuotas de esos meses.
+- **Ejemplo de baja:** Comunidad Básico con una visita en el primer mes y baja al final del segundo. Has recibido 162 € de la visita y 10 € de seguimiento (172 €) y has pagado dos cuotas (118 €): pagas 54 € + IVA y nada más. Normalmente la primera visita se hace en el primer mes; si como particular o comunidad te das de baja antes de ella, te devolvemos lo pagado menos el seguimiento de ese tiempo.
 - **Revisión eléctrica preventiva sin contrato:** comunidades de propietarios, **195 € + IVA**; locales y oficinas, **180 € + IVA**. Incluye hasta dos horas de revisión presencial de las instalaciones eléctricas accesibles, comprobaciones funcionales y mediciones seleccionadas, identificación de anomalías e informe técnico en PDF con fotografías y recomendaciones, además del desplazamiento dentro de Oropesa del Mar. No incluye materiales, reparaciones, certificados reglamentarios ni inspecciones de un organismo de control. Las instalaciones de mayor tamaño, con varios cuadros o equipamientos especiales, se presupuestan aparte. Hora adicional de revisión: 45 € + IVA, siempre que la aceptes antes.
 - **Locales de pública concurrencia:** en la Comunitat Valenciana necesitan una revisión anual con BRA (Boletín de Revisión Anual) emitido por una empresa instaladora habilitada, y los del anexo I de la Orden 6/2022, además, un contrato de mantenimiento. Los planes de local no incluyen el BRA: te lo presupuestamos aparte después de comprobar la clasificación de tu local.
 
