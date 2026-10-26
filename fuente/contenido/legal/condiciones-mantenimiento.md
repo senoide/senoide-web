@@ -1,4 +1,4 @@
-Estas son las condiciones generales de los planes de mantenimiento de SENOIDE (Luis M. Sierra Mena, NIF 46927518C). Lo que se pacte por escrito en cada contrato prevalece sobre este resumen.
+Estas son las condiciones generales de los planes de mantenimiento de SENOIDE (Luis M. Sierra Mena, NIF 46927518C). Las condiciones particulares de cada contrato concretan las prestaciones y los precios aplicables, respetando en todo caso tus derechos legales como consumidor y las condiciones de esta oferta que resulten exigibles.
 
 ## Desistimiento
 
@@ -8,14 +8,14 @@ Estas son las condiciones generales de los planes de mantenimiento de SENOIDE (L
 
 ## Duración, renovación y baja
 
-- El contrato dura **12 meses** desde la fecha de firma.
+- El contrato dura **12 meses** desde la **fecha de inicio del servicio** que figura en el contrato (que puede ser posterior a la firma).
 - Al terminar se renueva solo por otros 12 meses, con las mismas condiciones. Si cambiamos el precio o las condiciones, te avisamos por escrito con dos meses de antelación y puedes darte de baja antes sin ningún coste. Al menos 15 días antes de cada renovación te avisamos por escrito de la fecha, de que puedes darte de baja y de lo que ocurre si no lo haces. Si pagas por adelantado, ese aviso llega al menos 30 días antes de cobrar el nuevo periodo.
 - **Puedes darte de baja cuando quieras**, sin dar explicaciones: con el [formulario de baja](/baja/), por correo a info@senoide.es, por WhatsApp al 621 018 374, por escrito o en persona.
 - La baja tiene efecto **en la fecha que nos digas** (nunca antes de recibirla). Si lo prefieres, mantienes el servicio hasta el último día del mes. Te confirmamos por escrito la fecha de recepción y la de efecto.
 - **Sin penalización** y sin cobrarte cuotas futuras. Si la baja es a mitad de mes, ese mes se cobra por días. Si habías pagado algo por adelantado que no llegas a usar, te lo devolvemos en 14 días (en la cartera de apartamentos, según su apartado).
 - **Al darte de baja se liquida lo recibido frente a lo pagado.** Comparamos lo que has recibido en el periodo en curso (las visitas hechas, el seguimiento hasta la fecha de baja y, en los planes Plus, solo las horas de reparación que hayas usado, a 45 € por hora del bono) con lo que has pagado hasta esa fecha, y te lo detallamos por escrito:
 - Si has recibido más de lo que has pagado, pagas solo la diferencia.
-- Si has pagado más de lo que has recibido y contratas como particular o comunidad de propietarios, te devolvemos la diferencia en 14 días. Si contratas como empresa o profesional, las cuotas de los meses ya pasados no se devuelven.
+- Si has pagado más de lo que has recibido y contratas como particular o comunidad de propietarios, te devolvemos la diferencia en 14 días. Si contratas como empresa o profesional, las cuotas de los meses ya pasados no se devuelven, salvo lo que hayas pagado por adelantado por una revisión que no se ha hecho o por periodos posteriores a la baja, que se devuelve siempre (también en la cartera de apartamentos).
 - El valor de cada parte está en el apartado de cada plan.
 
 ## Precios y pago
@@ -33,7 +33,7 @@ Estas son las condiciones generales de los planes de mantenimiento de SENOIDE (L
 ## Avisos y averías
 
 - La mano de obra de las reparaciones se factura aparte con el descuento del plan: **5 %** en Básico y apartamentos, **10 %** en Plus. El descuento se aplica solo a la mano de obra (también cuando lleva el recargo de fuera de horario), no a la salida, al suplemento por servicio fuera de horario, al desplazamiento ni al material.
-- Los planes Plus incluyen el derecho a usar **hasta 3 horas de mano de obra de reparación en cada año de contrato** en la instalación cubierta, para reparaciones que autorices. Las horas usadas se anotan en el parte de trabajo. Se pueden usar fuera de horario: cada hora trabajada cuenta como 1,5 h del bono y el suplemento por servicio fuera de horario (60 €) se paga aparte. El bono no incluye materiales ni desplazamientos.
+- Los planes Plus incluyen el derecho a usar **hasta 3 horas de mano de obra de reparación en cada año de contrato** en la instalación cubierta, para reparaciones que autorices. Las horas usadas se anotan en el parte de trabajo. Se pueden usar fuera de horario: cada hora trabajada cuenta como 1,5 h del bono y el suplemento por servicio fuera de horario (60 €) se paga aparte. Ese 1,5 ya incluye el recargo de fuera de horario: las horas cubiertas por el bono no pagan además el 50 %; solo lo paga la mano de obra que exceda del bono. El bono no incluye materiales ni desplazamientos.
 - **Horas no usadas:** si el año de contrato termina con horas sin usar, no pasan al año siguiente ni se devuelven. Si te das de baja antes, en la liquidación solo cuentan las horas que hayas usado (45 € por hora del bono, como máximo 135 € al año); las no usadas no se cobran.
 - Urgencias en horario (L–V de 8 a 18 h): los planes Plus y los de apartamentos no pagan el suplemento de urgencia; los planes Básico pagan +30 € por intervención. «Sin suplemento» significa sin recargo por urgencia: la mano de obra, el material, la salida y el desplazamiento se cobran según el plan y el bono.
 - Plazos de respuesta: en los planes Plus, si avisas en día laborable antes de las 13 h, te respondemos y valoramos la avería ese mismo día; si avisas más tarde, el siguiente día laborable. En los planes Básico y de apartamentos, primera respuesta y valoración en un máximo de 2 días laborables desde el aviso. Responder y valorar no siempre significa ir en el momento: si hace falta visita, la acordamos contigo lo antes posible.
@@ -64,7 +64,7 @@ Estas son las condiciones generales de los planes de mantenimiento de SENOIDE (L
 - La revisión no incluye desmontajes, reparaciones ni piezas, que se presupuestan aparte. No es una certificación reglamentaria de la instalación. La prueba del diferencial corta la luz unos segundos: avísanos si hay huéspedes dentro o aparatos que no deban apagarse.
 - Viviendas grandes, con equipamiento complejo o instalaciones en mal estado: te damos un precio a medida.
 - **Altas y bajas en la cartera:** las bajas de apartamentos valen sin que tengas que aceptar nada; te enviamos el anexo actualizado para que te conste. Las altas sí te las enviamos para que las aceptes antes de aplicarlas.
-- **Si la cartera se queda con un solo apartamento**, sigue con su precio hasta el final del periodo; entonces el contrato termina y pasas a la revisión puntual. Te avisamos con al menos 30 días.
+- **Si la cartera se queda con un solo apartamento**, sigue con su precio hasta el final del periodo; entonces el contrato de mantenimiento termina, sin ningún cargo ni contratación automática. Si después quieres una revisión puntual (150 € + IVA), nos la pides cuando la necesites. Te avisamos con al menos 30 días.
 - Si te das de baja con pago mensual después de la revisión, pagas solo la parte de la revisión que faltaba (su precio menos lo pagado a cuenta) y ninguna cuota futura. Por ejemplo, revisión de 84 € y baja al final del quinto mes, con 35 € pagados a cuenta: pagas 49 € + IVA.
 - Si quieres adelantar la revisión, te enviamos antes una propuesta por escrito con el importe pendiente y solo la hacemos si la aceptas.
 
