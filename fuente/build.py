@@ -124,7 +124,7 @@ def leer_md(ruta):
 
 
 def inline(t):
-    t = esc(t)
+    t = esc(t).replace("\\*", "&#42;")  # \* = asterisco literal
     t = re.sub(r"!\[([^\]]*)\]\(([^)]+)\)", lambda m: f'<img src="{ruta_foto(m.group(2))}" alt="{m.group(1)}" loading="lazy">', t)
     t = re.sub(r"\[([^\]]+)\]\(([^)]+)\)", lambda m: enlace(m.group(1), m.group(2)), t)
     t = re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", t)
@@ -182,7 +182,8 @@ def markdown(md):
         h = re.match(r"^(#{2,3})\s+(.*)", s)
         if h:
             cerrar_parrafo(); cerrar_lista()
-            n = len(h.group(1)); out.append(f"<h{n}>{inline(h.group(2))}</h{n}>"); continue
+            n = len(h.group(1)); a = re.match(r"^(.*?)\s*\{#([\w-]+)\}$", h.group(2))
+            out.append(f'<h{n} id="{a.group(2)}">{inline(a.group(1))}</h{n}>' if a else f"<h{n}>{inline(h.group(2))}</h{n}>"); continue
         li = re.match(r"^([-*]|\d+\.)\s+(.*)", s)
         if li:
             cerrar_parrafo()
@@ -527,7 +528,8 @@ def construir():
     for slug, titulo, fichero in (("aviso-legal", "Aviso legal", "aviso-legal.md"),
                                   ("privacidad", "Política de privacidad", "privacidad.md"),
                                   ("cookies", "Política de cookies", "cookies.md"),
-                                  ("condiciones-mantenimiento", "Condiciones de los planes de mantenimiento", "condiciones-mantenimiento.md")):
+                                  ("condiciones-mantenimiento", "Condiciones de los planes de mantenimiento", "condiciones-mantenimiento.md"),
+                                  ("desistimiento", "Derecho de desistimiento", "desistimiento.md")):
         texto = (RAIZ / "contenido" / "legal" / fichero).read_text(encoding="utf-8")
         for k in ("TITULAR", "NIF", "DOMICILIO", "EMAIL", "TELEFONO", "DOMINIO"):
             texto = texto.replace("{{" + k + "}}", d[k])
@@ -549,7 +551,11 @@ def construir():
         '<label style="display:flex;gap:10px;align-items:center;font-weight:400;margin:8px 0 0"><input type="radio" name="b-alc" id="b-alc-todo" checked style="width:auto;margin:0"> De todo el contrato</label>'
         '<label style="display:flex;gap:10px;align-items:center;font-weight:400;margin:8px 0 0"><input type="radio" name="b-alc" id="b-alc-aptos" style="width:auto;margin:0"> De algunos apartamentos de mi cartera</label></div>'
         '<div class="field" id="b-aptos-w" hidden><label for="b-aptos">Apartamentos que das de baja</label><textarea id="b-aptos" rows="2" placeholder="Nombre o dirección de cada apartamento"></textarea></div>'
-        '<div class="field"><label for="b-fecha">Fecha de efecto (opcional)</label><input id="b-fecha" type="date"><small>Si la dejas en blanco, la baja tiene efecto el último día de este mes. No puede ser anterior a hoy.</small></div>'
+        '<div class="field"><span style="font-weight:600">¿Desde cuándo?</span>'
+        '<label style="display:flex;gap:10px;align-items:center;font-weight:400;margin:8px 0 0"><input type="radio" name="b-modo" id="b-modo-recepcion" value="recepcion" checked style="width:auto;margin:0"> Desde que recibamos esta solicitud (hoy)</label>'
+        '<label style="display:flex;gap:10px;align-items:center;font-weight:400;margin:8px 0 0"><input type="radio" name="b-modo" id="b-modo-finmes" value="finmes" style="width:auto;margin:0"> Al final de este mes</label>'
+        '<label style="display:flex;gap:10px;align-items:center;font-weight:400;margin:8px 0 0"><input type="radio" name="b-modo" id="b-modo-fecha" value="fecha" style="width:auto;margin:0"> En una fecha posterior que elijo</label></div>'
+        '<div class="field" id="b-fecha-w" hidden><label for="b-fecha">Fecha de efecto</label><input id="b-fecha" type="date"><small>No puede ser anterior a hoy.</small></div>'
         '<div class="field"><label for="b-com">Comentario (opcional)</label><textarea id="b-com" rows="3"></textarea></div>'
         '<input id="b-web" type="text" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">'
         '<label class="priv"><input type="checkbox" id="b-priv"><span>He leído la <a href="/privacidad/" target="_blank">política de privacidad</a> y he sido informado del tratamiento de mis datos para gestionar la baja.</span></label>'

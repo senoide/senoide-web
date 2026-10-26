@@ -1,5 +1,11 @@
 Estas son las condiciones generales de los planes de mantenimiento de SENOIDE (Luis M. Sierra Mena, NIF 46927518C). Lo que se pacte por escrito en cada contrato prevalece sobre este resumen.
 
+## Desistimiento
+
+- Si contratas cualquier plan como **consumidor** a distancia o fuera de nuestro local, tienes **14 días naturales** desde la firma para desistir, sin dar motivos y sin penalización (**30 días** si el contrato surge de una visita a tu casa que no pediste). Te devolvemos lo pagado en 14 días.
+- Durante ese plazo no hacemos ninguna visita ni revisión, salvo que nos lo pidas expresamente por escrito en la casilla separada del contrato. Si lo pides y luego desistes, pagas solo la parte proporcional de lo recibido hasta entonces.
+- Cómo hacerlo y modelo de formulario: [derecho de desistimiento](/desistimiento/).
+
 ## Duración, renovación y baja
 
 - El contrato dura **12 meses** desde la fecha de firma.
@@ -57,7 +63,6 @@ Estas son las condiciones generales de los planes de mantenimiento de SENOIDE (L
 - Viviendas grandes, con equipamiento complejo o instalaciones en mal estado: te damos un precio a medida.
 - **Altas y bajas en la cartera:** las bajas de apartamentos valen sin que tengas que aceptar nada; te enviamos el anexo actualizado para que te conste. Las altas sí te las enviamos para que las aceptes antes de aplicarlas.
 - **Si la cartera se queda con un solo apartamento**, sigue con su precio hasta el final del periodo; entonces el contrato termina y pasas a la revisión puntual. Te avisamos con al menos 30 días.
-- Si contratas como consumidor fuera de nuestro local o a distancia, tienes 14 días para desistir (30 si el contrato surge de una visita a tu casa que no pediste). Durante ese plazo no hacemos la revisión, salvo que nos lo pidas por escrito.
 - Si te das de baja con pago mensual después de la revisión, pagas solo la parte de la revisión que faltaba (su precio menos lo pagado a cuenta) y ninguna cuota futura. Por ejemplo, revisión de 84 € y baja al final del quinto mes, con 35 € pagados a cuenta: pagas 49 € + IVA.
 - Si quieres adelantar la revisión, te enviamos antes una propuesta por escrito con el importe pendiente y solo la hacemos si la aceptas.
 
