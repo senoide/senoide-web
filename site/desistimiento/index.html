@@ -1,0 +1,534 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Derecho de desistimiento | SENOIDE</title>
+<meta name="description" content="Derecho de desistimiento de la web de SENOIDE.">
+<link rel="canonical" href="https://senoide.es/desistimiento/">
+<meta name="robots" content="noindex,follow">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_ES">
+<meta property="og:site_name" content="SENOIDE">
+<meta property="og:title" content="Derecho de desistimiento | SENOIDE">
+<meta property="og:description" content="Derecho de desistimiento de la web de SENOIDE.">
+<meta property="og:url" content="https://senoide.es/desistimiento/">
+<meta property="og:image" content="https://senoide.es/assets/og-senoide.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0b2d58">
+<link rel="icon" href="/assets/favicon.ico" sizes="32x32">
+<link rel="icon" href="/assets/favicon-48.png" type="image/png" sizes="48x48">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="preload" href="/assets/fonts/bricolage.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/estilos.css?v=202610261550">
+<style>
+/* Menú con desplegables, menú móvil, accesos rápidos, barra inferior y «volver arriba» */
+header.site nav.main{gap:18px}
+header.site nav.main a:not(.btn),.dd-btn{display:inline-block;text-decoration:none;font:500 .95rem var(--f-body);color:var(--muted);background:none;border:0;padding:6px 0;cursor:pointer}
+header.site nav.main a:not(.btn):hover,.dd-btn:hover,.dd.open .dd-btn{color:var(--ink)}
+.dd{position:relative}
+.dd-btn::after{content:"";display:inline-block;width:.42em;height:.42em;margin-left:.45em;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:translateY(-.2em) rotate(45deg);transition:transform .15s}
+.dd.open .dd-btn::after{transform:translateY(.05em) rotate(225deg)}
+.dd-panel{display:none;position:absolute;top:calc(100% + 10px);left:-14px;min-width:250px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);box-shadow:0 14px 34px rgba(4,33,63,.14);padding:8px;z-index:30}
+.dd-panel::before{content:"";position:absolute;left:0;right:0;top:-12px;height:12px}
+header.site nav.main .dd-panel a:not(.btn){display:block!important;padding:9px 12px;border-radius:7px;color:var(--ink)}
+header.site nav.main .dd-panel a:not(.btn):hover{background:var(--paper)}
+.dd.open .dd-panel{display:block}
+header.site nav.main .nav-inicio{display:none!important}
+header.site nav.main .dd-panel a.dd-todos:not(.btn){font-weight:600;color:var(--accent-text)}
+@media (hover:hover) and (min-width:1101px){.dd:hover .dd-panel,.dd:focus-within .dd-panel{display:block}}
+header.site nav.main .nav-tel{font-family:var(--f-mono);font-weight:500;color:var(--ink)}
+.burger{display:none;align-items:center;gap:10px;font:600 .95rem var(--f-body);color:var(--ink);background:none;border:1.5px solid var(--line);border-radius:999px;padding:8px 14px;cursor:pointer}
+.burger-i,.burger-i::before,.burger-i::after{display:block;width:18px;height:2px;background:currentColor;border-radius:2px;transition:transform .2s,background .2s}
+.burger-i{position:relative}
+.burger-i::before,.burger-i::after{content:"";position:absolute;left:0}
+.burger-i::before{top:-6px}.burger-i::after{top:6px}
+.burger[aria-expanded="true"] .burger-i{background:transparent}
+.burger[aria-expanded="true"] .burger-i::before{transform:translateY(6px) rotate(45deg)}
+.burger[aria-expanded="true"] .burger-i::after{transform:translateY(-6px) rotate(-45deg)}
+@media (max-width:1240px){header.site nav.main .nav-tel{display:none}}
+@media (max-width:1100px){
+  .burger{display:inline-flex}
+  header.site nav.main{display:none;position:absolute;left:0;right:0;top:100%;flex-direction:column;align-items:stretch;gap:0;background:var(--surface);border-bottom:1px solid var(--line);box-shadow:0 18px 30px rgba(4,33,63,.12);padding:8px 20px 20px;max-height:calc(100vh - 120px);max-height:calc(100dvh - 120px);overflow-y:auto}
+  header.site nav.main.open{display:flex}
+  header.site nav.main > a:not(.btn),.dd-btn{display:flex!important;justify-content:space-between;align-items:center;width:100%;padding:14px 4px;font-size:1.05rem;color:var(--ink);border-bottom:1px solid var(--line);text-align:left}
+  header.site nav.main .nav-tel{display:flex!important}
+  header.site nav.main .nav-inicio{display:flex!important}
+  .dd-panel{position:static;box-shadow:none;border:0;padding:4px 0 8px 12px;min-width:0;background:none}
+  .dd-panel::before{display:none}
+  header.site nav.main .dd-panel a:not(.btn){padding:10px 4px;font-size:1rem;color:var(--muted)}
+  header.site nav.main .btn{margin-top:16px}
+}
+/* por qué SENOIDE (portada): bloque propio con fondo */
+.why{background:var(--surface);border-block:1px solid var(--line);padding-block:56px}
+.why .section-head{margin-bottom:28px}
+.why-grid{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px}
+.why-grid li{display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:start}
+.why .w-ico{display:grid;place-items:center;width:44px;height:44px;border-radius:12px;background:color-mix(in srgb,var(--wc) 15%,transparent);color:var(--wc)}
+.why .w-ico svg{width:22px;height:22px}
+.why h3{font-size:1.05rem;margin:2px 0 4px}
+.why p{color:var(--muted);font-size:.92rem;line-height:1.45}
+.why .w-a{--wc:var(--accent-text)} .why .w-b{--wc:var(--earth-g)} .why .w-c{--wc:var(--phase)} .why .w-d{--wc:var(--neutral)}
+@media (max-width:1100px){.why-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:820px){.why{padding-block:40px}.why-grid{grid-template-columns:1fr;gap:20px}}
+/* portada en el móvil: ocupa la primera pantalla y termina en los botones */
+.hero-down{display:none}
+@media (max-width:820px){
+  section.hero{min-height:calc(100vh - 136px);min-height:calc(100svh - 136px);display:flex;flex-direction:column;justify-content:center;padding-top:24px;padding-bottom:calc(0.36 * (100vh - 136px));padding-bottom:calc(0.36 * (100svh - 136px))}
+  .hero-down{display:grid;place-items:center;position:absolute;left:50%;bottom:14px;transform:translateX(-50%);width:40px;height:40px;border-radius:50%;color:var(--muted);text-decoration:none;animation:baja 2s ease-in-out infinite}
+  .hero-down svg{width:24px;height:24px}
+  .hero .wrap{position:static}
+  .hero canvas{top:auto;bottom:0;height:40%}
+}
+@keyframes baja{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,6px)}}
+@media (prefers-reduced-motion: reduce){.hero-down{animation:none}}
+/* portada por bloques: cada bloque ocupa la pantalla; el desplazamiento es libre (sin ajuste automático, que en el móvil hacía saltar la página) */
+html:has(main#inicio){scroll-padding-top:var(--cab,62px)}
+main#inicio > section:not(.hero){min-height:calc(100vh - var(--cab,62px));min-height:calc(100svh - var(--cab,62px));display:flex;flex-direction:column;justify-content:center;padding-block:56px;border-top:1px solid var(--line)}
+main#inicio > section:not(.hero) > .wrap{width:100%}
+main#inicio > section[hidden]{display:none!important}
+#presupuesto.wz-on .quote{min-height:0!important}
+@media (min-width:821px){html:has(main#inicio){--cab:74px} main#inicio > section:not(.hero){padding-block:72px}}
+@media (max-width:820px){main#inicio > section:not(.hero){padding-block:40px}}
+/* móvil: las tarjetas de cada bloque se deslizan de lado para que el bloque quepa en una pantalla */
+@media (max-width:820px){
+  main#inicio .trades, main#inicio .mt-sum, .cards, main#inicio .aud dl{
+    display:grid;grid-auto-flow:column;grid-auto-columns:86%;grid-template-columns:none;gap:12px;
+    overflow-x:auto;scroll-snap-type:x mandatory;overscroll-behavior-x:contain;scrollbar-width:none;
+    margin-inline:-20px;padding:2px 20px 6px;scroll-padding-inline:20px}
+  main#inicio .trades::-webkit-scrollbar, main#inicio .mt-sum::-webkit-scrollbar, .cards::-webkit-scrollbar, main#inicio .aud dl::-webkit-scrollbar{display:none}
+  main#inicio .trades > *, main#inicio .mt-sum > *, .cards > *, main#inicio .aud dl > div{scroll-snap-align:start}
+  .desliza{display:flex}
+  main#inicio .aud dl{border-top:0}
+  main#inicio .aud dl div{border:1px solid var(--line);border-radius:var(--r);background:var(--surface);padding:16px;align-content:start}
+  main#inicio .aud{gap:20px}
+  main#inicio .aud .intro{gap:12px}
+  main#inicio .aud .intro p{font-size:.98rem}
+  main#inicio .tabs{margin-bottom:18px}
+  main#inicio .trade{padding:18px;gap:10px}
+  main#inicio .trade ul{gap:3px;font-size:.93rem}
+  main#inicio .section-head{margin-bottom:22px;gap:8px}
+  main#inicio #servicios .section-head > p:last-child{display:none}
+  main#inicio .card img{aspect-ratio:16/9}
+  main#inicio .process{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:18px}
+  main#inicio .process li{padding:14px 12px 0 0;gap:6px}
+  main#inicio .process p{font-size:.92rem}
+  main#inicio .two{gap:28px}
+  main#inicio .faq details{padding-block:12px}
+  main#inicio .desliza{display:flex}
+}
+.desliza{display:none;align-items:center;gap:6px;margin-top:10px;font-family:var(--f-mono);font-size:.75rem;color:var(--muted);letter-spacing:.06em;text-transform:uppercase}
+@media (max-height:700px) and (max-width:820px){.hero h1{font-size:2.2rem}.hero .lead{font-size:.98rem}}
+/* ordenador: bloques más compactos para que quepan en la pantalla */
+@media (min-width:821px){
+  main#inicio .trade{padding:20px;gap:10px}
+  main#inicio .trade ul{gap:4px}
+  main#inicio .section-head{margin-bottom:28px}
+}
+@media (min-width:821px) and (max-height:860px){
+  .hero{padding-block:32px 28px}
+  .hero h1{font-size:clamp(2.5rem,5.4vw,4.2rem)}
+  main#inicio > section:not(.hero){padding-block:48px}
+  main#inicio .section-head h2{font-size:clamp(1.7rem,3vw,2.3rem)}
+  main#inicio .trade ul{font-size:.94rem}
+}
+/* contacto: mismo azul de marca en claro y en oscuro, para que no se invierta */
+#contacto{background:#0b2d58;color:#eef3f7;border-top:0!important}
+#contacto .eyebrow{color:#9fb3c8}
+#contacto .contact-lead{color:#c3d0dd;font-size:1.05rem;margin-top:12px}
+#contacto .contact-acts{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+#contacto .contact-acts .btn:not(.primary){border-color:#eef3f7;color:#eef3f7}
+#contacto .ccard{border-color:rgba(238,243,247,.22);background:rgba(255,255,255,.04)}
+#contacto .ccard .btn{border-color:#eef3f7;color:#eef3f7}
+#contacto .ccard .v.small{color:#7fe3e6}
+#contacto .contact{align-items:center}
+@media (max-width:820px){#contacto .contact-acts .btn{flex:1 1 auto}#contacto .contact h2{font-size:2rem}}
+/* bloques en el móvil: más compactos para que cada uno quepa en una pantalla */
+@media (max-width:820px){
+  main#inicio > section:not(.hero){padding-block:32px}
+  main#inicio .trade .tag, main#inicio .trade > p:has(.more-link){display:none}
+  main#inicio #mantenimiento .section-head > p:last-child{display:none}
+  main#inicio .mt-acts{margin-top:14px}
+  main#inicio #clientes .aud .intro > p{display:none}
+  main#inicio .towns{gap:6px;margin-top:8px}
+  main#inicio .towns span{padding:5px 11px;font-size:.86rem}
+  main#inicio #zona h2{font-size:1.75rem}
+}
+/* ordenador: el título de la calculadora va a la izquierda y el resumen ocupa toda la altura a la derecha */
+@media (min-width:961px){
+  #presupuesto > .wrap{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);column-gap:28px;align-items:start}
+  #presupuesto > .wrap > .section-head{grid-column:1;margin-bottom:22px}
+  #presupuesto .quote{display:contents}
+  #presupuesto .quote > div:first-child{grid-column:1}
+  #presupuesto .summary{grid-column:2;grid-row:1 / span 2;padding:20px;gap:11px}
+  #presupuesto .summary .note{font-size:.78rem;line-height:1.4}
+  #presupuesto .toast:empty{display:none}
+}
+/* pantallas bajas (móviles pequeños y portátiles): todo un poco más compacto */
+@media (max-width:820px) and (max-height:720px){
+  main#inicio > section:not(.hero){padding-block:24px}
+  main#inicio .section-head{margin-bottom:16px}
+  main#inicio .section-head h2, main#inicio #zona h2, #contacto .contact h2{font-size:1.6rem}
+  main#inicio .trade ul{font-size:.88rem}
+  main#inicio .process li h3{font-size:1.02rem}
+  main#inicio .process p{font-size:.85rem}
+  main#inicio .faq details{padding-block:9px}
+  main#inicio .faq summary{font-size:.95rem}
+  #contacto .contact{gap:20px}
+  #contacto .ccard{padding:12px 14px}
+}
+@media (min-width:821px) and (max-height:860px){
+  main#inicio #servicios .section-head > p:last-child{display:none}
+  main#inicio .trade ul{gap:2px;font-size:.92rem}
+  main#inicio .trade{gap:8px}
+}
+/* en modo oscuro el resumen de la calculadora mantiene el azul de marca (no se invierte a gris claro) */
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) :is(.summary,.cta-box,.ribbon){--ink:#0b2d58;--paper:#eef3f7}:root:not([data-theme="light"]) :is(.summary,.cta-box){border:1px solid #22344f}}
+:root[data-theme="dark"] :is(.summary,.cta-box,.ribbon){--ink:#0b2d58;--paper:#eef3f7}
+:root[data-theme="dark"] :is(.summary,.cta-box){border:1px solid #22344f}
+/* ordenador: la portada ocupa la primera pantalla */
+@media (min-width:821px){section.hero{min-height:calc(100vh - 98px);min-height:calc(100svh - 98px);display:flex;flex-direction:column;justify-content:center}}
+/* móvil: dentro de la calculadora no se muestra «volver arriba», para no tapar «Siguiente» */
+@media (max-width:820px){.en-calc .totop{opacity:0!important;pointer-events:none!important}}
+/* aviso del IVA reducido en la calculadora: visible, y más destacado si se elige el 10 % */
+.summary .vat-aviso{border-left:3px solid #e2bf22;background:rgba(226,191,34,.12);padding:8px 10px;border-radius:6px;color:inherit!important;opacity:1!important}
+.summary .vat-aviso strong{color:#f5d55a}
+.summary .vat-aviso.activo{background:rgba(226,191,34,.22);border-left-width:5px}
+/* pie de página */
+footer{padding-block:40px 24px}
+footer .foot-grid{display:grid;grid-template-columns:minmax(0,1.4fr) repeat(3,minmax(0,1fr));gap:28px;align-items:start}
+footer .foot-col{display:grid;gap:8px;align-content:start}
+footer .foot-col a{text-decoration:none;color:var(--ink)}
+footer .foot-col a:hover{text-decoration:underline}
+footer .foot-col span,footer .foot-marca p{color:var(--muted)}
+footer .foot-t{font-family:var(--f-mono);font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+footer .foot-marca p{max-width:300px;margin-top:6px}
+footer .foot-legal{display:flex;justify-content:space-between;gap:10px 20px;flex-wrap:wrap;margin-top:28px;padding-top:18px;border-top:1px solid var(--line);font-size:.8rem}
+@media (max-width:820px){footer .foot-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 16px}footer .foot-marca{grid-column:1 / -1}footer .foot-legal{flex-direction:column}}
+/* resumen de mantenimiento en la portada */
+.mt-sum{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.mt-sum article{display:grid;gap:8px;align-content:start;padding:20px;border:1px solid var(--line);border-radius:var(--r);background:var(--surface)}
+.mt-sum .cable{height:4px;border-radius:2px}
+.mt-sum .p{font-family:var(--f-display);font-weight:700;font-size:1.35rem;color:var(--ink)}
+.mt-sum .p small{font-family:var(--f-body);font-weight:500;font-size:.85rem;color:var(--muted)}
+.mt-sum p{color:var(--muted);font-size:.95rem}
+.mt-acts{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-top:22px}
+.mt-acts .more-link{font-weight:600;color:var(--accent-text);text-decoration:none}
+.mt-acts .more-link:hover{text-decoration:underline}
+@media (max-width:820px){.mt-sum{grid-template-columns:1fr}}
+/* barra inferior en el móvil y botón volver arriba */
+.mbar{display:none}
+@media (max-width:820px){
+  .mbar{display:grid;grid-template-columns:repeat(3,1fr);position:fixed;left:0;right:0;bottom:0;z-index:25;background:var(--surface);border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom,0px);transition:transform .25s}
+  .mbar{transition:transform .25s,opacity .25s}
+  .mbar-off .mbar{transform:translateY(110%);opacity:0;visibility:hidden;pointer-events:none}
+  .mbar a{display:flex;flex-direction:column;align-items:center;gap:2px;padding:9px 4px 10px;text-decoration:none;font:600 .8rem var(--f-body);color:var(--ink)}
+  .mbar a svg{width:22px;height:22px}
+  .mbar a.go{background:var(--signal);color:var(--signal-ink)}
+  body{padding-bottom:calc(64px + env(safe-area-inset-bottom,0px))}
+}
+.totop{position:fixed;right:16px;bottom:20px;z-index:24;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--surface);color:var(--ink);box-shadow:0 6px 18px rgba(4,33,63,.15);cursor:pointer;opacity:0;pointer-events:none;transition:opacity .2s}
+.totop.on{opacity:1;pointer-events:auto}
+.totop svg{width:20px;height:20px}
+@media (max-width:820px){
+  .totop{bottom:calc(76px + env(safe-area-inset-bottom,0px));transition:opacity .2s,bottom .25s}
+  .mbar-off .totop{bottom:calc(16px + env(safe-area-inset-bottom,0px))}
+  .en-calc .totop{bottom:calc(150px + env(safe-area-inset-bottom,0px))}
+  .en-calc.mbar-off .totop{bottom:calc(92px + env(safe-area-inset-bottom,0px))}
+  .mbar-off .wz-nav{bottom:calc(8px + env(safe-area-inset-bottom,0px))}
+}
+/* enlace «Volver» al final de las páginas interiores */
+.volver{max-width:1160px;margin:8px auto 48px;padding-inline:20px}
+.volver a{display:inline-flex;align-items:center;gap:8px;font-weight:600;color:var(--accent-text);text-decoration:none}
+.volver a:hover{text-decoration:underline}
+/* portada en el móvil: texto más corto y ficha del instalador compacta */
+@media (max-width:820px){
+  .hero{padding-block:28px 28px}
+  .hero .lead{font-size:1.04rem;margin-top:14px}
+  .hero .lead .lead-extra{display:none}
+  .hero .ctas{margin-top:20px;gap:10px}
+  .hero .ctas .btn{flex:1 1 auto;padding:11px 14px}
+  .plate{padding:14px 16px;gap:10px;font-size:.9rem}
+  .plate .row.opt{display:none}
+  .plate .row:nth-child(3){border-bottom:0;padding-bottom:0}
+  .hero .plate{display:none}
+  .hero .eyebrow .ey-extra{display:none}
+}
+.ey-movil{display:none}
+@media (max-width:820px){.hero .eyebrow .ey-movil{display:inline}}
+
+/* calculadora por pasos (solo móvil; lo activa el código de la portada) */
+.wz-oculto{display:none!important}
+.wz-pc .wz-nav{position:static;box-shadow:none;margin-top:4px}
+.wz-pc .wz-nav .wz-total{display:none}
+.wz-pc .step{margin-bottom:12px}
+#presupuesto .quote{scroll-margin-top:84px}
+@media (max-width:820px){
+  #presupuesto.wz-on{padding-bottom:28px}
+  #presupuesto.wz-on .quote{gap:0;align-content:start;min-height:calc(100vh - 176px);min-height:calc(100svh - 176px)}
+}
+.wz-nav.wz-ultimo{position:static;box-shadow:none}
+.wz-nav.wz-ultimo .wz-row{justify-content:flex-start}
+.wz-nav.wz-ultimo .wz-total{display:none}
+
+.wz-cab{margin-bottom:14px;color:var(--accent-text)}
+.wz-nav{position:sticky;bottom:calc(64px + env(safe-area-inset-bottom,0px));z-index:15;margin-top:8px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:10px 12px;box-shadow:0 -6px 18px rgba(4,33,63,.08)}
+.wz-row{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.wz-info{display:grid;text-align:center;font-size:.8rem;color:var(--muted);line-height:1.2}
+.wz-total{font-family:var(--f-display);font-size:1.15rem;color:var(--ink)}
+.wz-msg{color:#c0392b;font-weight:600;font-size:.9rem;margin-bottom:6px}
+.wz-msg:empty{display:none}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .dd-panel{box-shadow:0 14px 34px rgba(0,0,0,.4)}}
+/* zona de trabajo por tramos de desplazamiento y municipio en la calculadora */
+.tramos{display:grid;gap:14px;margin-top:18px}
+.tramo .towns{margin-top:8px}
+.tramo-t{margin:0;font-size:.9rem;color:var(--muted)}
+.tramo-t b{color:var(--ink);font-weight:600}
+.field.muni{margin-bottom:12px;max-width:420px}
+.field.muni select{width:100%}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@context": "https://schema.org", "@type": "Electrician", "@id": "https://senoide.es/#empresa", "name": "SENOIDE", "description": "Instalaciones eléctricas, averías, boletines, puntos de recarga, fontanería y remates de albañilería.", "url": "https://senoide.es/", "logo": "https://senoide.es/assets/icono-512.png", "image": "https://senoide.es/assets/og-senoide.jpg", "telephone": "+34621018374", "email": "info@senoide.es", "founder": {"@type": "Person", "name": "Luis M. Sierra Mena"}, "address": {"@type": "PostalAddress", "addressLocality": "Oropesa del Mar", "postalCode": "12594", "addressRegion": "Castellón", "addressCountry": "ES"}, "areaServed": [{"@type": "City", "name": "Oropesa del Mar"}, {"@type": "City", "name": "Benicàssim"}, {"@type": "City", "name": "Cabanes"}, {"@type": "City", "name": "Torreblanca"}, {"@type": "City", "name": "La Pobla Tornesa"}, {"@type": "City", "name": "Benlloc"}, {"@type": "City", "name": "Vilafamés"}, {"@type": "City", "name": "Borriol"}, {"@type": "City", "name": "Castelló de la Plana"}, {"@type": "City", "name": "Alcalà de Xivert-Alcossebre"}, {"@type": "City", "name": "Almassora"}, {"@type": "City", "name": "Vila-real"}], "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "08:00", "closes": "18:00"}], "priceRange": "€€", "sameAs": ["https://share.google/tdtfLiFDOJaDpnz7n", "https://www.instagram.com/senoide.es"]}]}</script>
+</head>
+<body data-whatsapp="34621018374" data-api="https://app.senoide.es">
+<div class="ribbon"><div class="wrap"><span id="aviso" data-abierto="Atendemos de lunes a viernes, de 8 a 18 h · Urgencias: &lt;a href=&quot;tel:+34621018374&quot;&gt;621 018 374&lt;/a&gt;" data-desde="2026-11-02">Abrimos el <b>2 de noviembre de 2026</b> · ya puedes pedir presupuesto</span><span class="mono">230 V · 50 Hz</span></div></div>
+<script>(function(){var a=document.getElementById('aviso');if(!a)return;var d=new Date(),h=d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');if(h>=a.dataset.desde)a.innerHTML=a.dataset.abierto;})();</script>
+
+<header class="site"><div class="wrap">
+  <a class="brand" href="/" aria-label="SENOIDE, inicio">
+    <img class="logo-l" src="/assets/logo.png" alt="SENOIDE" width="164" height="34">
+    <img class="logo-d" src="/assets/logo-blanco.png" alt="SENOIDE" width="164" height="34">
+  </a>
+  <button class="burger" type="button" aria-controls="menu-principal" aria-expanded="false"><span class="burger-i" aria-hidden="true"></span>Menú</button>
+  <nav class="main" id="menu-principal" aria-label="Principal">
+    <a class="nav-inicio" href="/">Inicio</a>
+    <div class="dd">
+      <button class="dd-btn" type="button" aria-expanded="false">Servicios</button>
+      <div class="dd-panel">
+        <a class="dd-todos" href="/#servicios">Ver todos los servicios</a>
+        <a href="/servicios/averias-electricas-urgencias/">Averías y urgencias</a>
+        <a href="/servicios/cuadro-electrico-aumento-potencia/">Cuadro y aumento de potencia</a>
+        <a href="/servicios/boletin-electrico/">Boletín eléctrico (CIE)</a>
+        <a href="/servicios/punto-recarga-coche-electrico/">Punto de recarga</a>
+        <a href="/#servicios">Fontanería y remates</a>
+      </div>
+    </div>
+    <div class="dd">
+      <button class="dd-btn" type="button" aria-expanded="false">Para quién</button>
+      <div class="dd-panel">
+        <a class="dd-todos" href="/#clientes">Ver todos los tipos de cliente</a>
+        <a href="/#particulares">Particulares</a>
+        <a href="/servicios/comunidades-de-propietarios/">Comunidades de propietarios</a>
+        <a href="/servicios/apartamentos-turisticos/">Apartamentos turísticos</a>
+        <a href="/#profesionales">Locales y empresas</a>
+      </div>
+    </div>
+    <a href="/mantenimiento/">Mantenimiento</a>
+    <a href="/trabajos/">Trabajos</a>
+    <div class="dd">
+      <button class="dd-btn" type="button" aria-expanded="false">Más</button>
+      <div class="dd-panel">
+        <a href="/consejos/">Consejos</a>
+        <a href="/noticias/">Noticias</a>
+        <a href="/#proceso">Cómo trabajamos</a>
+        <a href="/#zona">Zona y preguntas frecuentes</a>
+      </div>
+    </div>
+    <a href="/#contacto">Contacto</a>
+    <a class="nav-tel" href="tel:+34621018374">621 018 374</a>
+    <a class="btn primary small" href="/#presupuesto">Calcular presupuesto</a>
+  </nav>
+</div></header>
+
+<section class="page-head"><div class="wrap"><nav class="crumbs" aria-label="Estás en"><a href="/">Inicio</a> / Derecho de desistimiento</nav><p class="eyebrow" style="margin-top:14px">Información legal</p><h1>Derecho de desistimiento</h1></div></section><div class="wrap"><article class="prose"><p>Si contratas con SENOIDE como <strong>consumidor</strong> (un particular que contrata para su casa, no para un negocio) y el contrato se celebra <strong>a distancia</strong> (por ejemplo, aceptando un presupuesto desde el enlace, por correo o por WhatsApp) o <strong>fuera de un establecimiento</strong> (por ejemplo, firmando en tu casa), tienes derecho a desistir. Esto vale para los presupuestos de trabajos y para los planes de mantenimiento.</p>
+<h2>Plazo</h2>
+<ul>
+<li><strong>14 días naturales</strong> desde que aceptas el presupuesto o firmas el contrato.</li>
+<li><strong>30 días naturales</strong> si el contrato surge de una visita a tu casa que no habías pedido.</li>
+</ul>
+<p>No tienes que explicar el motivo y no tiene ninguna penalización.</p>
+<h2>Cómo desistir</h2>
+<p>Basta con que nos lo digas de forma clara antes de que acabe el plazo, por cualquiera de estos medios:</p>
+<ul>
+<li>Correo a info@senoide.es.</li>
+<li>WhatsApp o llamada al 621 018 374.</li>
+<li>Por escrito a Luis M. Sierra Mena (SENOIDE), C/ Moncayo, 28, 12594 Oropesa del Mar (Castellón).</li>
+</ul>
+<p>Puedes usar el modelo de formulario de abajo, pero no es obligatorio. Te confirmaremos la recepción por escrito.</p>
+<h2>Qué pasa si desistes</h2>
+<ul>
+<li>Te devolvemos lo que nos hayas pagado en un plazo máximo de <strong>14 días naturales</strong> desde que nos lo comuniques, por el mismo medio de pago que usaste, salvo que acordemos otro, y sin ningún coste para ti.</li>
+<li><strong>Mientras dura el plazo no empezamos el trabajo ni las revisiones del plan</strong>, salvo que nos pidas expresamente y por escrito que empecemos antes (en el presupuesto o el contrato hay una casilla separada para pedirlo).</li>
+<li>Si nos pediste empezar antes y después desistes, pagas solo la parte proporcional de lo que ya hayamos hecho hasta que nos lo comuniques.</li>
+<li>Si nos pediste empezar antes y el trabajo ya está <strong>completamente terminado</strong>, ya no puedes desistir. Te lo recordamos antes de que lo pidas.</li>
+</ul>
+<h2>Cuándo no hay desistimiento</h2>
+<ul>
+<li>Si contratas para tu empresa, tu negocio o tu actividad profesional.</li>
+<li>Si contratas en nuestro establecimiento.</li>
+<li>En una <strong>reparación o un mantenimiento urgente</strong> que nos hayas pedido tú para que vayamos a tu casa. Si en esa visita te ofrecemos servicios o materiales que no habías pedido, sobre esos sí tienes derecho a desistir.</li>
+</ul>
+<h2>Modelo de formulario de desistimiento</h2>
+<p>(Solo tienes que rellenarlo y enviarlo si quieres desistir del contrato.)</p>
+<ul>
+<li>A la atención de Luis M. Sierra Mena (SENOIDE), C/ Moncayo, 28, 12594 Oropesa del Mar (Castellón), correo info@senoide.es:</li>
+<li>Por la presente le comunico/comunicamos (&#42;) que desisto de mi/desistimos de nuestro (&#42;) contrato de prestación del siguiente servicio (&#42;): ________________________________</li>
+<li>Aceptado o firmado el (&#42;): ____________</li>
+<li>Nombre del consumidor o de los consumidores: ________________________________</li>
+<li>Domicilio del consumidor o de los consumidores: ________________________________</li>
+<li>Firma del consumidor o de los consumidores (solo si el formulario se presenta en papel): ____________</li>
+<li>Fecha: ____________</li>
+</ul>
+<p>(&#42;) Táchese lo que no proceda.</p>
+<p>Base legal: artículos 102 a 108 del Texto Refundido de la Ley General para la Defensa de los Consumidores y Usuarios (Real Decreto Legislativo 1/2007) y su anexo B.</p></article></div>
+
+<script>
+(function(){var c=document.querySelector('nav.crumbs');if(!c)return;var a=c.querySelectorAll('a');if(!a.length)return;var u=a[a.length-1];
+var d=document.createElement('div');d.className='volver';var l=document.createElement('a');l.href=u.getAttribute('href');l.textContent='← Volver a '+(u.textContent==='Inicio'?'la portada':u.textContent.toLowerCase());d.appendChild(l);
+/* si se llegó desde otra página de esta web, «Volver» regresa a esa página y al mismo punto */
+var vieneDeAqui=false;try{vieneDeAqui=document.referrer&&new URL(document.referrer).origin===location.origin&&new URL(document.referrer).pathname!==location.pathname;}catch(e){}
+if(vieneDeAqui&&history.length>1){l.textContent='← Volver';l.addEventListener('click',function(e){e.preventDefault();history.back();});}
+var sc=document.currentScript;sc.parentNode.insertBefore(d,sc);})();
+</script>
+<footer>
+  <div class="wrap foot-grid">
+    <div class="foot-col foot-marca">
+      <div class="foot-logo">
+        <img class="logo-l" src="/assets/logo-completo.png" alt="SENOIDE · Instalaciones eléctricas · Mantenimiento" width="900" height="186" loading="lazy">
+        <img class="logo-d" src="/assets/logo-completo-blanco.png" alt="SENOIDE · Instalaciones eléctricas · Mantenimiento" width="900" height="186" loading="lazy">
+      </div>
+      <p>Electricista en Oropesa del Mar y la Plana: Benicàssim, Cabanes, Torreblanca, Castelló de la Plana y alrededores.</p>
+    </div>
+    <div class="foot-col">
+      <p class="foot-t">Contacto</p>
+      <a href="tel:+34621018374">621 018 374</a>
+      <a href="https://wa.me/34621018374" target="_blank" rel="noopener">WhatsApp</a>
+      <a href="mailto:info@senoide.es">info@senoide.es</a>
+      <span>Lunes a viernes, 8:00–18:00</span>
+    </div>
+    <div class="foot-col">
+      <p class="foot-t">Servicios</p>
+      <a href="/servicios/averias-electricas-urgencias/">Averías y urgencias</a>
+      <a href="/servicios/boletin-electrico/">Boletín eléctrico</a>
+      <a href="/servicios/cuadro-electrico-aumento-potencia/">Cuadro y potencia</a>
+      <a href="/servicios/punto-recarga-coche-electrico/">Punto de recarga</a>
+      <a href="/mantenimiento/">Mantenimiento</a>
+    </div>
+    <div class="foot-col">
+      <p class="foot-t">SENOIDE</p>
+      <a href="/#presupuesto">Calcular presupuesto</a>
+      <a href="/trabajos/">Trabajos</a>
+      <a href="/consejos/">Consejos</a>
+      <a href="/noticias/">Noticias</a>
+    </div>
+  </div>
+  <div class="wrap foot-legal">
+    <span>SENOIDE · Luis M. Sierra Mena · NIF 46927518C · Oropesa del Mar (Castellón)</span>
+    <span><a href="/aviso-legal/">Aviso legal</a> · <a href="/privacidad/">Privacidad</a> · <a href="/cookies/">Cookies</a> · <a href="/condiciones-mantenimiento/">Condiciones de mantenimiento</a> · <a href="/desistimiento/">Desistimiento</a> · <a href="/aviso-legal/#reclamaciones">Reclamaciones</a> · <a href="https://share.google/tdtfLiFDOJaDpnz7n" target="_blank" rel="noopener">SENOIDE en Google</a></span>
+  </div>
+</footer>
+<nav class="mbar" aria-label="Contacto rápido">
+  <a href="tel:+34621018374"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>Llamar</a>
+  <a href="https://wa.me/34621018374" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l1.9-5.4A8.4 8.4 0 1 1 21 11.5z"/></svg>WhatsApp</a>
+  <a class="go" href="/#presupuesto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M9 6h6M9 10h1M14 10h1M9 14h1M14 14h1M9 18h6"/></svg>Presupuesto</a>
+</nav>
+<button class="totop" type="button" aria-label="Volver arriba"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 15l6-6 6 6"/></svg></button>
+<script>
+(function(){
+  var nav=document.getElementById('menu-principal'),burger=document.querySelector('.burger');
+  if(!nav)return;
+  var dds=[].slice.call(nav.querySelectorAll('.dd'));
+  function cerrarDd(salvo){dds.forEach(function(d){if(d!==salvo){d.classList.remove('open');d.querySelector('.dd-btn').setAttribute('aria-expanded','false');}});}
+  function cerrarMenu(){nav.classList.remove('open');if(burger)burger.setAttribute('aria-expanded','false');cerrarDd();}
+  dds.forEach(function(d){
+    var b=d.querySelector('.dd-btn');
+    b.addEventListener('click',function(e){e.stopPropagation();var abrir=!d.classList.contains('open');cerrarDd(d);d.classList.toggle('open',abrir);b.setAttribute('aria-expanded',abrir?'true':'false');});
+  });
+  if(burger)burger.addEventListener('click',function(e){e.stopPropagation();var abrir=!nav.classList.contains('open');nav.classList.toggle('open',abrir);burger.setAttribute('aria-expanded',abrir?'true':'false');if(!abrir)cerrarDd();});
+  document.addEventListener('click',function(e){if(!nav.contains(e.target))cerrarMenu();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')cerrarMenu();});
+  nav.addEventListener('click',function(e){
+    var a=e.target.closest('a');if(!a)return;
+    cerrarMenu();
+  });
+  /* los saltos dentro de la misma página (menú, botones) no añaden pasos al historial:
+     así el botón «atrás» del móvil vuelve a la página anterior y no a cada apartado visitado */
+  document.addEventListener('click',function(e){
+    var a=e.target.closest&&e.target.closest('a[href*="#"]');if(!a||e.defaultPrevented||e.metaKey||e.ctrlKey)return;
+    var u;try{u=new URL(a.href,location.href);}catch(x){return;}
+    if(u.origin!==location.origin||u.pathname!==location.pathname||!u.hash)return;
+    var id=decodeURIComponent(u.hash.slice(1)),dest=document.getElementById(id);
+    var esPestana=u.hash==='#particulares'||u.hash==='#profesionales';
+    if(!dest&&!esPestana)return;
+    e.preventDefault();
+    history.replaceState(history.state,'',u.hash);
+    if(esPestana)pestana(true);else dest.scrollIntoView({behavior:'smooth'});
+  });
+  /* Posición al navegar:
+     - al volver atrás o adelante, se recupera el punto exacto donde estabas (aunque la dirección tenga un #apartado);
+     - al llegar con un #apartado (/#presupuesto…), se coloca ese apartado bajo la cabecera;
+     - si tocas o desplazas la pantalla mientras se coloca, se respeta lo que haces (no vuelve a moverse). */
+  var esVuelta=false;
+  try{
+    if('scrollRestoration' in history)history.scrollRestoration='manual';
+    var clave='pos:'+location.pathname;
+    /* se guarda la posición y, en la portada, la sección que se estaba viendo y el paso de la calculadora */
+    var seccionVista=function(){var cab=document.querySelector('header.site'),lim=(cab?cab.offsetHeight:0)+2,id='';
+      [].forEach.call(document.querySelectorAll('main#inicio > section[id]'),function(x){if(x.getBoundingClientRect().top<=lim+window.innerHeight*0.3)id=x.id;});return id;};
+    var guardar=function(){try{sessionStorage.setItem(clave,String(Math.round(window.scrollY)));sessionStorage.setItem(clave+':sec',seccionVista()+'|'+(window.__wzPaso==null?'':window.__wzPaso));}catch(x){}};
+    window.addEventListener('pagehide',guardar);
+    document.addEventListener('visibilitychange',function(){if(document.visibilityState==='hidden')guardar();});
+    var tg;window.addEventListener('scroll',function(){clearTimeout(tg);tg=setTimeout(guardar,250);},{passive:true});
+    var mover=function(y){window.scrollTo({top:Math.max(0,y),left:0,behavior:'instant'});};
+    var usuario=false;['wheel','touchstart','mousedown','keydown'].forEach(function(ev){window.addEventListener(ev,function(){usuario=true;},{passive:true,capture:true});});
+    var colocar=function(f){usuario=false;f();[120,400,900].forEach(function(t){setTimeout(function(){if(!usuario)f();},t);});
+      if(document.readyState!=='complete')window.addEventListener('load',function(){if(!usuario){f();setTimeout(function(){if(!usuario)f();},150);}},{once:true});};
+    var nav0=performance.getEntriesByType&&performance.getEntriesByType('navigation')[0];
+    esVuelta=!!(nav0&&nav0.type==='back_forward');
+    var leer=function(){var v=null;try{v=sessionStorage.getItem(clave);}catch(x){}return v===null?null:(parseInt(v,10)||0);};
+    var volverA=function(){var y=leer();if(y===null)return false;
+      /* la calculadora recuerda su paso; si al volver no coincide con el guardado, se encuadra la sección desde su principio */
+      var sv='';try{sv=sessionStorage.getItem(clave+':sec')||'';}catch(x){}var ps=sv.split('|'),sec=ps[0]&&document.getElementById(ps[0]);
+      if(sec&&ps[0]==='presupuesto'&&ps[1]!==String(window.__wzPaso==null?'':window.__wzPaso)){var cab=document.querySelector('header.site');colocar(function(){mover(sec.getBoundingClientRect().top+window.scrollY-(cab?cab.offsetHeight:0));});return true;}
+      colocar(function(){mover(y);});return true;};
+    var irAlApartado=function(){
+      var h=location.hash;if(!h||h.length<2)return;
+      var id=decodeURIComponent(h.slice(1)),el=document.getElementById(id);
+      if(!el&&(id==='particulares'||id==='profesionales'))el=document.getElementById('clientes');
+      if(!el)return;var cab=document.querySelector('header.site');
+      colocar(function(){mover(el.getBoundingClientRect().top+window.scrollY-(cab?cab.offsetHeight:0));});
+    };
+    var arrancar=function(){if(esVuelta&&volverA())return;if(location.hash)irAlApartado();};
+    if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',arrancar);else arrancar();
+    window.addEventListener('pageshow',function(e){if(e.persisted)volverA();});
+  }catch(x){}
+  function pestana(mover){
+    var m={'#particulares':'tab-part','#profesionales':'tab-pro'}[location.hash];
+    var tab=m&&document.getElementById(m),sec=document.getElementById('clientes');
+    if(tab&&sec){tab.click();if(mover)sec.scrollIntoView();}
+  }
+  window.addEventListener('hashchange',function(){pestana(true);});
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',function(){pestana(false);});else pestana(false);
+  var top=document.querySelector('.totop');
+  if(top){
+    top.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+    var on=false,ultimo=window.scrollY,b=document.body;
+    if(document.querySelector('.hero')&&window.scrollY<200)b.classList.add('mbar-off');
+    window.addEventListener('scroll',function(){
+      var y=window.scrollY,v=y>400;
+      if(v!==on){on=v;top.classList.toggle('on',v);}
+      /* la barra de abajo se esconde al bajar y vuelve al subir o al llegar al final */
+      var fin=window.innerHeight+y>=document.documentElement.scrollHeight-40;
+      /* en la primera pantalla (cabecera de la portada) la barra no se muestra, para ver el apartado completo */
+      var h=document.querySelector('.hero'),arriba=h?y<h.offsetTop+h.offsetHeight-window.innerHeight*0.5:y<200;
+      if(Math.abs(y-ultimo)>8){b.classList.toggle('mbar-off',arriba||(y>ultimo&&!fin));ultimo=y;}
+      if(fin)b.classList.remove('mbar-off');
+      else if(arriba)b.classList.add('mbar-off');
+    },{passive:true});
+  }
+})();
+</script>
+<script src="/assets/senoide.js?v=202610261550" defer></script>
+<script src="/assets/trabajos.js?v=202610261550" defer></script>
+
+</body>
+</html>

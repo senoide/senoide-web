@@ -6,15 +6,19 @@
   $('b-fecha').min = iso;
   function alc(){ $('b-aptos-w').hidden = !$('b-alc-aptos').checked; }
   $('b-alc-todo').addEventListener('change', alc); $('b-alc-aptos').addEventListener('change', alc); alc();
+  function modo(){ var m = document.querySelector('input[name="b-modo"]:checked'); return m ? m.value : 'recepcion'; }
+  function verFecha(){ $('b-fecha-w').hidden = modo() !== 'fecha'; }
+  ['recepcion','finmes','fecha'].forEach(function(k){ $('b-modo-' + k).addEventListener('change', verFecha); }); verFecha();
   function msg(t, ok){ var m = $('b-msg'); m.className = 'send-msg ' + (ok ? 'ok' : 'err'); m.innerHTML = t; }
   f.addEventListener('submit', function(e){
     e.preventDefault(); if (enviando) return;
     var d = {nombre: $('b-nombre').value.trim(), email: $('b-email').value.trim(), telefono: $('b-tel').value.trim(), contrato: $('b-contrato').value.trim(),
-      alcance: $('b-alc-aptos').checked ? 'apartamentos' : 'todo', apartamentos: $('b-aptos').value.trim(), fecha: $('b-fecha').value, comentario: $('b-com').value.trim(),
+      alcance: $('b-alc-aptos').checked ? 'apartamentos' : 'todo', apartamentos: $('b-aptos').value.trim(), modo: modo(), fecha: modo() === 'fecha' ? $('b-fecha').value : '', comentario: $('b-com').value.trim(),
       privacidad: $('b-priv').checked, web: $('b-web').value};
     if (d.nombre.length < 2){ msg('Escribe el nombre del titular del contrato.'); $('b-nombre').focus(); return; }
     if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(d.email)){ msg('Escribe un correo válido: ahí te confirmamos la baja.'); $('b-email').focus(); return; }
     if (d.alcance === 'apartamentos' && d.apartamentos.length < 2){ msg('Indica qué apartamentos das de baja.'); $('b-aptos').focus(); return; }
+    if (d.modo === 'fecha' && !d.fecha){ msg('Elige la fecha de efecto.'); $('b-fecha').focus(); return; }
     if (d.fecha && d.fecha < iso){ msg('La fecha de efecto no puede ser anterior a hoy.'); $('b-fecha').focus(); return; }
     if (!d.privacidad){ msg('Marca la casilla de la política de privacidad.'); $('b-priv').focus(); return; }
     if (!API){ msg('Ahora mismo no podemos recibirla desde aquí. Escríbenos a info@senoide.es, por favor.'); return; }
