@@ -15,7 +15,7 @@ Estas son las condiciones generales de los planes de mantenimiento de SENOIDE (L
 - **Sin penalización** y sin cobrarte cuotas futuras. Si la baja es a mitad de mes, ese mes se cobra por días. Si habías pagado algo por adelantado que no llegas a usar, te lo devolvemos en 14 días (en la cartera de apartamentos, según su apartado).
 - **Al darte de baja se liquida lo recibido frente a lo pagado.** Comparamos lo que has recibido en el periodo en curso (las visitas hechas, el seguimiento hasta la fecha de baja y, en los planes Plus, solo las horas de reparación que hayas usado, a 45 € por hora del bono) con lo que has pagado hasta esa fecha, y te lo detallamos por escrito:
 - Si has recibido más de lo que has pagado, pagas solo la diferencia.
-- Si has pagado más de lo que has recibido y contratas como particular o comunidad de propietarios, te devolvemos la diferencia en 14 días. Si contratas como empresa o profesional, las cuotas de los meses ya pasados no se devuelven, salvo lo que hayas pagado por adelantado por una revisión que no se ha hecho o por periodos posteriores a la baja, que se devuelve siempre (también en la cartera de apartamentos).
+- Si has pagado más de lo que has recibido y contratas como particular o comunidad de propietarios, te devolvemos la diferencia en 14 días. Si contratas como empresa o profesional se aplica un **régimen profesional diferenciado**, que figura destacado en tu contrato y aceptas expresamente al firmarlo: las cuotas de los meses ya pasados no se devuelven, salvo lo que hayas pagado por adelantado por una revisión que no se ha hecho o por periodos posteriores a la baja, que se devuelve siempre (también en la cartera de apartamentos).
 - El valor de cada parte está en el apartado de cada plan.
 
 ## Precios y pago
