@@ -37,6 +37,7 @@ CONFIG = {
     "WHATSAPP": "34621018374",                 # con prefijo 34, sin espacios ni +
     "EMAIL": "info@senoide.es",    # cámbialo por info@tudominio cuando exista
     "CERTIFICADO": "CIBTB-04551",
+    "RII": "10-B-D00-12064193",              # Registro Integrado Industrial: empresa instaladora BT, categoría básica
     "AVISO": "Abrimos el <b>2 de noviembre de 2026</b> · ya puedes pedir presupuesto",
     # A partir de APERTURA el aviso de arriba cambia solo (lo decide el navegador del visitante)
     "APERTURA": "2026-11-02",

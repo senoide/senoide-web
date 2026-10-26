@@ -8,6 +8,8 @@ En cumplimiento del artículo 10 de la Ley 34/2002, de Servicios de la Sociedad 
 - **Correo electrónico:** info@senoide.es
 - **Teléfono:** 621 018 374
 - **Actividad:** instalaciones eléctricas, fontanería y pequeñas reformas.
+- **Empresa instaladora:** inscrita en el Registro Integrado Industrial de la Comunitat Valenciana con el nº **10-B-D00-12064193**, como empresa instaladora de baja tensión, categoría básica.
+- **Certificado personal de instalador en baja tensión:** CIBTB-04551.
 
 ## Condiciones de uso
 
