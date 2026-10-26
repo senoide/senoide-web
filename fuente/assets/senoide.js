@@ -172,11 +172,12 @@
     var client = val('client');
     var zone = +val('zone'), urg = +val('urg');
     var vatWrap = $('#vat-wrap'), vatNote = $('#vat-note');
-    var isPart = client === 'particular';
+    var isPart = client === 'particular' || client === 'comunidad';
     vatWrap.hidden = !isPart; vatNote.hidden = !isPart;
-    if (!isPart) $('#v21').checked = true;
-    var vat = +val('vat') / 100;
-    vatNote.classList.toggle('activo', vat === 0.1);
+    if (!isPart) $('#f-iva10').checked = false;
+    /* Siempre IVA 21 %: el 10 % solo se valora a petición y se confirma en el presupuesto escrito */
+    var vat = 0.21, iva10 = isPart && $('#f-iva10').checked;
+    vatNote.classList.toggle('activo', iva10);
 
     var list = $('#sum-list'); list.innerHTML = '';
     var wMin = 0, wMax = 0, hMin = 0, hMax = 0, lines = [], items = [], code = CODE[client], needSal = false, diag = false;
@@ -258,12 +259,13 @@
       (town ? 'Municipio: ' + town + '\n' : '') +
       (day || slot ? 'Visita preferida: ' + [dayTxt, slot ? 'a las ' + (+slot) + ':00' : ''].filter(Boolean).join(', ') + ' — pendiente de confirmar\n' : '') +
       (urg ? 'Urgencia: ' + URG_LABEL[urg] + '\n' : '') +
-      (has ? 'Trabajos:\n' + lines.join('\n') + '\nTotal con IVA ' + Math.round(vat * 100) + '%: ' + desde(bMin * (1 + vat)) + (vat === 0.1 ? ' (IVA del 10 % pendiente de comprobar requisitos)' : '') + '\n' : '') +
+      (has ? 'Trabajos:\n' + lines.join('\n') + '\nTotal con IVA ' + Math.round(vat * 100) + '%: ' + desde(bMin * (1 + vat)) + '\n' : '') +
+      (iva10 ? 'Solicito que valoréis si me corresponde el IVA del 10 %.\n' : '') +
       (desc ? 'Detalle: ' + desc : '') +
       (fotos ? '\nTe adjunto fotos en este chat.' : '');
     last.text = t;
     last.data = {nombre: name, telefono: phone, email: $('#f-email') ? $('#f-email').value.trim() : '', municipio: town, descripcion: desc, tipoCliente: client,
-      dia: day, hora: slot, urgencia: urg, zona: zone, iva: Math.round(vat * 100), fotos: fotos, totalDesde: has ? Math.round(bMin * (1 + vat) * 100) / 100 : 0, trabajos: items};
+      dia: day, hora: slot, urgencia: urg, zona: zone, iva: 21, ivaReducidoSolicitado: iva10, fotos: fotos, totalDesde: has ? Math.round(bMin * (1 + vat) * 100) / 100 : 0, trabajos: items};
     renderDisp();
     $('#wa').href = 'https://wa.me/' + PHONE + '?text=' + encodeURIComponent(t);
     guardarCalc();
@@ -277,7 +279,7 @@
     if (!calcListo) return;
     var q = {}; Object.keys(qty).forEach(function(k){ if (qty[k] > 0) q[k] = qty[k]; });
     var c = {}; CAMPOS.forEach(function(id){ var el = document.getElementById(id); if (el && el.value) c[id] = el.value; });
-    var d = {client: val('client'), zone: val('zone'), urg: val('urg'), vat: val('vat'), fotos: !!($('#f-fotos') && $('#f-fotos').checked), q: q, c: c};
+    var d = {client: val('client'), zone: val('zone'), urg: val('urg'), iva10: !!($('#f-iva10') && $('#f-iva10').checked), fotos: !!($('#f-fotos') && $('#f-fotos').checked), q: q, c: c};
     try { sessionStorage.setItem(CALC_KEY, JSON.stringify(d)); } catch (x) {}
   }
   function borrarCalc(){ try { sessionStorage.removeItem(CALC_KEY); } catch (x) {} }
@@ -285,13 +287,13 @@
     var d = null; try { d = JSON.parse(sessionStorage.getItem(CALC_KEY) || 'null'); } catch (x) {}
     if (!d) return;
     var radio = function(name, v){ if (v == null) return; var el = document.querySelector('input[name="' + name + '"][value="' + v + '"]'); if (el) el.checked = true; };
-    radio('client', d.client); radio('zone', d.zone); radio('urg', d.urg); radio('vat', d.vat);
+    radio('client', d.client); radio('zone', d.zone); radio('urg', d.urg); if ($('#f-iva10')) $('#f-iva10').checked = !!d.iva10;
     Object.keys(d.q || {}).forEach(function(k){ var el = document.getElementById('q-' + k); if (el && k in qty){ el.value = d.q[k]; qty[k] = +d.q[k] || 0; } });
     Object.keys(d.c || {}).forEach(function(id){ var el = document.getElementById(id); if (el && CAMPOS.indexOf(id) >= 0) el.value = d.c[id]; });
     if ($('#f-fotos')) $('#f-fotos').checked = !!d.fotos;
   }
 
-  document.querySelectorAll('input[name="client"],input[name="zone"],input[name="urg"],input[name="vat"]').forEach(function(r){r.addEventListener('change', update)});
+  document.querySelectorAll('input[name="client"],input[name="zone"],input[name="urg"],#f-iva10').forEach(function(r){r.addEventListener('change', update)});
   /* municipio: marca solo el tramo de desplazamiento y rellena el municipio de tus datos */
   var muni = $('#f-muni');
   function aplicarMuni(){

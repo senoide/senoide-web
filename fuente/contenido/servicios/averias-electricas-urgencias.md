@@ -21,14 +21,14 @@ Si el diferencial salta, antes de llamar puedes hacer una prueba sencilla: [te e
 
 ## Cómo trabajamos una avería
 
-1. **Visita y diagnóstico.** Incluye la salida y la primera hora de trabajo. Si es algo sencillo, lo dejamos resuelto en esa hora.
+1. **Visita y diagnóstico: 65 € + IVA (78,65 € con IVA).** Incluye la salida y la primera hora de trabajo; fuera de Oropesa del Mar se suma el desplazamiento. Te confirmamos el precio antes de ir. Si es algo sencillo, lo dejamos resuelto en esa hora.
 2. **Te decimos qué pasa y cuánto cuesta** antes de seguir. Si hace falta material o más tiempo, te lo explicamos y decides.
 3. **Reparamos y comprobamos** que la instalación queda segura: aislamiento, tierra y diferenciales.
 
 ## Urgencias
 
-- **Urgente en horario** (lunes a viernes, de 8 a 18 h, en 24 horas): suplemento de 30 € por intervención.
-- **Fuera de horario**: salida de 60 € y un 50 % más sobre las horas trabajadas.
+- **Urgente en horario** (lunes a viernes, de 8 a 18 h, en 24 horas): suplemento de 30 € + IVA (36,30 €) por intervención.
+- **Fuera de horario**: salida de 60 € + IVA (72,60 €) y un 50 % más sobre las horas trabajadas.
 
 Las urgencias dependen de la agenda del día. Llámanos al **621 018 374** y te decimos cuándo podemos ir.
 

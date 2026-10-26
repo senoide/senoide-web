@@ -245,7 +245,7 @@ def pagina(ruta_url, titulo, descripcion, contenido, jsonld=None, og_tipo="websi
         "WHATSAPP": d["WHATSAPP"], "AVISO": d["AVISO"], "TITULAR": esc(d["TITULAR"]), "NIF": esc(d["NIF"]),
         "TELEFONO": d["TELEFONO"], "EMAIL": d["EMAIL"], "TELEFONO_SIN_ESPACIOS": d["TELEFONO"].replace(" ", ""), "VERSION": VERSION, "ANALITICA": analitica,
         "API": d["API"], "APERTURA": d["APERTURA"], "AVISO_ABIERTO": esc(d["AVISO_ABIERTO"]),
-        "PIE_OPINIONES": (f' · <a href="{esc(d["PERFIL_GOOGLE"] or d["RESENAS_URL"])}" target="_blank" rel="noopener">Opiniones en Google</a>'
+        "PIE_OPINIONES": (f' · <a href="{esc(d["PERFIL_GOOGLE"] or d["RESENAS_URL"])}" target="_blank" rel="noopener">SENOIDE en Google</a>'
                           if (d["PERFIL_GOOGLE"] or d["RESENAS_URL"]) else ""),
         "CONTENIDO": contenido,
     }
@@ -495,8 +495,8 @@ def construir():
     inicio = inicio.replace("{{BLOQUE_ARTICULOS}}", bloque_art)
     opiniones = ""
     if d["RESENAS_URL"] or d["PERFIL_GOOGLE"]:
-        opiniones = ('<div class="ccard"><div><div class="k">Opiniones</div>'
-                     + (f'<a class="v small" href="{esc(d["PERFIL_GOOGLE"])}" target="_blank" rel="noopener">Lee lo que dicen nuestros clientes en Google</a>' if d["PERFIL_GOOGLE"] else "")
+        opiniones = ('<div class="ccard"><div><div class="k">Google</div>'
+                     + (f'<a class="v small" href="{esc(d["PERFIL_GOOGLE"])}" target="_blank" rel="noopener">Nuestra ficha en Google</a>' if d["PERFIL_GOOGLE"] else "")
                      + (f'<a class="v small" href="{esc(d["RESENAS_URL"])}" target="_blank" rel="noopener">¿Ya has trabajado con nosotros? Déjanos tu opinión</a>' if d["RESENAS_URL"] else "")
                      + '</div></div>')
     inicio = inicio.replace("{{OPINIONES}}", opiniones)
