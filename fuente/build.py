@@ -462,7 +462,7 @@ def construir():
     pagina("/mantenimiento/", "Mantenimiento eléctrico con cuota fija | SENOIDE",
            "Planes de mantenimiento eléctrico con cuota fija para comunidades, locales y apartamentos turísticos en Oropesa del Mar: visitas, informe y prioridad.",
            cabecera("Mantenimiento", "Tu electricista de referencia, con cuota fija.",
-                    "Visitas programadas, informe de cada visita y prioridad cuando surge una avería. Contrato de 12 meses que se renueva solo. Puedes darte de baja cuando quieras, sin penalización.",
+                    "Visitas programadas, informe de cada visita y prioridad cuando surge una avería. Contrato de 12 meses que se renueva solo. Puedes darte de baja cuando quieras, sin penalización: solo se liquida lo recibido frente a lo pagado.",
                     [("Inicio", "/"), ("Mantenimiento", None)])
            + f'<section id="planes" style="padding-top:32px"><div class="wrap">{planes}</div></section>', jsonld=srv_mant)
 
@@ -539,7 +539,7 @@ def construir():
     form_baja = (
         '<div class="wrap" style="padding-block:24px 64px"><article class="prose">'
         '<p>Puedes darte de baja del plan de mantenimiento, o de uno o varios apartamentos de tu cartera, cuando quieras y sin indicar el motivo. '
-        'No tiene penalización. Al enviar el formulario recibirás un justificante con la fecha y la hora de recepción, y después la confirmación por escrito de la fecha de efecto y, si corresponde, de lo que te devolvemos.</p>'
+        'No tiene penalización: solo se liquida lo que hayas recibido frente a lo que hayas pagado (<a href="/condiciones-mantenimiento/">condiciones</a>). Al enviar el formulario recibirás un justificante con la fecha y la hora de recepción, y después la confirmación por escrito de la fecha de efecto y, si corresponde, de lo que te devolvemos o de lo que quede pendiente.</p>'
         '<form class="form" id="baja-form" novalidate>'
         '<div class="field"><label for="b-nombre">Titular del contrato</label><input id="b-nombre" autocomplete="name" placeholder="Nombre y apellidos o razón social"></div>'
         '<div class="field"><label for="b-email">Correo</label><input id="b-email" type="email" autocomplete="email" placeholder="Para enviarte el justificante"></div>'
