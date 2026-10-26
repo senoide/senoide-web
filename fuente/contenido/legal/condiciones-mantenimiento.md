@@ -13,7 +13,7 @@ Estas son las condiciones generales de los planes de mantenimiento de SENOIDE (L
 - **Puedes darte de baja cuando quieras**, sin dar explicaciones: con el [formulario de baja](/baja/), por correo a info@senoide.es, por WhatsApp al 621 018 374, por escrito o en persona.
 - La baja tiene efecto **en la fecha que nos digas** (nunca antes de recibirla). Si lo prefieres, mantienes el servicio hasta el último día del mes. Te confirmamos por escrito la fecha de recepción y la de efecto.
 - **Sin penalización** y sin cobrarte cuotas futuras. Si la baja es a mitad de mes, ese mes se cobra por días. Si habías pagado algo por adelantado que no llegas a usar, te lo devolvemos en 14 días (en la cartera de apartamentos, según su apartado).
-- **Al darte de baja se liquida lo recibido frente a lo pagado.** Comparamos lo que has recibido en el periodo en curso (las visitas hechas, el seguimiento hasta la fecha de baja y, en los planes Plus, las horas de reparación usadas o, si son más, la parte del bono que corresponde al tiempo transcurrido) con lo que has pagado hasta esa fecha, y te lo detallamos por escrito:
+- **Al darte de baja se liquida lo recibido frente a lo pagado.** Comparamos lo que has recibido en el periodo en curso (las visitas hechas, el seguimiento hasta la fecha de baja y, en los planes Plus, solo las horas de reparación que hayas usado, a 45 € por hora del bono) con lo que has pagado hasta esa fecha, y te lo detallamos por escrito:
 - Si has recibido más de lo que has pagado, pagas solo la diferencia.
 - Si has pagado más de lo que has recibido y contratas como particular o comunidad de propietarios, te devolvemos la diferencia en 14 días. Si contratas como empresa o profesional, las cuotas de los meses ya pasados no se devuelven.
 - El valor de cada parte está en el apartado de cada plan.
@@ -33,7 +33,8 @@ Estas son las condiciones generales de los planes de mantenimiento de SENOIDE (L
 ## Avisos y averías
 
 - La mano de obra de las reparaciones se factura aparte con el descuento del plan: **5 %** en Básico y apartamentos, **10 %** en Plus. El descuento se aplica solo a la mano de obra (también cuando lleva el recargo de fuera de horario), no a la salida, al desplazamiento ni al material.
-- Los planes Plus incluyen **3 horas de reparación al año** en la instalación cubierta, para reparaciones que autorices. Se pueden usar fuera de horario: cada hora trabajada cuenta como 1,5 h del bono y la salida (60 €) se paga aparte. Las horas no usadas no pasan al año siguiente.
+- Los planes Plus incluyen el derecho a usar **hasta 3 horas de mano de obra de reparación en cada año de contrato** en la instalación cubierta, para reparaciones que autorices. Las horas usadas se anotan en el parte de trabajo. Se pueden usar fuera de horario: cada hora trabajada cuenta como 1,5 h del bono y la salida (60 €) se paga aparte. El bono no incluye materiales ni desplazamientos.
+- **Horas no usadas:** si el año de contrato termina con horas sin usar, no pasan al año siguiente ni se devuelven. Si te das de baja antes, en la liquidación solo cuentan las horas que hayas usado (45 € por hora del bono, como máximo 135 € al año); las no usadas no se cobran.
 - Urgencias en horario (L–V de 8 a 18 h): los planes Plus y los de apartamentos no pagan el suplemento de urgencia; los planes Básico pagan +30 € por intervención. «Sin suplemento» significa sin recargo por urgencia: la mano de obra, el material, la salida y el desplazamiento se cobran según el plan y el bono.
 - Plazos de respuesta: en los planes Plus, si avisas en día laborable antes de las 13 h, te respondemos y valoramos la avería ese mismo día; si avisas más tarde, el siguiente día laborable. En los planes Básico y de apartamentos, primera respuesta y valoración en un máximo de 2 días laborables desde el aviso. Responder y valorar no siempre significa ir en el momento: si hace falta visita, la acordamos contigo lo antes posible.
 - Fuera de horario (L–V antes de las 8 h o después de las 18 h, sábados, domingos y festivos) se aplica la tarifa general: +60 € por salida y +50 % sobre las horas de mano de obra, con el descuento del plan sobre la mano de obra.
@@ -44,6 +45,7 @@ Estas son las condiciones generales de los planes de mantenimiento de SENOIDE (L
 - **Qué pagas con cada plan** (al año, sin IVA; la cuota mensual es el pago fraccionado de este precio):
 - Comunidad Básico, 708 €: 4 visitas de 162 € y 60 € de seguimiento.
 - Comunidad Plus, 1.308 €: 6 visitas de 162 €, 3 horas de reparación de 45 € (135 €) y 201 € de seguimiento.
+- **Ejemplo de baja en un plan Plus:** Comunidad Plus sin visitas hechas, con 2 horas de reparación usadas y baja al final del segundo mes. Has recibido 90 € de horas y 33,50 € de seguimiento (123,50 €) y has pagado dos cuotas (218 €): te devolvemos 94,50 € + IVA.
 - Local Básico, 420 €: 2 visitas de 165 € y 90 € de seguimiento.
 - Local Plus, 948 €: 4 visitas de 165 €, 3 horas de reparación de 45 € (135 €) y 153 € de seguimiento.
 - El seguimiento cubre la atención de avisos, la prioridad y el descuento en mano de obra durante el año.
