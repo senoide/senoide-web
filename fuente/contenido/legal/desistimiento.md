@@ -1,4 +1,4 @@
-Si contratas con SENOIDE como **consumidor** (un particular que contrata para su casa, no para un negocio) y el contrato se celebra **a distancia** (por ejemplo, aceptando un presupuesto desde el enlace, por correo o por WhatsApp) o **fuera de un establecimiento** (por ejemplo, firmando en tu casa), tienes derecho a desistir. Esto vale para los presupuestos de trabajos y para los planes de mantenimiento.
+Si contratas con SENOIDE como **consumidor** (un particular que contrata para su casa, no para un negocio, o una **comunidad de propietarios** que actúa como consumidora) y el contrato se celebra **a distancia** (por ejemplo, aceptando un presupuesto desde el enlace, por correo o por WhatsApp) o **fuera de un establecimiento** (por ejemplo, firmando en tu casa), tienes derecho a desistir. Esto vale para los presupuestos de trabajos y para los planes de mantenimiento.
 
 ## Plazo
 
@@ -22,11 +22,12 @@ Puedes usar el modelo de formulario de abajo, pero no es obligatorio. Te confirm
 - Te devolvemos lo que nos hayas pagado en un plazo máximo de **14 días naturales** desde que nos lo comuniques, por el mismo medio de pago que usaste, salvo que acordemos otro, y sin ningún coste para ti.
 - **Mientras dura el plazo no empezamos el trabajo ni las revisiones del plan**, salvo que nos pidas expresamente y por escrito que empecemos antes (en el presupuesto o el contrato hay una casilla separada para pedirlo).
 - Si nos pediste empezar antes y después desistes, pagas solo la parte proporcional de lo que ya hayamos hecho hasta que nos lo comuniques.
-- Si nos pediste empezar antes y el trabajo ya está **completamente terminado**, ya no puedes desistir. Te lo recordamos antes de que lo pidas.
+- En los contratos de prestación de servicios, el derecho de desistimiento puede extinguirse cuando el servicio contratado se haya **ejecutado íntegramente**, siempre que se hayan cumplido los requisitos legales: que nos hayas pedido expresamente empezar antes y que antes de pedirlo supieras que perderías ese derecho.
+- Hacer una revisión incluida en un contrato de mantenimiento anual **no supone, por sí sola, la ejecución completa del contrato**: puedes seguir desistiendo del resto dentro del plazo.
 
 ## Cuándo no hay desistimiento
 
-- Si contratas para tu empresa, tu negocio o tu actividad profesional.
+- Si contratas para tu empresa, tu negocio o tu actividad profesional (también las comunidades de propietarios que no actúen como consumidoras).
 - Si contratas en nuestro establecimiento.
 - En una **reparación o un mantenimiento urgente** que nos hayas pedido tú para que vayamos a tu casa. Si en esa visita te ofrecemos servicios o materiales que no habías pedido, sobre esos sí tienes derecho a desistir.
 
