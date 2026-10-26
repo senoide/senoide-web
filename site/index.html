@@ -20,7 +20,7 @@
 <link rel="icon" href="/assets/favicon-48.png" type="image/png" sizes="48x48">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <link rel="preload" href="/assets/fonts/bricolage.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/estilos.css?v=202610261359">
+<link rel="stylesheet" href="/assets/estilos.css?v=202610261513">
 <style>
 /* Menú con desplegables, menú móvil, accesos rápidos, barra inferior y «volver arriba» */
 header.site nav.main{gap:18px}
@@ -549,11 +549,10 @@ footer .foot-legal{display:flex;justify-content:space-between;gap:10px 20px;flex
           <p class="eyebrow" style="margin-bottom:6px">Total con IVA</p>
           <div class="total" id="total">0 €</div>
         </div>
-        <div class="vat" id="vat-wrap" role="radiogroup" aria-label="Tipo de IVA">
-          <span class="chip"><input type="radio" name="vat" id="v21" value="21" checked><label for="v21">IVA 21 %</label></span>
-          <span class="chip"><input type="radio" name="vat" id="v10" value="10"><label for="v10">IVA 10 % (sujeto a requisitos)</label></span>
+        <div class="vat" id="vat-wrap">
+          <span class="chip"><input type="checkbox" id="f-iva10"><label for="f-iva10">Quiero que valoréis si me corresponde el IVA del 10 %</label></span>
         </div>
-        <p class="note vat-aviso" id="vat-note" role="note"><strong>IVA del 10 %: sujeto a comprobación de requisitos.</strong> Solo se aplica a reparaciones de vivienda de uso particular con más de dos años, si el material aportado no supera el 40 % del precio. Lo comprobamos antes del presupuesto definitivo; si no se cumplen, se aplica el 21 %.</p>
+        <p class="note vat-aviso" id="vat-note" role="note"><strong>El precio se calcula con el IVA general del 21 %.</strong> El 10 % no se elige: solo se aplica si se cumplen los requisitos de la Ley del IVA. En general, obras de reparación o renovación en una vivienda de uso particular (o en el edificio de viviendas, si contrata la comunidad de propietarios) terminada hace más de dos años, contratadas directamente por quien la usa o por la comunidad, y en las que el coste de los materiales que aportamos no supere el 40 % de la base imponible (el precio sin IVA). Lo comprobamos antes del presupuesto definitivo y, si se cumplen, te lo aplicamos por escrito.</p>
         <label class="priv"><input type="checkbox" id="f-priv"><span>He leído la <a href="/privacidad/" target="_blank">política de privacidad</a> y he sido informado del tratamiento de mis datos para atender mi solicitud y preparar el presupuesto.</span></label>
         <div class="acts">
           <button class="btn primary" type="button" id="send">Enviar solicitud</button>
@@ -575,9 +574,9 @@ footer .foot-legal{display:flex;justify-content:space-between;gap:10px 20px;flex
       <p>Visitas programadas, informe de cada visita y prioridad cuando surge una avería. Contrato de 12 meses que se renueva solo; puedes darte de baja cuando quieras, sin penalización: solo se liquida lo recibido frente a lo pagado.</p>
     </div>
     <div class="mt-sum">
-      <article><div class="cable phase"></div><h3>Comunidades de propietarios</h3><p class="p"><small>desde</small> 59 € <small>/ mes + IVA</small></p><p>Zonas comunes, alumbrado, cuadros y luces de emergencia. Hasta 20 viviendas.</p></article>
-      <article><div class="cable neutral"></div><h3>Locales y oficinas</h3><p class="p"><small>desde</small> 35 € <small>/ mes + IVA</small></p><p>Comercios, oficinas y pequeños negocios.</p></article>
-      <article><div class="cable earth"></div><h3>Apartamentos turísticos</h3><p class="p"><small>desde</small> 8 € <small>/ mes por apartamento + IVA</small></p><p>Carteras de 2 o más apartamentos: revisión antes de la temporada y atención con huéspedes dentro. Un apartamento: revisión puntual.</p></article>
+      <article><div class="cable phase"></div><h3>Comunidades de propietarios</h3><p class="p"><small>desde</small> 59 € <small>/ mes + IVA · 71,39 € con IVA</small></p><p>Zonas comunes, alumbrado, cuadros y luces de emergencia. Hasta 20 viviendas.</p></article>
+      <article><div class="cable neutral"></div><h3>Locales y oficinas</h3><p class="p"><small>desde</small> 35 € <small>/ mes + IVA · 42,35 € con IVA</small></p><p>Comercios, oficinas y pequeños negocios.</p></article>
+      <article><div class="cable earth"></div><h3>Apartamentos turísticos</h3><p class="p"><small>desde</small> 8 € <small>/ mes por apartamento + IVA · 9,68 € con IVA</small></p><p>Carteras de 2 o más apartamentos: revisión antes de la temporada y atención con huéspedes dentro. Un apartamento: revisión puntual.</p></article>
     </div>
     <p class="desliza" aria-hidden="true">Desliza para ver más →</p>
     <div class="mt-acts">
@@ -616,7 +615,8 @@ footer .foot-legal{display:flex;justify-content:space-between;gap:10px 20px;flex
       <p class="eyebrow" style="margin-bottom:8px">Preguntas frecuentes</p>
       <details><summary>¿Qué es el boletín eléctrico?</summary><p>Es el Certificado de Instalación Eléctrica (CIE). Lo firma un instalador habilitado y lo pide la distribuidora para dar de alta la luz, cambiar de titular tras años sin suministro o subir la potencia.</p></details>
       <details><summary>¿El precio de la calculadora es el definitivo?</summary><p>No. Es un precio medio con material de gama comercial incluido. Si quieres otra gama o un modelo concreto, se presupuesta aparte. En la visita vemos tu caso y te damos el presupuesto por escrito antes de empezar. Si al abrir aparece algo que no se veía, te lo explicamos y no hacemos nada sin tu aprobación.</p></details>
-      <details><summary>¿Atendéis urgencias?</summary><p>Sí. En horario (L–V de 8 a 18 h), una urgencia lleva +30 €. Fuera de horario, +60 € por salida y un 50 % más sobre las horas trabajadas. Llámanos o escríbenos por WhatsApp.</p></details>
+      <details><summary>¿Cuánto cuesta la visita por una avería?</summary><p>El presupuesto orientativo de la calculadora es gratis y sin compromiso. Si vamos a ver una avería, la visita y diagnóstico cuesta 65 € + IVA (78,65 € con IVA) e incluye la salida y la primera hora de trabajo; si es algo sencillo, lo dejamos resuelto en esa hora. Te lo confirmamos antes de ir y fuera de Oropesa del Mar se suma el desplazamiento.</p></details>
+      <details><summary>¿Atendéis urgencias?</summary><p>Sí. En horario (L–V de 8 a 18 h), una urgencia lleva +30 € + IVA (36,30 €). Fuera de horario, +60 € + IVA (72,60 €) por salida y un 50 % más sobre las horas trabajadas. Llámanos o escríbenos por WhatsApp.</p></details>
       <details><summary>¿Trabajáis con comunidades y empresas?</summary><p>Sí. Hacemos mantenimiento de zonas comunes, locales y apartamentos turísticos, con factura y parte de cada intervención.</p></details>
     </div>
   </div>
@@ -637,7 +637,7 @@ footer .foot-legal{display:flex;justify-content:space-between;gap:10px 20px;flex
       <div class="ccard"><div><div class="k">Teléfono y WhatsApp</div><a class="v" id="ph" href="tel:+34621018374">621 018 374</a></div><button class="btn small" type="button" data-copy="621018374">Copiar</button></div>
       <div class="ccard"><div><div class="k">Correo</div><a class="v" href="mailto:info@senoide.es">info@senoide.es</a></div><button class="btn small" type="button" data-copy="info@senoide.es">Copiar</button></div>
       <div class="ccard"><div><div class="k">Presupuesto</div><a class="v small" href="#presupuesto">Calcula un precio orientativo en un minuto →</a></div></div>
-      <div class="ccard"><div><div class="k">Opiniones</div><a class="v small" href="https://share.google/tdtfLiFDOJaDpnz7n" target="_blank" rel="noopener">Lee lo que dicen nuestros clientes en Google</a><a class="v small" href="https://g.page/r/CcEAwUZu5RxeEBM/review" target="_blank" rel="noopener">¿Ya has trabajado con nosotros? Déjanos tu opinión</a></div></div>
+      <div class="ccard"><div><div class="k">Google</div><a class="v small" href="https://share.google/tdtfLiFDOJaDpnz7n" target="_blank" rel="noopener">Nuestra ficha en Google</a><a class="v small" href="https://g.page/r/CcEAwUZu5RxeEBM/review" target="_blank" rel="noopener">¿Ya has trabajado con nosotros? Déjanos tu opinión</a></div></div>
     </div>
   </div>
 </section>
@@ -752,7 +752,7 @@ var sc=document.currentScript;sc.parentNode.insertBefore(d,sc);})();
   </div>
   <div class="wrap foot-legal">
     <span>SENOIDE · Luis M. Sierra Mena · NIF 46927518C · Oropesa del Mar (Castellón)</span>
-    <span><a href="/aviso-legal/">Aviso legal</a> · <a href="/privacidad/">Privacidad</a> · <a href="/cookies/">Cookies</a> · <a href="/condiciones-mantenimiento/">Condiciones de mantenimiento</a> · <a href="https://share.google/tdtfLiFDOJaDpnz7n" target="_blank" rel="noopener">Opiniones en Google</a></span>
+    <span><a href="/aviso-legal/">Aviso legal</a> · <a href="/privacidad/">Privacidad</a> · <a href="/cookies/">Cookies</a> · <a href="/condiciones-mantenimiento/">Condiciones de mantenimiento</a> · <a href="https://share.google/tdtfLiFDOJaDpnz7n" target="_blank" rel="noopener">SENOIDE en Google</a></span>
   </div>
 </footer>
 <nav class="mbar" aria-label="Contacto rápido">
@@ -856,8 +856,8 @@ var sc=document.currentScript;sc.parentNode.insertBefore(d,sc);})();
   }
 })();
 </script>
-<script src="/assets/senoide.js?v=202610261359" defer></script>
-<script src="/assets/trabajos.js?v=202610261359" defer></script>
+<script src="/assets/senoide.js?v=202610261513" defer></script>
+<script src="/assets/trabajos.js?v=202610261513" defer></script>
 
 </body>
 </html>
