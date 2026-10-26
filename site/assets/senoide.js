@@ -94,13 +94,13 @@
     comunidad: 'Trabajos en zonas comunes: portal, escaleras, garaje y cuarto de contadores. Presupuesto a nombre de la comunidad.'
   };
   var TRAVEL = [0, 15, 30];          // € por zona
-  var URG_FIXED = [0, 30, 60];        // € por intervención: urgente en horario / salida fuera de horario
+  var URG_FIXED = [0, 30, 60];        // € por intervención: urgente en horario / suplemento por servicio fuera de horario
   var URG_HOURS = [0, 0, 0.50];       // recargo solo sobre las horas de mano de obra (fuera de horario)
   var HOUR_ITEMS = {e1:1, e2:1};      // líneas que son horas de mano de obra
   var URG_LABEL = ['', 'urgente en horario (24 h)', 'fuera de horario'];
   var URG_NOTE = ['',
     'Urgente en horario (L–V de 8 a 18 h): +30 € por intervención. Las horas se cobran a tarifa normal.',
-    'Fuera de horario (L–V antes de las 8 h o después de las 18 h, sábados, domingos y festivos): +60 € por salida y +50 % sobre las horas de mano de obra, incluida la primera. Fuera de horario atendemos averías; las instalaciones y reformas se programan en horario normal.'];
+    'Fuera de horario (L–V antes de las 8 h o después de las 18 h, sábados, domingos y festivos): suplemento de 60 € por intervención y +50 % sobre las horas de mano de obra, incluida la primera (sobre los 65 € de la visita y diagnóstico). Fuera de horario atendemos averías; las instalaciones y reformas se programan en horario normal.'];
   var PHONE = (document.body.dataset.whatsapp || '34621018374');
 
   var qty = {};
@@ -218,7 +218,7 @@
     var extras = [];
     if (sal) extras.push(['Salida y visita (una por visita)', sal]);
     if (travel) extras.push(['Desplazamiento (' + (zone === 1 ? 'hasta 20 km' : '20 a 40 km') + ')', travel]);
-    if (fix) extras.push([urg === 1 ? 'Suplemento urgencia en horario' : 'Salida fuera de horario', fix]);
+    if (fix) extras.push([urg === 1 ? 'Suplemento urgencia en horario' : 'Suplemento por servicio fuera de horario', fix]);
     if (hMin * URG_HOURS[urg]) extras.push(['Recargo 50 % sobre horas fuera de horario', hMin * URG_HOURS[urg]]);
     extras.forEach(function(x){
       var li = document.createElement('li'); li.className = 'extra';
