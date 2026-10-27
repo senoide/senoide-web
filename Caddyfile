@@ -13,15 +13,38 @@
 	}
 }
 
+# Solo para la web pública (la app manda sus propias cabeceras)
+(seguridad_web) {
+	header {
+		X-Frame-Options "SAMEORIGIN"
+		Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=()"
+		Content-Security-Policy "frame-ancestors 'self'; object-src 'none'; base-uri 'self'"
+	}
+}
+
+# Contacto para avisar de fallos de seguridad (RFC 9116)
+(security_txt) {
+	handle /.well-known/security.txt {
+		header Content-Type "text/plain; charset=utf-8"
+		respond "Contact: mailto:info@senoide.es
+Expires: 2027-10-27T00:00:00.000Z
+Preferred-Languages: es, en
+" 200
+	}
+}
+
 # Web pública
 senoide.es {
 	import seguridad
+	import seguridad_web
+	import security_txt
 	encode zstd gzip
 	# Horas libres de la agenda: se piden a la app (Cloudflare) desde el servidor
 	# Presupuestos que el cliente acepta desde un enlace: los sirve la app (Cloudflare)
 	handle /presupuesto/* {
 		reverse_proxy https://origin-app.senoide.es {
 			header_up Host {upstream_hostport}
+			header_up X-Senoide-Origen {$ORIGIN_SECRET:sin-configurar}
 			header_up X-Forwarded-Host senoide.es
 		}
 	}
@@ -29,12 +52,21 @@ senoide.es {
 	handle /anexo/* {
 		reverse_proxy https://origin-app.senoide.es {
 			header_up Host {upstream_hostport}
+			header_up X-Senoide-Origen {$ORIGIN_SECRET:sin-configurar}
 			header_up X-Forwarded-Host senoide.es
+		}
+	}
+	# Informes de la política de contenidos de las páginas que sirve la app (presupuestos, anexos)
+	handle /csp-informe {
+		reverse_proxy https://origin-app.senoide.es {
+			header_up Host {upstream_hostport}
+			header_up X-Senoide-Origen {$ORIGIN_SECRET:sin-configurar}
 		}
 	}
 	handle /api/disponibilidad {
 		reverse_proxy https://origin-app.senoide.es {
 			header_up Host {upstream_hostport}
+			header_up X-Senoide-Origen {$ORIGIN_SECRET:sin-configurar}
 		}
 	}
 	handle {
@@ -56,9 +88,11 @@ www.senoide.es {
 # Gestión SENOIDE: puerta de entrada a la app (el Worker solo acepta a este servidor)
 app.senoide.es {
 	import seguridad
+	import security_txt
 	encode zstd gzip
 	reverse_proxy https://origin-app.senoide.es {
 		header_up Host {upstream_hostport}
+		header_up X-Senoide-Origen {$ORIGIN_SECRET:sin-configurar}
 		header_up X-Forwarded-Host app.senoide.es
 	}
 }
