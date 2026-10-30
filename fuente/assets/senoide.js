@@ -312,6 +312,18 @@
   $('#wa').addEventListener('click', function(e){
     if (!privOk()){ e.preventDefault(); return; }
     if ($('#f-fotos') && $('#f-fotos').checked){ var t = $('#toast'); t.textContent = 'Envía el mensaje en WhatsApp y después adjunta las fotos con el clip.'; setTimeout(function(){t.textContent=''}, 8000); }
+    // Copia de la solicitud a la app de SENOIDE, para que no se quede solo en WhatsApp.
+    // La referencia va en el mensaje y en la copia, para casar el chat con la solicitud.
+    try {
+      update();
+      var ref = 'W' + Date.now().toString(36).slice(-4).toUpperCase();
+      this.href = 'https://wa.me/' + PHONE + '?text=' + encodeURIComponent(last.text + '\nRef. ' + ref);
+      var API2 = document.body.dataset.api || '';
+      if (API2 && last.data){
+        var cuerpo = JSON.stringify(Object.assign({}, last.data, {privacidad: true, canal: 'whatsapp', ref: ref, web: ($('#f-web') || {}).value || ''}));
+        fetch(API2 + '/api/solicitud', {method: 'POST', headers: {'content-type': 'application/json'}, body: cuerpo, keepalive: true}).catch(function(){});
+      }
+    } catch (x) {}
   });
   $('#req').addEventListener('submit', function(e){e.preventDefault()});
 
