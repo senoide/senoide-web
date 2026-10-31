@@ -97,7 +97,7 @@ app.senoide.es {
 	}
 }
 
-# Entorno de pruebas: misma puerta de entrada que la app real (evita los bloqueos de LaLiga a las IPs de Cloudflare).
+# Entorno de pruebas (desde el 31/10/2026): misma puerta de entrada que la app real (evita los bloqueos de LaLiga a las IPs de Cloudflare).
 # El Worker «senoide-pruebas» solo acepta a este servidor en origin-pruebas.senoide.es. No se le manda la llave de la app real.
 pruebas.senoide.es {
 	import seguridad
