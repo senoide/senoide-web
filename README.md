@@ -4,7 +4,7 @@ Se sirve desde un servidor propio en la UE (UpCloud, Madrid) con IP dedicada, pa
 
 - `fuente/` — el código de la web: textos (`contenido/`), diseño (`plantillas/`), estilos, calculadora y fuentes (`assets/`), fotos (`fotos/`) y el generador `build.py`.
 - `site/` — la web generada (lo que ve el cliente). No se edita a mano: se regenera desde `fuente/`.
-- `Caddyfile` — servidor web: senoide.es (web), www → senoide.es, app.senoide.es (reenvía a la app en Cloudflare, `origin-app.senoide.es`).
+- `Caddyfile` — servidor web: senoide.es (web), www → senoide.es, app.senoide.es (reenvía a la app en Cloudflare, `origin-app.senoide.es`) y pruebas.senoide.es (reenvía al entorno de pruebas, `origin-pruebas.senoide.es`).
 - `scripts/actualizar.sh` — el servidor trae los cambios de este repositorio cada 5 minutos.
 - `servidor-cloud-init.yaml` — configuración automática del servidor al crearlo (sin contraseñas ni claves).
 
