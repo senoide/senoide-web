@@ -39,6 +39,9 @@ senoide.es {
 	import seguridad_web
 	import security_txt
 	encode zstd gzip
+	# Enlace corto para pedir opiniones: senoide.es/opinion lleva a la página de reseñas de Google
+	redir /opinion https://g.page/r/CcEAwUZu5RxeEBM/review 302
+	redir /opinion/ https://g.page/r/CcEAwUZu5RxeEBM/review 302
 	# Horas libres de la agenda: se piden a la app (Cloudflare) desde el servidor
 	# Presupuestos que el cliente acepta desde un enlace: los sirve la app (Cloudflare)
 	handle /presupuesto/* {
