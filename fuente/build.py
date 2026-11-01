@@ -38,7 +38,8 @@ CONFIG = {
     "EMAIL": "info@senoide.es",    # cámbialo por info@tudominio cuando exista
     "CERTIFICADO": "CIBTB-04551",
     "RII": "10-B-D00-12064193",              # Registro Integrado Industrial: empresa instaladora BT, categoría básica
-    "AVISO": "Abrimos el <b>2 de noviembre de 2026</b> · ya puedes pedir presupuesto",
+    # Franja de arriba (antes «Abrimos el 2 de noviembre…», quitado el 02/11/2026). AVISO y AVISO_ABIERTO dicen lo mismo.
+    "AVISO": "Atendemos de lunes a viernes, de 8 a 18 h · Urgencias: <a href=\"tel:+34621018374\">621 018 374</a>",
     # A partir de APERTURA el aviso de arriba cambia solo (lo decide el navegador del visitante)
     "APERTURA": "2026-11-02",
     "AVISO_ABIERTO": "Atendemos de lunes a viernes, de 8 a 18 h · Urgencias: <a href=\"tel:+34621018374\">621 018 374</a>",
@@ -385,7 +386,7 @@ def construir():
     lista_t = ('<div class="cards" data-trabajos="">' + "".join(
         tarjeta(t, "/trabajos/", f'{t.get("municipio", "")} · {t.get("servicio", "")}'.strip(" ·")) for t in trabajos) + "</div>"
                + ("" if trabajos else
-                  '<div class="empty-state" id="trabajos-vacio">Abrimos el 2 de noviembre. Aquí irán apareciendo los trabajos terminados, con fotos.</div>'))
+                  '<div class="empty-state" id="trabajos-vacio">Aquí irán apareciendo los trabajos terminados, con fotos.</div>'))
     pagina("/trabajos/", "Trabajos realizados | SENOIDE, electricista en Oropesa del Mar",
            "Instalaciones eléctricas, mantenimiento y reparaciones hechas por SENOIDE en Oropesa del Mar y la Plana.",
            cabecera("Trabajos", "Trabajos realizados", "Instalaciones y reparaciones terminadas en la zona.",
