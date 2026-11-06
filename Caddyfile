@@ -39,6 +39,10 @@ senoide.es {
 	import seguridad_web
 	import security_txt
 	encode zstd gzip
+	# Las páginas se comprueban siempre con el servidor (si no han cambiado, responde 304 sin volver a enviarlas);
+	# así nadie ve una versión antigua guardada en su navegador. Estilos, scripts y fotos sí se guardan.
+	@paginas not path /assets/* /fotos/*
+	header @paginas Cache-Control "no-cache"
 	# Enlace corto para pedir opiniones: senoide.es/opinion lleva a la página de reseñas de Google
 	redir /opinion https://g.page/r/CcEAwUZu5RxeEBM/review 302
 	redir /opinion/ https://g.page/r/CcEAwUZu5RxeEBM/review 302
