@@ -49,6 +49,12 @@ CONFIG = {
     "RESENAS_URL": "https://g.page/r/CcEAwUZu5RxeEBM/review",
     # Enlace a la ficha de Google para leer las opiniones (por ejemplo, el de «Compartir» del perfil). Vacío = no se muestra.
     "PERFIL_GOOGLE": "https://share.google/tdtfLiFDOJaDpnz7n",
+    # Opiniones de clientes que se muestran en la portada. Solo reseñas reales de Google, copiadas tal cual,
+    # y con permiso del cliente para mostrar su nombre. Lista vacía = el bloque no aparece.
+    "OPINIONES_CLIENTES": [
+        {"nombre": "Pura J.", "estrellas": 5, "fecha": "Noviembre de 2026",
+         "texto": "Muy contento con el trabajo realizado. Han sido puntuales, profesionales y han dejado todo recogido y todo limpio."},
+    ],
     "HORARIO": [("Mo", "Fr", "08:00", "18:00")],
     # Zona de trabajo: una sola lista para la portada, la calculadora y Google.
     # Tramo de desplazamiento: 0 = incluido (Oropesa), 1 = hasta 20 km (+15 €), 2 = de 20 a 40 km (+30 €).
@@ -503,6 +509,22 @@ def construir():
                      + (f'<a class="v small" href="{esc(d["RESENAS_URL"])}" target="_blank" rel="noopener">¿Ya has trabajado con nosotros? Déjanos tu opinión</a>' if d["RESENAS_URL"] else "")
                      + '</div></div>')
     inicio = inicio.replace("{{OPINIONES}}", opiniones)
+    # opiniones de clientes (reseñas reales de Google)
+    bloque_op = ""
+    if d["OPINIONES_CLIENTES"]:
+        enlace = d["PERFIL_GOOGLE"] or d["RESENAS_URL"]
+        bloque_op = ('<section id="opiniones"><div class="wrap"><div class="section-head"><p class="eyebrow">Opiniones</p>'
+                     '<h2>Lo que dicen nuestros clientes.</h2></div><div class="opiniones">'
+                     + "".join(
+                         f'<figure class="opinion"><div class="estrellas" aria-label="{o["estrellas"]} de 5 estrellas">'
+                         f'{"★" * o["estrellas"]}{"☆" * (5 - o["estrellas"])}</div>'
+                         f'<blockquote>{esc(o["texto"])}</blockquote>'
+                         f'<figcaption><b>{esc(o["nombre"])}</b> · Opinión en Google · {esc(o["fecha"])}</figcaption></figure>'
+                         for o in d["OPINIONES_CLIENTES"])
+                     + '</div>'
+                     + (f'<p class="more"><a class="btn" href="{esc(enlace)}" target="_blank" rel="noopener">Ver las opiniones en Google</a></p>' if enlace else "")
+                     + '</div></section>')
+    inicio = inicio.replace("{{BLOQUE_OPINIONES}}", bloque_op)
     # zona de trabajo (portada) y municipios de la calculadora, desde la misma lista
     TRAMOS = [("Sin desplazamiento", "incluido"), ("Hasta 20 km", "+15 € por visita"), ("De 20 a 40 km", "+30 € por visita")]
     zona_html = "".join(

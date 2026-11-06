@@ -310,3 +310,10 @@ footer .wrap{display:flex;justify-content:space-between;align-items:end;gap:16px
 .card .thumbs{display:flex;gap:6px;padding:0 16px 14px;flex-wrap:wrap}
 .card .thumbs img{width:64px;height:48px;aspect-ratio:auto;border-radius:6px;cursor:zoom-in}
 .ccard .v.small{font-family:inherit;font-size:.95rem}
+
+/* opiniones de clientes (portada) */
+.opiniones{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:20px}
+.opinion{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:22px;display:grid;gap:12px;align-content:start}
+.opinion .estrellas{color:#f5b301;font-size:1.2rem;letter-spacing:2px}
+.opinion blockquote{margin:0;font-size:1.05rem;line-height:1.55}
+.opinion figcaption{color:var(--muted);font-size:.88rem}
