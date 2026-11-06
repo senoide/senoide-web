@@ -1,7 +1,8 @@
 ---
-titulo: Válvula antirretorno en el desagüe del inodoro
-titulo_seo: Agua que sale por el váter cuando llueve: válvula antirretorno | SENOIDE
+titulo: Válvula antirretorno en el desagüe del inodoro en Oropesa del Mar
+titulo_seo: Agua por el váter al llover: válvula antirretorno en Oropesa | SENOIDE
 resumen: Cuando llovía fuerte, el agua del alcantarillado subía y salía por el inodoro. Instalamos una válvula antirretorno en el desagüe.
+municipio: Oropesa del Mar
 servicio: Fontanería
 portada: valvula-antirretorno-instalada.jpg
 publicar: 2026-11-06
