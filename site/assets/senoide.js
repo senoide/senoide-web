@@ -10,7 +10,7 @@
   var CATALOG = [
     /* c: a quién se muestra cada trabajo. p = particular, e = empresa o autónomo, c = comunidad. d: lo que incluye */
     {id:'g', name:'Visita y mano de obra', cable:'all', items:[
-      {id:'e1', closed:1, c:'pec', name:'Visita y diagnóstico (salida y primera hora)', unit:'visita', min:65, max:65,
+      {id:'e1', closed:1, c:'pec', name:'Visita y diagnóstico (salida y primera hora)', unit:'visita', min:60, max:60,
         d:'Para averías o cuando no sabes qué hay que hacer. Incluye la salida y la primera hora de trabajo; si es algo sencillo, lo dejamos resuelto en esa hora.'},
       {id:'e2', closed:1, c:'pec', name:'Hora adicional de trabajo', unit:'h', min:45, max:45,
         d:'Electricidad, fontanería o remates de albañilería, a partir de la primera hora.'}
@@ -100,7 +100,7 @@
   var URG_LABEL = ['', 'urgente en horario (24 h)', 'fuera de horario'];
   var URG_NOTE = ['',
     'Urgente en horario (L–V de 8 a 18 h): +30 € por intervención. Las horas se cobran a tarifa normal.',
-    'Fuera de horario (L–V antes de las 8 h o después de las 18 h, sábados, domingos y festivos): suplemento de 60 € por intervención y +50 % sobre las horas de mano de obra, incluida la primera (sobre los 65 € de la visita y diagnóstico). Fuera de horario atendemos averías; las instalaciones y reformas se programan en horario normal.'];
+    'Fuera de horario (L–V antes de las 8 h o después de las 18 h, sábados, domingos y festivos): suplemento de 60 € por intervención y +50 % sobre las horas de mano de obra, incluida la primera (sobre los 60 € de la visita y diagnóstico). Fuera de horario atendemos averías; las instalaciones y reformas se programan en horario normal.'];
   var PHONE = (document.body.dataset.whatsapp || '34621018374');
 
   var qty = {};
