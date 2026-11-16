@@ -21,7 +21,7 @@ Si el diferencial salta, antes de llamar puedes hacer una prueba sencilla: [te e
 
 ## Cómo trabajamos una avería
 
-1. **Visita y diagnóstico: 65 € + IVA (78,65 € con IVA).** Incluye la salida y la primera hora de trabajo; fuera de Oropesa del Mar se suma el desplazamiento. Te confirmamos el precio antes de ir. Si es algo sencillo, lo dejamos resuelto en esa hora.
+1. **Visita y diagnóstico: 60 € + IVA (72,60 € con IVA).** Incluye la salida y la primera hora de trabajo; fuera de Oropesa del Mar se suma el desplazamiento. Te confirmamos el precio antes de ir. Si es algo sencillo, lo dejamos resuelto en esa hora.
 2. **Te decimos qué pasa y cuánto cuesta** antes de seguir. Si hace falta material o más tiempo, te lo explicamos y decides.
 3. **Reparamos y comprobamos** que la instalación queda segura: aislamiento, tierra y diferenciales.
 
@@ -34,8 +34,8 @@ Las urgencias dependen de la agenda del día. Llámanos al **621 018 374** y te 
 
 ### Ejemplos de precio (avería de una hora, sin material, en Oropesa del Mar)
 
-- **Urgente en horario:** visita y diagnóstico 65 € + suplemento de urgencia 30 € = **95 € + IVA (114,95 € con IVA)**.
-- **Fuera de horario:** visita y diagnóstico 65 € (incluye la salida y la primera hora) + suplemento por servicio fuera de horario 60 € + recargo del 50 % sobre la mano de obra, que se calcula sobre los 65 € de la visita y diagnóstico (32,50 €) = **157,50 € + IVA (190,58 € con IVA)**. El suplemento se cobra una sola vez por intervención; no hay una segunda salida.
+- **Urgente en horario:** visita y diagnóstico 60 € + suplemento de urgencia 30 € = **90 € + IVA (108,90 € con IVA)**.
+- **Fuera de horario:** visita y diagnóstico 60 € (incluye la salida y la primera hora) + suplemento por servicio fuera de horario 60 € + recargo del 50 % sobre la mano de obra, que se calcula sobre los 60 € de la visita y diagnóstico (30 €) = **150 € + IVA (181,50 € con IVA)**. El suplemento se cobra una sola vez por intervención; no hay una segunda salida.
 - Cada hora adicional fuera de horario: 45 € + 50 % = 67,50 € + IVA.
 - Fuera de Oropesa del Mar se suma el desplazamiento: 15 € + IVA hasta 20 km y 30 € + IVA de 20 a 40 km.
 
